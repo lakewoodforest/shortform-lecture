@@ -47,16 +47,58 @@
     pointer-events:none;}
   .land-head{margin-top:84px;display:flex;align-items:center;gap:18px;justify-content:center;
     opacity:0;animation:fadeDown .9s .1s forwards;}
-  .land-pill{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;
-    letter-spacing:3px;color:#f0f8ff;border:1px solid rgba(255,255,255,.4);
-    padding:7px 14px;border-radius:9px;}
-  .land-sep{width:46px;height:1px;background:rgba(255,255,255,.4);}
-  .land-head .svc{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:5px;color:#d8edfc;}
-  .welcome{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
-    letter-spacing:7px;color:#c2e1f8;opacity:0;animation:fadeDown .9s .25s forwards;}
-  .land-title{margin-top:10px;font-size:54px;font-weight:800;letter-spacing:-1px;color:#ffffff;
-    text-shadow:0 6px 40px rgba(7,60,110,.5);opacity:0;animation:fadeDown 1s .4s forwards;}
-  .land-sub{margin-top:14px;font-size:15px;color:#e2f2fd;opacity:0;animation:fadeDown 1s .6s forwards;}
+  /* 글래스 존 칩 3개 */
+  .zone-pill{display:inline-flex;align-items:center;gap:9px;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12.5px;
+    letter-spacing:3px;color:#fff;padding:9px 18px;border-radius:99px;
+    background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.38);
+    backdrop-filter:blur(5px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 6px 16px rgba(8,60,110,.2);
+    transition:.2s;}
+  .zone-pill:hover{background:rgba(255,255,255,.22);transform:translateY(-2px);}
+  .zone-pill .dot{width:8px;height:8px;border-radius:50%;flex:none;}
+  .dot-gold{background:#cfe8ff;box-shadow:0 0 9px #cfe8ff;}
+  .dot-mint{background:#6ee7b0;box-shadow:0 0 9px #6ee7b0;}
+  .dot-pink{background:#ffa3bb;box-shadow:0 0 9px #ffa3bb;}
+  .land-sep{width:34px;height:1.5px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);}
+  .welcome{margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    letter-spacing:7px;color:#e3f2ff;text-shadow:0 0 18px rgba(200,230,255,.75);
+    display:flex;align-items:center;gap:16px;
+    opacity:0;animation:fadeDown .9s .25s forwards;}
+  .welcome::before,.welcome::after{content:"";width:58px;height:1.5px;flex:none;}
+  .welcome::before{background:linear-gradient(90deg,transparent,#cfe8ff);}
+  .welcome::after{background:linear-gradient(270deg,transparent,#cfe8ff);}
+  /* 금빛 반짝이 타이틀 (학교 홈페이지 WELCOME 무드) */
+  .land-title-wrap{position:relative;display:inline-block;margin-top:10px;}
+  .land-title{font-size:56px;font-weight:800;letter-spacing:-1px;
+    background:linear-gradient(120deg,#ffffff 0%,#dceeff 22%,#9fd2ff 45%,#ffffff 65%,#dceeff 85%,#ffffff 100%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 4px 5px rgba(10,60,120,.3)) drop-shadow(0 10px 36px rgba(190,225,255,.55));
+    opacity:0;animation:fadeDown 1s .4s forwards, shimmer 4.5s linear 1.6s infinite;}
+  @keyframes shimmer{to{background-position:-250% 0;}}
+  .sp{position:absolute;color:#f0f8ff;text-shadow:0 0 14px rgba(210,235,255,.95);
+    opacity:0;animation:twinkle 2.6s ease-in-out infinite;pointer-events:none;}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0deg);}
+    50%{opacity:1;transform:scale(1.15) rotate(25deg);}}
+
+  /* 낙하산 마스코트 (상단 좌우) */
+  .chute{position:absolute;top:0;z-index:1;opacity:0;animation:chuteIn 1.3s .9s forwards;}
+  .chute svg{display:block;width:112px;height:auto;transform-origin:50% 0;
+    filter:drop-shadow(0 10px 22px rgba(10,50,100,.3));
+    animation:sway 5.5s ease-in-out 1.8s infinite alternate;}
+  .chute-l{left:7%;}
+  .chute-r{right:7%;}
+  .chute-r svg{animation-duration:6.4s;}
+  @keyframes sway{from{transform:rotate(-6deg);}to{transform:rotate(6deg);}}
+  @keyframes chuteIn{from{opacity:0;transform:translateY(-44px);}to{opacity:1;transform:none;}}
+  @media(max-width:900px){.chute{display:none;}}
+  .land-sub{margin-top:16px;font-size:15.5px;color:#e2f2fd;opacity:0;animation:fadeDown 1s .6s forwards;}
+  .land-sub b{font-weight:700;}
+  .hl-gold{color:#e6f3ff;text-shadow:0 0 14px rgba(200,230,255,.7);}
+  .hl-mint{color:#8af0c0;text-shadow:0 0 14px rgba(110,231,176,.55);}
+  .hl-pink{color:#ffb9cb;text-shadow:0 0 14px rgba(255,163,187,.55);}
   /* 입구 2개: 좌(숏폼 스튜디오) · 우(파이썬 문제 풀이) */
   .gates{position:relative;margin-top:auto;margin-bottom:auto;display:flex;gap:56px;
     align-items:flex-end;justify-content:center;flex-wrap:wrap;
@@ -667,14 +709,62 @@
 </head>
 <body>
   <div id="landing">
+    <!-- 낙하산 마스코트 -->
+    <div class="chute chute-l">
+      <svg viewBox="0 0 120 175" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,52 A50,46 0 0 1 110,52 L110,55 Q97,64 84,55 Q72,65 60,55 Q48,65 36,55 Q23,64 10,55 Z"
+              fill="#9b7fe0" stroke="#6e54b8" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M36,55 Q40,20 60,8" stroke="#6e54b8" stroke-width="3" fill="none"/>
+        <path d="M84,55 Q80,20 60,8" stroke="#6e54b8" stroke-width="3" fill="none"/>
+        <line x1="14" y1="57" x2="48" y2="112" stroke="#6e54b8" stroke-width="3"/>
+        <line x1="60" y1="60" x2="60" y2="110" stroke="#6e54b8" stroke-width="3"/>
+        <line x1="106" y1="57" x2="72" y2="112" stroke="#6e54b8" stroke-width="3"/>
+        <circle cx="60" cy="138" r="27" fill="#3da379"/>
+        <circle cx="60" cy="140" r="21" fill="#fff"/>
+        <circle cx="52" cy="138" r="2.6" fill="#1e5c43"/>
+        <circle cx="68" cy="138" r="2.6" fill="#1e5c43"/>
+        <path d="M55,146 q5,4.5 10,0" stroke="#1e5c43" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="45" cy="144" rx="4.5" ry="3" fill="#bfe5d2"/>
+        <ellipse cx="75" cy="144" rx="4.5" ry="3" fill="#bfe5d2"/>
+      </svg>
+    </div>
+    <div class="chute chute-r">
+      <svg viewBox="0 0 120 175" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,52 A50,46 0 0 1 110,52 L110,55 Q97,64 84,55 Q72,65 60,55 Q48,65 36,55 Q23,64 10,55 Z"
+              fill="#9b7fe0" stroke="#6e54b8" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M36,55 Q40,20 60,8" stroke="#6e54b8" stroke-width="3" fill="none"/>
+        <path d="M84,55 Q80,20 60,8" stroke="#6e54b8" stroke-width="3" fill="none"/>
+        <line x1="14" y1="57" x2="48" y2="112" stroke="#6e54b8" stroke-width="3"/>
+        <line x1="60" y1="60" x2="60" y2="110" stroke="#6e54b8" stroke-width="3"/>
+        <line x1="106" y1="57" x2="72" y2="112" stroke="#6e54b8" stroke-width="3"/>
+        <polygon points="40,124 45,103 57,114" fill="#fff" stroke="#4a4350" stroke-width="3.5" stroke-linejoin="round"/>
+        <polygon points="80,124 75,103 63,114" fill="#fff" stroke="#4a4350" stroke-width="3.5" stroke-linejoin="round"/>
+        <circle cx="60" cy="140" r="25" fill="#fff" stroke="#4a4350" stroke-width="3.5"/>
+        <circle cx="52" cy="138" r="2.4" fill="#4a4350"/>
+        <circle cx="68" cy="138" r="2.4" fill="#4a4350"/>
+        <path d="M55,148 q5,-4 10,0" stroke="#4a4350" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <ellipse cx="44" cy="145" rx="4.5" ry="3" fill="#f7b8c4"/>
+        <ellipse cx="76" cy="145" rx="4.5" ry="3" fill="#f7b8c4"/>
+      </svg>
+    </div>
     <div class="land-head">
-      <span class="land-pill">SHORTS</span>
+      <span class="zone-pill"><i class="dot dot-gold"></i>SHORTS</span>
       <span class="land-sep"></span>
-      <span class="svc">QUIZ</span>
+      <span class="zone-pill"><i class="dot dot-mint"></i>QUIZ</span>
+      <span class="land-sep"></span>
+      <span class="zone-pill"><i class="dot dot-pink"></i>CODE</span>
     </div>
     <div class="welcome">WELCOME TO</div>
-    <div class="land-title">한입 파이썬</div>
-    <div class="land-sub">숏폼으로 가볍게 배우고, 퀴즈로 단단하게 다지기</div>
+    <div class="land-title-wrap">
+      <span class="sp" style="left:-54px;top:-2px;font-size:21px;animation-delay:.2s">✦</span>
+      <span class="sp" style="right:-58px;top:16px;font-size:25px;animation-delay:1.1s">✦</span>
+      <span class="sp" style="left:-26px;bottom:-18px;font-size:13px;animation-delay:1.7s">✦</span>
+      <span class="sp" style="right:-22px;top:-24px;font-size:15px;animation-delay:.7s">✦</span>
+      <span class="sp" style="left:22%;top:-32px;font-size:12px;animation-delay:2.2s">✦</span>
+      <span class="sp" style="right:20%;bottom:-28px;font-size:16px;animation-delay:2.9s">✦</span>
+      <div class="land-title">한입 파이썬</div>
+    </div>
+    <div class="land-sub"><b class="hl-gold">숏폼</b>으로 가볍게 배우고, <b class="hl-mint">퀴즈</b>로 다지고, <b class="hl-pink">코드</b>로 완성하기</div>
     <div class="gates">
       <!-- 좌: 숏폼 스튜디오 -->
       <div class="gate" id="enterStudio">
