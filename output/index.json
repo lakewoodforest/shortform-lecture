@@ -1,0 +1,547 @@
+{
+  "lecture_id": "lecture",
+  "lecture_title": "파이썬 기초",
+  "short_count": 54,
+  "shorts": [
+    {
+      "id": "web-04-short",
+      "title": "안녕인사.",
+      "duration": 4.656,
+      "scene_count": 1,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Forest",
+      "slide_page": null,
+      "video": "web-04-short/video.mp4"
+    },
+    {
+      "id": "web-03-short",
+      "title": "인사",
+      "duration": 4.656,
+      "scene_count": 1,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Plum",
+      "slide_page": null,
+      "video": "web-03-short/video.mp4"
+    },
+    {
+      "id": "s17-operator-compound",
+      "title": "복합 할당 연산자",
+      "duration": 24.384,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 36,
+      "video": "s17-operator-compound/video.webm"
+    },
+    {
+      "id": "s16-operator-power",
+      "title": "거듭제곱과 제곱근",
+      "duration": 28.416,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 34,
+      "video": "s16-operator-power/video.webm"
+    },
+    {
+      "id": "s15-operator-division",
+      "title": "나눗셈의 함정 (몫과 나머지)",
+      "duration": 24.744,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 31,
+      "video": "s15-operator-division/video.webm"
+    },
+    {
+      "id": "s14-operator-arithmetic",
+      "title": "산술 연산자 (사칙연산)",
+      "duration": 21.96,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 30,
+      "video": "s14-operator-arithmetic/video.webm"
+    },
+    {
+      "id": "s13-operator-expression",
+      "title": "수식 — 연산자와 피연산자",
+      "duration": 25.248,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 29,
+      "video": "s13-operator-expression/video.webm"
+    },
+    {
+      "id": "s12-operator-assign",
+      "title": "할당 연산자 = 다시 보기",
+      "duration": 26.832,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 27,
+      "video": "s12-operator-assign/video.webm"
+    },
+    {
+      "id": "s11-datatype-why",
+      "title": "자료형이 왜 중요할까?",
+      "duration": 24.528,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 24,
+      "video": "s11-datatype-why/video.webm"
+    },
+    {
+      "id": "s10-datatype-type-bool",
+      "title": "자료형 확인하기와 참·거짓",
+      "duration": 25.8,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 22,
+      "video": "s10-datatype-type-bool/video.webm"
+    },
+    {
+      "id": "s09-datatype-four",
+      "title": "기본 자료형 네 가지",
+      "duration": 22.92,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 21,
+      "video": "s09-datatype-four/video.webm"
+    },
+    {
+      "id": "s08-variable-string",
+      "title": "변수에 글자도 담을 수 있어요",
+      "duration": 22.488,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 18,
+      "video": "s08-variable-string/video.webm"
+    },
+    {
+      "id": "s07-variable-naming",
+      "title": "변수 이름 짓는 규칙",
+      "duration": 29.52,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 15,
+      "video": "s07-variable-naming/video.webm"
+    },
+    {
+      "id": "s06-variable-change-multi",
+      "title": "값은 바뀌고, 변수는 여러 개",
+      "duration": 27.264,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 12,
+      "video": "s06-variable-change-multi/video.webm"
+    },
+    {
+      "id": "s04-variable-what",
+      "title": "변수가 뭐예요?",
+      "duration": 22.8,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 9,
+      "video": "s04-variable-what/video.webm"
+    },
+    {
+      "id": "s03-script-mode",
+      "title": "스크립트 모드와 IDLE",
+      "duration": 32.592,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 6,
+      "video": "s03-script-mode/video.webm"
+    },
+    {
+      "id": "s02-interactive-mode",
+      "title": "대화식 모드로 첫 코드 써보기",
+      "duration": 33.408,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 5,
+      "video": "s02-interactive-mode/video.webm"
+    },
+    {
+      "id": "s01-start-overview",
+      "title": "파이썬, 어떻게 시작하죠?",
+      "duration": 23.232,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 7,
+      "video": "s01-start-overview/video.webm"
+    },
+    {
+      "id": "m03-if",
+      "title": "if 문과 들여쓰기",
+      "duration": 18.432,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 6,
+      "video": "m03-if/video.webm"
+    },
+    {
+      "id": "web-02-short",
+      "title": "인삿말",
+      "duration": 9.984,
+      "scene_count": 1,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": null,
+      "video": "web-02-short/video.mp4"
+    },
+    {
+      "id": "web-01-short",
+      "title": "인삿말",
+      "duration": 4.728,
+      "scene_count": 1,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": null,
+      "video": "web-01-short/video.mp4"
+    },
+    {
+      "id": "m29-set-op",
+      "title": "집합 연산",
+      "duration": 18.936,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 93,
+      "video": "m29-set-op/video.mp4"
+    },
+    {
+      "id": "m28-set",
+      "title": "집합 (중복 없는 모음)",
+      "duration": 16.704,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 83,
+      "video": "m28-set/video.mp4"
+    },
+    {
+      "id": "m27-dict-vs-list",
+      "title": "딕셔너리 vs 리스트",
+      "duration": 17.4,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 77,
+      "video": "m27-dict-vs-list/video.mp4"
+    },
+    {
+      "id": "m26-dict-use",
+      "title": "딕셔너리 다루기",
+      "duration": 17.376,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 75,
+      "video": "m26-dict-use/video.mp4"
+    },
+    {
+      "id": "m25-dict",
+      "title": "딕셔너리 (키와 값)",
+      "duration": 18.696,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 71,
+      "video": "m25-dict/video.mp4"
+    },
+    {
+      "id": "m24-tuple",
+      "title": "튜플 (바꿀 수 없는 묶음)",
+      "duration": 16.248,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 67,
+      "video": "m24-tuple/video.mp4"
+    },
+    {
+      "id": "m23-list-comp",
+      "title": "리스트 함축",
+      "duration": 17.688,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 66,
+      "video": "m23-list-comp/video.mp4"
+    },
+    {
+      "id": "m22-list-edit",
+      "title": "리스트 수정과 메소드",
+      "duration": 17.016,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 62,
+      "video": "m22-list-edit/video.mp4"
+    },
+    {
+      "id": "m21-slicing",
+      "title": "슬라이싱 (잘라내기)",
+      "duration": 17.448,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 59,
+      "video": "m21-slicing/video.mp4"
+    },
+    {
+      "id": "m20-indexing",
+      "title": "인덱싱 (순서로 꺼내기)",
+      "duration": 18.816,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 56,
+      "video": "m20-indexing/video.mp4"
+    },
+    {
+      "id": "m19-list-func",
+      "title": "리스트 연산과 내장 함수",
+      "duration": 17.16,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 54,
+      "video": "m19-list-func/video.mp4"
+    },
+    {
+      "id": "m18-list-make",
+      "title": "리스트 만들기와 추가",
+      "duration": 17.16,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 50,
+      "video": "m18-list-make/video.mp4"
+    },
+    {
+      "id": "m17-list-why",
+      "title": "리스트가 필요한 이유",
+      "duration": 18.624,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 49,
+      "video": "m17-list-why/video.mp4"
+    },
+    {
+      "id": "m16-continue",
+      "title": "continue와 break",
+      "duration": 18.408,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 43,
+      "video": "m16-continue/video.mp4"
+    },
+    {
+      "id": "m15-infinite-break",
+      "title": "무한 루프와 break",
+      "duration": 17.784,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 41,
+      "video": "m15-infinite-break/video.mp4"
+    },
+    {
+      "id": "m14-while",
+      "title": "while 문",
+      "duration": 18.048,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 39,
+      "video": "m14-while/video.mp4"
+    },
+    {
+      "id": "m13-range-args",
+      "title": "range의 시작·끝·간격",
+      "duration": 17.928,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 34,
+      "video": "m13-range-args/video.mp4"
+    },
+    {
+      "id": "m12-range",
+      "title": "range 함수",
+      "duration": 19.584,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 33,
+      "video": "m12-range/video.mp4"
+    },
+    {
+      "id": "m11-for-in",
+      "title": "for-in과 변수 활용",
+      "duration": 16.2,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 29,
+      "video": "m11-for-in/video.mp4"
+    },
+    {
+      "id": "m10-for",
+      "title": "for 루프 기본",
+      "duration": 17.112,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 27,
+      "video": "m10-for/video.mp4"
+    },
+    {
+      "id": "m09-loop-kinds",
+      "title": "반복의 두 종류 (for·while)",
+      "duration": 17.352,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 22,
+      "video": "m09-loop-kinds/video.mp4"
+    },
+    {
+      "id": "m08-loop-why",
+      "title": "반복문은 왜 필요할까?",
+      "duration": 19.8,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 19,
+      "video": "m08-loop-why/video.mp4"
+    },
+    {
+      "id": "m07-nested-if",
+      "title": "중첩 if 블록",
+      "duration": 20.136,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 16,
+      "video": "m07-nested-if/video.mp4"
+    },
+    {
+      "id": "m06-elif",
+      "title": "elif로 여러 조건 나누기",
+      "duration": 18.144,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 14,
+      "video": "m06-elif/video.mp4"
+    },
+    {
+      "id": "m05-ifelse-ex",
+      "title": "if-else 활용 예시",
+      "duration": 17.376,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 10,
+      "video": "m05-ifelse-ex/video.mp4"
+    },
+    {
+      "id": "m04-ifelse",
+      "title": "if-else 문",
+      "duration": 17.4,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 8,
+      "video": "m04-ifelse/video.mp4"
+    },
+    {
+      "id": "m02-truefalse",
+      "title": "참과 거짓, 비교의 결과",
+      "duration": 18.24,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 5,
+      "video": "m02-truefalse/video.mp4"
+    },
+    {
+      "id": "m01-cond-why",
+      "title": "조건문은 왜 필요할까?",
+      "duration": 17.232,
+      "scene_count": 3,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 4,
+      "video": "m01-cond-why/video.mp4"
+    },
+    {
+      "id": "s18-operator-compare-logic",
+      "title": "비교 연산자와 논리 연산자",
+      "duration": 26.808,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 37,
+      "video": "s18-operator-compare-logic/video.mp4"
+    },
+    {
+      "id": "s21-module-random-math",
+      "title": "random 모듈과 math 모듈",
+      "duration": 29.832,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 43,
+      "video": "s21-module-random-math/video.mp4"
+    },
+    {
+      "id": "s20-module-builtin",
+      "title": "내장 함수와 표준 라이브러리",
+      "duration": 27.144,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 41,
+      "video": "s20-module-builtin/video.mp4"
+    },
+    {
+      "id": "s19-operator-precedence",
+      "title": "연산자 우선순위",
+      "duration": 22.968,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 39,
+      "video": "s19-operator-precedence/video.mp4"
+    },
+    {
+      "id": "s05-variable-assign",
+      "title": "변수에 값 저장하기 (= 의 진짜 의미)",
+      "duration": 30.624,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 10,
+      "video": "s05-variable-assign/video.mp4"
+    }
+  ]
+}

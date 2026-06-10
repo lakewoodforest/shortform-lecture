@@ -1,0 +1,29 @@
+{
+  "short_id": "m09-loop-kinds",
+  "title": "반복의 두 종류 (for·while)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 22,
+      "narration": "파이썬의 반복은 크게 두 가지예요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.384
+    },
+    {
+      "index": 2,
+      "slide_page": 22,
+      "narration": "하나는 횟수를 정해 두고 도는 for 문, 다른 하나는 어떤 조건이 참인 동안 계속 도는 while 문이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.728
+    },
+    {
+      "index": 3,
+      "slide_page": 22,
+      "narration": "횟수를 알면 for, 조건으로 멈춰야 하면 while, 이렇게 기억하면 쉬워요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.24
+    }
+  ],
+  "total_duration": 17.352
+}

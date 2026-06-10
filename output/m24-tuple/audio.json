@@ -1,0 +1,29 @@
+{
+  "short_id": "m24-tuple",
+  "title": "튜플 (바꿀 수 없는 묶음)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 67,
+      "narration": "튜플은 리스트와 비슷하지만 한 번 만들면 값을 바꿀 수 없는 자료형이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.952
+    },
+    {
+      "index": 2,
+      "slide_page": 67,
+      "narration": "그래서 변하면 안 되는 데이터를 안전하게 담을 때 좋아요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.608
+    },
+    {
+      "index": 3,
+      "slide_page": 67,
+      "narration": "값을 바꾸려고 하면 오류가 나니, 고정된 묶음이라고 생각하면 돼요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.688
+    }
+  ],
+  "total_duration": 16.248
+}

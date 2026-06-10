@@ -1,0 +1,16 @@
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / 잡파일
+.DS_Store
+*.zip
+
+# 생성 중간 산출물 (완성 영상 video.mp4 는 커밋해서 배포에 포함)
+output/**/_audio*
+output/**/*.webm
+
+# 로컬 메모리/설정
+.claude/

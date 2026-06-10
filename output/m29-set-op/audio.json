@@ -1,0 +1,29 @@
+{
+  "short_id": "m29-set-op",
+  "title": "집합 연산",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 93,
+      "narration": "집합이 강력한 이유는 수학의 집합 연산을 그대로 쓸 수 있기 때문이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.88
+    },
+    {
+      "index": 2,
+      "slide_page": 93,
+      "narration": "두 집합을 합치는 합집합, 공통된 것만 남기는 교집합, 빼는 차집합이 있죠.",
+      "audio": "scene-02.mp3",
+      "duration": 6.768
+    },
+    {
+      "index": 3,
+      "slide_page": 93,
+      "narration": "교집합은 앰퍼샌드 기호, 차집합은 마이너스 기호로 간단히 구할 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.288
+    }
+  ],
+  "total_duration": 18.936
+}

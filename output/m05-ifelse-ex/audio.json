@@ -1,0 +1,29 @@
+{
+  "short_id": "m05-ifelse-ex",
+  "title": "if-else 활용 예시",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 10,
+      "narration": "예를 들어 시간을 입력받아 12보다 작으면 오전, 아니면 오후를 출력할 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.72
+    },
+    {
+      "index": 2,
+      "slide_page": 10,
+      "narration": "또 숫자를 2로 나눈 나머지가 0이면 짝수, 아니면 홀수라고 판단할 수도 있죠.",
+      "audio": "scene-02.mp3",
+      "duration": 6.504
+    },
+    {
+      "index": 3,
+      "slide_page": 10,
+      "narration": "조건 하나로 두 갈래를 깔끔하게 나눌 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.152
+    }
+  ],
+  "total_duration": 17.376
+}

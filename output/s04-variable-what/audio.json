@@ -1,0 +1,36 @@
+{
+  "short_id": "s04-variable-what",
+  "title": "변수가 뭐예요?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 9,
+      "narration": "변수는 컴퓨터 메모리 공간에 이름을 붙이는 거예요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.296
+    },
+    {
+      "index": 2,
+      "slide_page": 9,
+      "narration": "쉽게 말해, 값을 담아두는 이름표 붙은 상자라고 생각하면 돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.28
+    },
+    {
+      "index": 3,
+      "slide_page": 9,
+      "narration": "이 상자에는 숫자, 소수, 문자 같은 여러 데이터를 저장할 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.168
+    },
+    {
+      "index": 4,
+      "slide_page": 9,
+      "narration": "그리고 저장한 값은 언제든 바뀔 수 있어서, 변하는 수, 줄여서 변수라고 불러요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.056
+    }
+  ],
+  "total_duration": 22.8
+}

@@ -1,0 +1,29 @@
+{
+  "short_id": "m23-list-comp",
+  "title": "리스트 함축",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 66,
+      "narration": "리스트를 한 줄로 똑똑하게 만드는 방법이 리스트 함축이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.8
+    },
+    {
+      "index": 2,
+      "slide_page": 66,
+      "narration": "반복과 조건을 대괄호 안에 함께 적어, 원하는 값들로 이루어진 리스트를 간결하게 만들 수 있죠.",
+      "audio": "scene-02.mp3",
+      "duration": 7.488
+    },
+    {
+      "index": 3,
+      "slide_page": 66,
+      "narration": "예를 들어 0부터 9까지 중 짝수만 모은 리스트도 한 줄로 표현돼요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.4
+    }
+  ],
+  "total_duration": 17.688
+}

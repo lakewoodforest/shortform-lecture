@@ -1,0 +1,47 @@
+{
+  "short_id": "web-02-short",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 4.752,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 0.6,
+          "text": "안녕하세요, 이번"
+        },
+        {
+          "start": 1.42,
+          "end": 3.12,
+          "text": "강의는 파이썬 기초강의 입"
+        },
+        {
+          "start": 3.12,
+          "end": 3.62,
+          "text": "니다."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 5.28,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.42,
+          "text": "각 섹터별로 나누어 30초~1분 가량"
+        },
+        {
+          "start": 2.42,
+          "end": 4.18,
+          "text": "으로 설명될 예정입니다."
+        }
+      ]
+    }
+  ]
+}

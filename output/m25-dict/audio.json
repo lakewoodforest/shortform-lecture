@@ -1,0 +1,36 @@
+{
+  "short_id": "m25-dict",
+  "title": "딕셔너리 (키와 값)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 71,
+      "narration": "딕셔너리는 키와 값을 짝지어 저장하는 자료형이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.392
+    },
+    {
+      "index": 2,
+      "slide_page": 71,
+      "narration": "전화번호부를 떠올려 보세요.",
+      "audio": "scene-02.mp3",
+      "duration": 2.832
+    },
+    {
+      "index": 3,
+      "slide_page": 71,
+      "narration": "이름이라는 키로 전화번호라는 값을 찾죠.",
+      "audio": "scene-03.mp3",
+      "duration": 3.84
+    },
+    {
+      "index": 4,
+      "slide_page": 71,
+      "narration": "중괄호 안에 키 콜론 값 형태로 적어 만들고, 키를 알면 연결된 값을 바로 꺼낼 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.632
+    }
+  ],
+  "total_duration": 18.696
+}

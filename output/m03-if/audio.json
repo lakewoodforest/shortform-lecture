@@ -1,0 +1,36 @@
+{
+  "short_id": "m03-if",
+  "title": "if 문과 들여쓰기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 6,
+      "narration": "가장 기본은 if 문이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 2.856
+    },
+    {
+      "index": 2,
+      "slide_page": 6,
+      "narration": "if 다음에 조건을 쓰고 콜론을 찍은 뒤, 조건이 참일 때 실행할 코드를 적어요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.432
+    },
+    {
+      "index": 3,
+      "slide_page": 6,
+      "narration": "이때 중요한 게 들여쓰기예요.",
+      "audio": "scene-03.mp3",
+      "duration": 2.928
+    },
+    {
+      "index": 4,
+      "slide_page": 6,
+      "narration": "파이썬은 같은 칸만큼 들여 쓴 문장들을 하나의 블록으로 보고 함께 실행해요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.216
+    }
+  ],
+  "total_duration": 18.432
+}

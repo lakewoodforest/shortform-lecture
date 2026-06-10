@@ -1,0 +1,29 @@
+{
+  "short_id": "m18-list-make",
+  "title": "리스트 만들기와 추가",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 50,
+      "narration": "리스트는 다른 변수처럼 대괄호 안에 항목을 적어 만들어요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.992
+    },
+    {
+      "index": 2,
+      "slide_page": 50,
+      "narration": "만든 뒤에 새 항목을 덧붙이고 싶으면 append를 써서 끝에 추가할 수 있어요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.192
+    },
+    {
+      "index": 3,
+      "slide_page": 50,
+      "narration": "range를 활용하면 여러 숫자를 한꺼번에 담은 리스트도 쉽게 만들 수 있고요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.976
+    }
+  ],
+  "total_duration": 17.16
+}

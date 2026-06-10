@@ -1,0 +1,36 @@
+{
+  "short_id": "s08-variable-string",
+  "title": "변수에 글자도 담을 수 있어요",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 18,
+      "narration": "변수에는 숫자뿐 아니라 글자, 즉 문자열도 저장할 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.544
+    },
+    {
+      "index": 2,
+      "slide_page": 18,
+      "narration": "문자열은 큰따옴표나 작은따옴표로 감싸서 만들어요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.68
+    },
+    {
+      "index": 3,
+      "slide_page": 18,
+      "narration": "글자가 몇 개인지 세고 싶을 땐 len 함수를 쓰면 길이를 알려줘요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.376
+    },
+    {
+      "index": 4,
+      "slide_page": 18,
+      "narration": "또 두 문자열을 플러스 기호로 이으면 하나로 합쳐지는데, 이걸 문자열 연결이라고 해요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.888
+    }
+  ],
+  "total_duration": 22.488
+}

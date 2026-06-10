@@ -1,0 +1,91 @@
+{
+  "short_id": "s13-operator-expression",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 4.08,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.12,
+          "text": "수식은 피연산자와 연산자가 조합된"
+        },
+        {
+          "start": 2.12,
+          "end": 2.9,
+          "text": "거예요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 7.416,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.26,
+          "text": "연산자는 어떤 계산을 나타내는 기호이고,"
+        },
+        {
+          "start": 2.26,
+          "end": 4.6,
+          "text": "피연산자는 계산의 대상이 되는"
+        },
+        {
+          "start": 4.6,
+          "end": 6.38,
+          "text": "숫자나 변수예요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 7.416,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.8,
+          "text": "예를 들어 7 더하기 4 라는 수식에서,"
+        },
+        {
+          "start": 1.8,
+          "end": 3.64,
+          "text": "7과 4는 피연산자이고"
+        },
+        {
+          "start": 3.64,
+          "end": 5.7,
+          "text": "더하기 기호는 연산자죠."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 6.336,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.26,
+          "text": "참고로 코드를 쓸 때 연산자 양옆에"
+        },
+        {
+          "start": 2.26,
+          "end": 4.04,
+          "text": "한 칸씩 띄어 쓰는 게 보기 좋은"
+        },
+        {
+          "start": 4.04,
+          "end": 5.26,
+          "text": "습관이에요."
+        }
+      ]
+    }
+  ]
+}

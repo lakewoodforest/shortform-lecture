@@ -1,0 +1,120 @@
+{
+  "short_id": "s05-variable-assign",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 4.008,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.24,
+          "text": "변수에 값을 저장할 땐 등호 기호를"
+        },
+        {
+          "start": 2.24,
+          "end": 3.04,
+          "text": "써요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 6.936,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.8,
+          "text": "예를 들어 weight 등호 78.2"
+        },
+        {
+          "start": 1.8,
+          "end": 4.34,
+          "text": "라고 쓰면, weight라는 상자에 78.2가"
+        },
+        {
+          "start": 4.34,
+          "end": 6.0,
+          "text": "들어가요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 4.128,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.88,
+          "text": "그런데 여기서 등호는 수학의 같다는"
+        },
+        {
+          "start": 1.88,
+          "end": 2.88,
+          "text": "뜻이 아니에요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 4.392,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.02,
+          "text": "오른쪽 값을 왼쪽 변수에 저장하라는"
+        },
+        {
+          "start": 2.02,
+          "end": 3.32,
+          "text": "명령이죠."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slide_page": 0,
+      "duration": 5.376,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.16,
+          "text": "그래서 이 기호를 할당 연산자,"
+        },
+        {
+          "start": 2.16,
+          "end": 4.4,
+          "text": "또는 대입 연산자라고 불러요."
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "slide_page": 0,
+      "duration": 5.616,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.06,
+          "text": "저장한 값을 화면에 보고 싶으면 print"
+        },
+        {
+          "start": 2.06,
+          "end": 3.98,
+          "text": "괄호 안에 변수 이름을 넣으면"
+        },
+        {
+          "start": 3.98,
+          "end": 4.56,
+          "text": "돼요."
+        }
+      ]
+    }
+  ]
+}

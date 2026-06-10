@@ -1,0 +1,29 @@
+{
+  "short_id": "m14-while",
+  "title": "while 문",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 39,
+      "narration": "while 문은 조건이 참인 동안 계속 반복해요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.2
+    },
+    {
+      "index": 2,
+      "slide_page": 39,
+      "narration": "while 다음에 조건을 쓰고, 참이면 코드를 실행한 뒤 다시 조건을 확인하죠.",
+      "audio": "scene-02.mp3",
+      "duration": 6.48
+    },
+    {
+      "index": 3,
+      "slide_page": 39,
+      "narration": "횟수를 모를 때 특히 유용하지만, 1부터 10까지 더하기처럼 횟수를 아는 경우에도 쓸 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 7.368
+    }
+  ],
+  "total_duration": 18.048
+}

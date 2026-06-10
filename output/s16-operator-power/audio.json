@@ -1,0 +1,43 @@
+{
+  "short_id": "s16-operator-power",
+  "title": "거듭제곱과 제곱근",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 34,
+      "narration": "같은 수를 여러 번 곱하는 거듭제곱은 별표 두 개로 계산해요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.064
+    },
+    {
+      "index": 2,
+      "slide_page": 34,
+      "narration": "예를 들어 2의 7제곱은 2 별표 별표 7 이라고 쓰면 돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.92
+    },
+    {
+      "index": 3,
+      "slide_page": 34,
+      "narration": "이때 아래 숫자 2를 밑, 위 숫자 7을 지수라고 불러요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.632
+    },
+    {
+      "index": 4,
+      "slide_page": 34,
+      "narration": "거듭제곱을 응용하면 제곱근도 구할 수 있어서, 피타고라스 정리 같은 계산에도 쓸 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.464
+    },
+    {
+      "index": 5,
+      "slide_page": 34,
+      "narration": "참고로 거듭제곱은 다른 연산보다 먼저 계산되는 높은 우선순위를 가져요.",
+      "audio": "scene-05.mp3",
+      "duration": 6.336
+    }
+  ],
+  "total_duration": 28.416
+}

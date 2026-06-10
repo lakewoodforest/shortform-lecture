@@ -1,0 +1,36 @@
+{
+  "short_id": "m12-range",
+  "title": "range 함수",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 33,
+      "narration": "반복 횟수가 아주 많으면 값을 일일이 적을 수 없겠죠.",
+      "audio": "scene-01.mp3",
+      "duration": 4.584
+    },
+    {
+      "index": 2,
+      "slide_page": 33,
+      "narration": "이때 range 함수를 써요.",
+      "audio": "scene-02.mp3",
+      "duration": 2.784
+    },
+    {
+      "index": 3,
+      "slide_page": 33,
+      "narration": "range 괄호 안에 3을 넣으면 0, 1, 2 라는 숫자를 차례로 만들어 줘요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.48
+    },
+    {
+      "index": 4,
+      "slide_page": 33,
+      "narration": "for와 range를 함께 쓰면 원하는 횟수만큼 깔끔하게 반복할 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.736
+    }
+  ],
+  "total_duration": 19.584
+}

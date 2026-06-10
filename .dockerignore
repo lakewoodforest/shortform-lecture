@@ -1,0 +1,11 @@
+.git
+.gitignore
+**/__pycache__/
+*.pyc
+**/.DS_Store
+.DS_Store
+*.zip
+.claude/
+# 생성 중간 산출물(뷰어엔 불필요)
+output/**/_audio*
+output/**/*.webm

@@ -1,0 +1,29 @@
+{
+  "short_id": "m19-list-func",
+  "title": "리스트 연산과 내장 함수",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 54,
+      "narration": "리스트끼리 플러스로 이으면 두 리스트가 하나로 합쳐져요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.8
+    },
+    {
+      "index": 2,
+      "slide_page": 54,
+      "narration": "또 숫자 리스트에는 편리한 내장 함수들이 있어요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.344
+    },
+    {
+      "index": 3,
+      "slide_page": 54,
+      "narration": "개수를 세는 len, 가장 큰 값 max, 가장 작은 값 min, 그리고 모두 더하는 sum이 대표적이에요.",
+      "audio": "scene-03.mp3",
+      "duration": 8.016
+    }
+  ],
+  "total_duration": 17.16
+}

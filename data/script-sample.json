@@ -1,0 +1,26 @@
+{
+  "lecture_id": "lecture",
+  "lecture_title": "파이썬 기초",
+  "voice": "ko-KR-SunHiNeural",
+  "shorts": [
+    {
+      "id": "short-01-variable",
+      "title": "변수가 도대체 뭐예요?",
+      "topic_index": 2,
+      "scenes": [
+        {
+          "slide_page": 9,
+          "narration": "파이썬을 배우면 가장 먼저 만나는 게 바로 변수예요. 변수는 컴퓨터 메모리 공간에 이름을 붙이는 거예요."
+        },
+        {
+          "slide_page": 10,
+          "narration": "예를 들어 내 몸무게 칠십팔 점 이를 weight라는 이름의 변수에 저장한다고 해볼게요. 그러면 파이썬 안에 weight라는 상자가 생기고, 그 안에 값이 담겨요."
+        },
+        {
+          "slide_page": 9,
+          "narration": "정수, 실수, 문자열 같은 값을 자유롭게 담을 수 있고, 저장한 값은 언제든 다시 꺼내 쓸 수 있어요. 이게 바로 변수의 핵심이에요."
+        }
+      ]
+    }
+  ]
+}

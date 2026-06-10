@@ -1,0 +1,29 @@
+{
+  "short_id": "m15-infinite-break",
+  "title": "무한 루프와 break",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 41,
+      "narration": "while 조건이 항상 참이면 영원히 멈추지 않는 무한 루프가 생겨요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.352
+    },
+    {
+      "index": 2,
+      "slide_page": 41,
+      "narration": "일부러 while True로 무한 루프를 만든 뒤, 특정 조건이 되면 break로 빠져나오는 방식을 자주 써요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.56
+    },
+    {
+      "index": 3,
+      "slide_page": 41,
+      "narration": "break를 만나면 가장 가까운 반복문을 즉시 탈출해요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.872
+    }
+  ],
+  "total_duration": 17.784
+}

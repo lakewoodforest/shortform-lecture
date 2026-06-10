@@ -1,0 +1,86 @@
+{
+  "short_id": "s09-datatype-four",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 4.2,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.8,
+          "text": "프로그램이 다루는 데이터의"
+        },
+        {
+          "start": 1.8,
+          "end": 3.14,
+          "text": "종류를 자료형이라고 해요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 4.176,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.86,
+          "text": "파이썬에서 가장 기본이 되는 네"
+        },
+        {
+          "start": 1.86,
+          "end": 3.1,
+          "text": "가지를 알아볼게요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 10.104,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.1,
+          "text": "1이나 2 같은 정수, 3.14"
+        },
+        {
+          "start": 2.1,
+          "end": 3.7,
+          "text": "같은 소수를 뜻하는 실수, 글자"
+        },
+        {
+          "start": 3.7,
+          "end": 6.08,
+          "text": "묶음인 문자열, 그리고 참과 거짓을"
+        },
+        {
+          "start": 6.42,
+          "end": 8.28,
+          "text": "나타내는 부울형이에요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 4.44,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.12,
+          "text": "이 네 가지만 알아도 데이터를 구분하는"
+        },
+        {
+          "start": 2.12,
+          "end": 3.48,
+          "text": "눈이 생겨요."
+        }
+      ]
+    }
+  ]
+}

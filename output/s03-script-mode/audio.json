@@ -1,0 +1,43 @@
+{
+  "short_id": "s03-script-mode",
+  "title": "스크립트 모드와 IDLE",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 6,
+      "narration": "대화식 모드는 편하지만, 잘못 입력하면 고치기 힘들고 같은 일을 다시 시키기도 번거로워요.",
+      "audio": "scene-01.mp3",
+      "duration": 7.248
+    },
+    {
+      "index": 2,
+      "slide_page": 6,
+      "narration": "그래서 명령어들을 모아 하나의 파일로 저장하는 게 스크립트 모드예요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.328
+    },
+    {
+      "index": 3,
+      "slide_page": 6,
+      "narration": "이렇게 저장한 코드 파일은 이름 뒤에 점 파이가 붙어요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.8
+    },
+    {
+      "index": 4,
+      "slide_page": 6,
+      "narration": "파이썬을 설치하면 함께 제공되는 IDLE이라는 도구에서 코드를 작성하고, Run 메뉴를 눌러 실행할 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 8.256
+    },
+    {
+      "index": 5,
+      "slide_page": 6,
+      "narration": "간단한 연습은 대화식, 제대로 된 프로그램은 스크립트, 이렇게 나눠 쓰면 됩니다.",
+      "audio": "scene-05.mp3",
+      "duration": 6.96
+    }
+  ],
+  "total_duration": 32.592
+}

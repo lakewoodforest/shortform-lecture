@@ -1,0 +1,36 @@
+{
+  "short_id": "m28-set",
+  "title": "집합 (중복 없는 모음)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 83,
+      "narration": "집합은 순서가 없고 중복을 허용하지 않는 자료형이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.704
+    },
+    {
+      "index": 2,
+      "slide_page": 83,
+      "narration": "그래서 같은 값을 여러 번 넣어도 하나만 남죠.",
+      "audio": "scene-02.mp3",
+      "duration": 4.08
+    },
+    {
+      "index": 3,
+      "slide_page": 83,
+      "narration": "리스트에서 중복을 제거하고 싶을 때 집합으로 바꾸면 아주 간단해요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.568
+    },
+    {
+      "index": 4,
+      "slide_page": 83,
+      "narration": "중괄호로 만들어요.",
+      "audio": "scene-04.mp3",
+      "duration": 2.352
+    }
+  ],
+  "total_duration": 16.704
+}

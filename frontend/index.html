@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강의 숏폼 스튜디오</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --navy:#16244a;
+    --navy-2:#1f3160;
+    --bg:#0a1124;          /* 앱 베이스(딥 네이비) */
+    --bg-2:#0e1730;
+    --panel:#13203f;        /* 카드 */
+    --panel-2:#172a52;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --ink:#e8edfb;
+    --mute:#8a99c0;
+    --accent:#6e96f0;
+    --accent-2:#9db8f7;
+    --shadow:0 18px 44px -18px rgba(0,0,0,.6);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:
+      radial-gradient(120% 80% at 50% -10%, #1a2c5a 0%, var(--bg-2) 42%, var(--bg) 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'IBM Plex Sans KR',sans-serif;
+    line-height:1.7;min-height:100vh;
+  }
+
+  /* ── 랜딩(진입) 화면 ── */
+  #landing{
+    position:fixed;inset:0;z-index:1000;
+    background:radial-gradient(120% 90% at 50% 42%, #2a3f7a 0%, #16244a 38%, #0c1530 72%, #070c1c 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    text-align:center;color:#fff;overflow:hidden;
+    transition:opacity .8s ease, visibility .8s ease;
+  }
+  #landing.gone{opacity:0;visibility:hidden;pointer-events:none;}
+  #landing::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(50% 40% at 50% 48%, rgba(120,150,230,.18), transparent 70%);
+    pointer-events:none;}
+  .land-head{margin-top:84px;display:flex;align-items:center;gap:18px;justify-content:center;
+    opacity:0;animation:fadeDown .9s .1s forwards;}
+  .land-pill{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;
+    letter-spacing:3px;color:#cdd9f5;border:1px solid rgba(255,255,255,.22);
+    padding:7px 14px;border-radius:9px;}
+  .land-sep{width:46px;height:1px;background:rgba(255,255,255,.25);}
+  .land-head .svc{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:5px;color:#9fb0d8;}
+  .welcome{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    letter-spacing:7px;color:#7e8fbb;opacity:0;animation:fadeDown .9s .25s forwards;}
+  .land-title{margin-top:10px;font-size:54px;font-weight:800;letter-spacing:-1px;color:#eaf0ff;
+    text-shadow:0 6px 40px rgba(80,120,220,.45);opacity:0;animation:fadeDown 1s .4s forwards;}
+  .land-sub{margin-top:14px;font-size:15px;color:#aab8de;opacity:0;animation:fadeDown 1s .6s forwards;}
+  .mascot-wrap{position:relative;margin-top:auto;margin-bottom:auto;cursor:pointer;
+    opacity:0;animation:fadeUp 1.1s .7s forwards;}
+  .mascot-glow{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
+    width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle, rgba(120,160,255,.35), transparent 65%);
+    filter:blur(8px);animation:breathe 4s ease-in-out infinite;}
+  #mascot{position:relative;width:230px;height:auto;display:block;
+    filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));
+    transition:transform .35s cubic-bezier(.2,.8,.3,1.2);}
+  .mascot-wrap:hover #mascot{transform:translateY(-10px) scale(1.04);}
+  .mascot-fallback{position:relative;width:200px;height:200px;border-radius:50%;
+    background:linear-gradient(160deg,#dfe8ff,#9fb6ee);display:flex;align-items:center;
+    justify-content:center;font-size:90px;box-shadow:0 18px 40px rgba(0,0,0,.45);}
+  .enter-hint{position:relative;margin-top:18px;font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:3px;color:#8a9bc6;opacity:0;animation:fadeUp 1.1s 1s forwards;}
+  .land-badge{position:absolute;left:28px;bottom:28px;width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.18);background:rgba(10,18,40,.5);color:#cdd9f5;
+    display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;
+    font-size:18px;opacity:0;animation:fadeUp 1s 1.1s forwards;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:none;}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes breathe{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}
+    50%{opacity:.9;transform:translate(-50%,-50%) scale(1.08);}}
+
+  /* ── 앱 2단 레이아웃 ── */
+  .app{display:grid;grid-template-columns:300px 1fr;gap:0;min-height:100vh;}
+
+  .sidebar{background:linear-gradient(180deg,rgba(19,32,63,.85),rgba(12,20,42,.85));
+    border-right:1px solid var(--line);padding:28px 22px;backdrop-filter:blur(6px);}
+  .side-head{font-weight:700;font-size:16px;color:var(--accent-2);margin-bottom:24px;
+    display:flex;align-items:center;gap:8px;}
+  .side-label{font-size:12.5px;color:var(--mute);margin:18px 0 8px;font-weight:500;}
+  .sel{width:100%;background:var(--panel);color:var(--ink);border:1px solid var(--line-2);
+    border-radius:10px;padding:11px 12px;font-family:'IBM Plex Sans KR';font-size:14px;
+    cursor:pointer;appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238a99c0' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;}
+  .swatch{height:54px;border-radius:12px;margin-top:12px;border:1px solid var(--line-2);
+    box-shadow:inset 0 0 30px rgba(0,0,0,.3);}
+  .swatch-cap{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mute);
+    margin-top:8px;text-align:center;}
+  .tip{margin-top:26px;background:rgba(110,150,240,.08);border:1px solid rgba(110,150,240,.2);
+    border-radius:12px;padding:14px 15px;font-size:12.8px;color:#b9c6ea;line-height:1.6;}
+
+  .main{padding:46px 50px 90px;max-width:1000px;}
+  .main-head{text-align:center;margin-bottom:34px;}
+  .main-head h1{font-size:38px;font-weight:800;letter-spacing:-1px;
+    background:linear-gradient(90deg,#fff,#9db8f7);-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;}
+  .main-head p{color:var(--mute);font-size:14.5px;margin-top:8px;}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;
+    box-shadow:var(--shadow);padding:26px 28px;margin-bottom:22px;}
+  .field{margin-bottom:18px;}
+  .field:last-child{margin-bottom:0;}
+  .field label{display:block;font-size:13.5px;color:#c5d0ec;margin-bottom:8px;font-weight:500;}
+  .inp,.ta{width:100%;background:var(--bg-2);color:var(--ink);border:1px solid var(--line-2);
+    border-radius:12px;padding:13px 15px;font-family:'IBM Plex Sans KR';font-size:14.5px;
+    transition:.15s;}
+  .inp:focus,.ta:focus{outline:none;border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(110,150,240,.18);}
+  .ta{min-height:180px;resize:vertical;line-height:1.75;}
+  .inp::placeholder,.ta::placeholder{color:#5d6a90;}
+
+  .btn{width:100%;border:none;border-radius:13px;padding:15px;font-size:15.5px;font-weight:600;
+    font-family:'IBM Plex Sans KR';color:#fff;cursor:pointer;transition:.18s;
+    background:linear-gradient(90deg,var(--accent),#5577dd);
+    box-shadow:0 10px 26px -8px rgba(110,150,240,.6);}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+  .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;filter:grayscale(.3);}
+
+  /* 진행 상황 */
+  .progress{display:none;}
+  .progress.on{display:block;}
+  .steps{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+  .step{flex:1;min-width:110px;background:var(--bg-2);border:1px solid var(--line);
+    border-radius:11px;padding:11px 12px;font-size:12.5px;color:var(--mute);
+    display:flex;align-items:center;gap:8px;transition:.2s;}
+  .step .dot{width:9px;height:9px;border-radius:50%;background:#39456b;flex:none;}
+  .step.active{border-color:var(--accent);color:#fff;background:rgba(110,150,240,.12);}
+  .step.active .dot{background:var(--accent);box-shadow:0 0 10px var(--accent);
+    animation:pulse 1s infinite;}
+  .step.done{color:#bcd0ff;}
+  .step.done .dot{background:#5ad48a;}
+  @keyframes pulse{50%{opacity:.4;}}
+  .ind{height:8px;background:var(--bg-2);border-radius:99px;overflow:hidden;position:relative;}
+  .ind i{position:absolute;left:-40%;width:40%;height:100%;border-radius:99px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    animation:slide 1.3s infinite;}
+  @keyframes slide{to{left:100%;}}
+  .ptxt{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mute);margin-top:12px;}
+
+  /* 결과 영상 */
+  .result-video{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
+  .result-video video{width:280px;aspect-ratio:9/16;border-radius:14px;background:#000;
+    box-shadow:var(--shadow);}
+  .result-info h3{font-size:18px;margin-bottom:10px;}
+  .result-info .row{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--mute);
+    margin-bottom:6px;}
+  .result-info .row b{color:var(--accent-2);}
+
+  /* 섹션 + 갤러리 */
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin:34px 2px 16px;}
+  .sec-head h2{font-family:'Gowun Batang',serif;font-size:21px;font-weight:700;color:#eaf0ff;}
+  .sec-head .meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mute);}
+  .shorts-empty{color:var(--mute);font-size:13.5px;background:var(--panel);
+    border:1px dashed var(--line-2);border-radius:14px;padding:22px;text-align:center;}
+
+  /* ── 코스 폴더 ── */
+  .folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;}
+  .folder-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:24px 20px 20px;text-align:center;cursor:pointer;transition:.18s;box-shadow:var(--shadow);}
+  .folder-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .folder-card.locked{cursor:default;opacity:.5;}
+  .folder-card.locked:hover{border-color:var(--line);transform:none;}
+  .folder-ico{width:108px;height:84px;margin:0 auto 16px;position:relative;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));}
+  .folder-ico .tab{position:absolute;top:2px;left:8px;width:44px;height:18px;
+    border-radius:9px 12px 0 0;background:linear-gradient(#86c8ff,#5aa8f0);}
+  .folder-ico .body{position:absolute;top:14px;left:0;width:108px;height:70px;border-radius:12px;
+    background:linear-gradient(165deg,#74bcff 0%,#4f9bee 55%,#3f86df 100%);}
+  .folder-ico .lip{position:absolute;top:20px;left:6px;width:96px;height:9px;border-radius:6px;
+    background:rgba(255,255,255,.45);}
+  .folder-card.locked .folder-ico .body{background:linear-gradient(165deg,#566188,#3a4565);}
+  .folder-card.locked .folder-ico .tab{background:linear-gradient(#697499,#566188);}
+  .folder-name{font-weight:600;font-size:16px;color:#eaf0ff;}
+  .folder-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);margin-top:6px;}
+  .folder-mini{height:6px;background:var(--bg-2);border-radius:99px;overflow:hidden;margin-top:12px;}
+  .folder-mini i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--accent),#5ad48a);}
+  .folder-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    color:var(--mute);border:1px solid var(--line-2);border-radius:6px;padding:3px 8px;margin-top:10px;}
+
+  .back-folders{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#cfdaf3;background:none;
+    border:1px solid var(--line-2);border-radius:9px;padding:8px 14px;cursor:pointer;margin-bottom:16px;}
+  .back-folders:hover{border-color:var(--accent);color:var(--accent);}
+  .course-name-head{font-size:22px;font-weight:700;color:#eaf0ff;margin-bottom:14px;
+    display:flex;align-items:center;gap:10px;}
+
+  /* ── 학습 코스(커리큘럼) ── */
+  .course-progress{display:flex;align-items:center;gap:14px;background:var(--panel);
+    border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:18px;
+    box-shadow:var(--shadow);}
+  .cp-ring{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:var(--accent-2);
+    white-space:nowrap;}
+  .cp-bar{flex:1;height:9px;background:var(--bg-2);border-radius:99px;overflow:hidden;}
+  .cp-bar i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--accent),#5ad48a);transition:width .4s;}
+  .cp-reset{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);
+    background:none;border:1px solid var(--line-2);border-radius:8px;padding:6px 10px;cursor:pointer;}
+  .cp-reset:hover{color:var(--accent);border-color:var(--accent);}
+
+  .topic-group{margin-bottom:20px;}
+  .topic-head{display:flex;align-items:center;gap:9px;margin:0 4px 10px;}
+  .topic-head .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  .topic-head h3{font-size:14px;font-weight:600;color:var(--accent-2);letter-spacing:.3px;}
+  .lesson{display:flex;align-items:center;gap:14px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin-bottom:8px;
+    cursor:pointer;transition:.15s;}
+  .lesson:hover{border-color:var(--accent);transform:translateX(2px);}
+  .lesson.done{border-color:rgba(90,212,138,.35);}
+  .lesson .num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mute);
+    width:28px;text-align:center;flex:none;}
+  .lesson .lt{flex:1;font-size:14.5px;font-weight:500;color:#eaf0ff;}
+  .lesson .ld{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);flex:none;}
+  .lesson .chk{width:24px;height:24px;border-radius:50%;flex:none;display:flex;
+    align-items:center;justify-content:center;font-size:13px;
+    border:1.5px solid var(--line-2);color:transparent;transition:.2s;}
+  .lesson.done .chk{background:#2fae6a;border-color:#2fae6a;color:#fff;}
+  .lesson .play{color:var(--accent);font-size:15px;flex:none;}
+
+  /* ── 코스 플레이어(모달) ── */
+  .player-overlay{position:fixed;inset:0;z-index:1200;display:none;
+    background:rgba(6,11,26,.86);backdrop-filter:blur(6px);
+    align-items:center;justify-content:center;padding:30px;}
+  .player-overlay.on{display:flex;}
+  .player-box{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .player-top{display:flex;align-items:center;gap:12px;color:#eaf0ff;}
+  .player-top .ptag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent-2);}
+  .player-top .ptitle{font-size:17px;font-weight:600;}
+  .player-stage{display:flex;align-items:center;gap:22px;}
+  .player-video{width:auto;height:74vh;max-height:760px;aspect-ratio:9/16;
+    border-radius:18px;background:#000;box-shadow:0 20px 60px -12px rgba(0,0,0,.7);}
+  .nav-btn{width:58px;height:58px;border-radius:50%;border:1px solid var(--line-2);
+    background:rgba(20,32,60,.8);color:#eaf0ff;font-size:24px;cursor:pointer;flex:none;
+    display:flex;align-items:center;justify-content:center;transition:.15s;}
+  .nav-btn:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.08);}
+  .nav-btn:disabled{opacity:.25;cursor:not-allowed;transform:none;background:rgba(20,32,60,.8);}
+  .player-bottom{display:flex;align-items:center;gap:16px;font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;color:var(--mute);}
+  .player-bottom .watched{color:#5ad48a;}
+  .player-close{position:absolute;top:-6px;right:-6px;width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--line-2);background:rgba(20,32,60,.9);color:#cdd9f5;font-size:18px;
+    cursor:pointer;}
+  .player-close:hover{color:#fff;border-color:var(--accent);}
+  .next-hint{font-size:12px;color:var(--accent-2);}
+  @media(max-width:880px){.player-video{height:64vh;}.nav-btn{width:46px;height:46px;font-size:20px;}}
+
+  /* ════ 라이트 메인 테마 (사이드바는 다크 유지, 오른쪽만 부드러운 오프화이트) ════ */
+  :root{
+    --m-bg:#eef2f9; --m-surface:#ffffff; --m-ink:#1b2a52; --m-mute:#69748f;
+    --m-line:#e4e9f3; --m-accent:#3f64c8; --m-shadow:0 14px 34px -18px rgba(27,42,82,.22);
+  }
+  .main{background:linear-gradient(180deg,#f4f6fc 0%,#e9eef7 100%);color:var(--m-ink);}
+  /* 다크 사이드바 → 라이트 메인 경계를 부드럽게 */
+  .sidebar{box-shadow:14px 0 30px -20px rgba(0,0,0,.55);position:relative;z-index:1;}
+
+  .side-head{position:relative;padding-left:13px;}
+  .side-head::before{content:"";position:absolute;left:0;top:3px;width:4px;height:16px;
+    border-radius:3px;background:linear-gradient(180deg,var(--accent),#5566dd);}
+
+  /* 그라데이션 히어로 아이콘 (🎬 대체) */
+  .hero-ico{display:inline-block;width:46px;height:46px;border-radius:14px;vertical-align:-11px;
+    margin-right:12px;position:relative;background:linear-gradient(135deg,#6e96f0,#4f5fd6);
+    box-shadow:0 10px 22px -6px rgba(79,95,214,.55);}
+  .hero-ico::after{content:"";position:absolute;left:18px;top:14px;border-style:solid;
+    border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff;}
+
+  .main-head h1{background:linear-gradient(90deg,#1b2a52,#4f64c8);-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;}
+  .main-head p{color:var(--m-mute);}
+
+  .card{background:var(--m-surface);border-color:var(--m-line);box-shadow:var(--m-shadow);}
+  .field label{color:#46537a;}
+  .inp,.ta{background:#f6f8fd;color:var(--m-ink);border-color:#dde4f0;}
+  .inp::placeholder,.ta::placeholder{color:#9aa6c2;}
+  .inp:focus,.ta:focus{background:#fff;border-color:var(--accent);}
+
+  .sec-head h2{color:var(--m-ink);}
+  .sec-head .meta{color:var(--m-mute);}
+
+  .step{background:#f3f6fc;border-color:var(--m-line);color:var(--m-mute);}
+  .step.active{background:#eaf0ff;border-color:var(--accent);color:var(--m-ink);}
+  .step.done{color:#3a8a5e;}
+  .ind{background:#e7ecf6;}
+  .ptxt{color:var(--m-mute);}
+  .result-info h3{color:var(--m-ink);}
+  .result-info .row{color:var(--m-mute);}
+
+  /* 폴더 */
+  .folder-card{background:var(--m-surface);border-color:var(--m-line);box-shadow:var(--m-shadow);}
+  .folder-name{color:var(--m-ink);}
+  .folder-sub{color:var(--m-mute);}
+  .folder-mini{background:#e7ecf6;}
+  .folder-badge{color:var(--m-mute);border-color:var(--m-line);}
+  .folder-card.locked .folder-ico .body{background:linear-gradient(165deg,#b7c1d6,#9aa6c2);}
+  .folder-card.locked .folder-ico .tab{background:linear-gradient(#c4cde0,#aab4cc);}
+
+  /* 코스 */
+  .back-folders{color:#46537a;border-color:var(--m-line);background:var(--m-surface);}
+  .course-name-head{color:var(--m-ink);}
+  .folder-mark{display:inline-block;width:26px;height:20px;border-radius:5px;position:relative;
+    background:linear-gradient(165deg,#74bcff,#3f86df);box-shadow:0 4px 10px -3px rgba(63,134,223,.5);}
+  .folder-mark::before{content:"";position:absolute;top:-4px;left:3px;width:11px;height:5px;
+    border-radius:3px 4px 0 0;background:#5aa8f0;}
+  .course-progress{background:var(--m-surface);border-color:var(--m-line);box-shadow:var(--m-shadow);}
+  .cp-ring{color:var(--m-accent);}
+  .cp-bar{background:#e7ecf6;}
+  .cp-reset{color:var(--m-mute);border-color:var(--m-line);}
+  .topic-head h3{color:var(--m-accent);}
+  .topic-head .dot{background:var(--m-accent);}
+  .lesson{background:var(--m-surface);border-color:var(--m-line);box-shadow:0 6px 18px -14px rgba(27,42,82,.3);}
+  .lesson:hover{border-color:var(--accent);}
+  .lesson.done{border-color:rgba(47,174,106,.4);}
+  .lesson .lt{color:var(--m-ink);}
+  .lesson .num,.lesson .ld{color:var(--m-mute);}
+  .lesson .chk{border-color:#cdd6e6;}
+  .shorts-empty{background:var(--m-surface);border-color:var(--m-line);color:var(--m-mute);}
+
+  /* PDF 보조 도구 */
+  .pdf-tool{background:var(--m-surface);border-color:var(--m-line);box-shadow:var(--m-shadow);}
+  .pdf-tool>summary{color:var(--m-ink);}
+  .pdf-tool[open]>summary{border-color:var(--m-line);}
+  .drop{background:#f3f6fc;border-color:#cdd6e6;}
+  .drop .small{color:var(--m-mute);}
+  .kpi{background:#f3f6fc;border-color:var(--m-line);}
+  .kpi .label{color:var(--m-mute);}
+  .kpi .value{color:var(--m-ink);}
+  .group{background:#f6f8fd;border-color:var(--m-line);}
+  .gcount{color:var(--m-mute);}
+  .stext{color:var(--m-mute);border-color:#e4e9f3;}
+  .mini{background:#f3f6fc;color:#46537a;border-color:var(--m-line);}
+  .mini:hover{border-color:var(--accent);color:var(--accent);}
+  .hint{color:var(--m-mute);}
+
+  /* ── 뷰어 전용 모드(배포): 생성 UI 숨기고 감상만 ── */
+  body.viewer .sidebar{display:none;}
+  body.viewer .app{grid-template-columns:1fr;}
+  body.viewer #genCard,
+  body.viewer #progress,
+  body.viewer #genResult,
+  body.viewer .pdf-tool{display:none!important;}
+  body.viewer .main{max-width:1040px;width:100%;margin:0 auto;}
+
+  /* PDF 추출(보조 도구, 접이식) */
+  .pdf-tool{margin-top:34px;background:var(--panel);border:1px solid var(--line);
+    border-radius:16px;overflow:hidden;}
+  .pdf-tool>summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:15px;
+    list-style:none;display:flex;align-items:center;gap:10px;color:#cfdaf3;}
+  .pdf-tool>summary::-webkit-details-marker{display:none;}
+  .pdf-tool[open]>summary{border-bottom:1px solid var(--line);}
+  .pdf-body{padding:20px 22px;}
+  .drop{border:1.5px dashed var(--line-2);border-radius:12px;background:var(--bg-2);
+    padding:34px 20px;text-align:center;cursor:pointer;transition:.18s;}
+  .drop:hover,.drop.over{border-color:var(--accent);background:rgba(110,150,240,.08);}
+  .drop .ic{font-size:30px;}.drop .big{font-weight:600;font-size:14.5px;margin-top:6px;}
+  .drop .small{color:var(--mute);font-size:12.5px;margin-top:4px;}
+  input[type=file]{display:none;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
+  .kpi{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .kpi .label{font-size:11.5px;color:var(--mute);}
+  .kpi .value{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:24px;color:#fff;}
+  .kpi .unit{font-size:12px;color:var(--mute);margin-left:3px;}
+  .group{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .group>summary{cursor:pointer;padding:13px 16px;display:flex;align-items:center;gap:12px;
+    list-style:none;font-size:14px;}
+  .group>summary::-webkit-details-marker{display:none;}
+  .gnum{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);
+    background:rgba(110,150,240,.13);padding:3px 8px;border-radius:6px;}
+  .gtitle{flex:1;font-weight:600;}
+  .gcount{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mute);}
+  .gbody{padding:4px 16px 12px;}
+  .slide{padding:11px 0;border-bottom:1px dashed var(--line);}
+  .slide:last-child{border-bottom:none;}
+  .spage{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fff;background:var(--navy-2);
+    padding:2px 7px;border-radius:5px;}
+  .stitle{font-weight:600;font-size:13.5px;margin-left:8px;}
+  .stext{color:var(--mute);font-size:13px;white-space:pre-wrap;border-left:2px solid var(--line-2);
+    padding-left:12px;margin-top:6px;}
+  .mini-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .mini{font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:var(--bg-2);color:#cfdaf3;
+    border:1px solid var(--line-2);padding:9px 14px;border-radius:9px;cursor:pointer;}
+  .mini:hover{border-color:var(--accent);color:var(--accent);}
+  .err{color:#ff8a8a;font-size:13px;margin-top:10px;}
+  .hidden{display:none!important;}
+
+  @media(max-width:880px){.app{grid-template-columns:1fr;}.sidebar{border-right:none;
+    border-bottom:1px solid var(--line);}.main{padding:30px 22px 70px;}.kpis{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+  <div id="landing">
+    <div class="land-head">
+      <span class="land-pill">LECTURE</span>
+      <span class="land-sep"></span>
+      <span class="svc">SHORTFORM</span>
+    </div>
+    <div class="welcome">WELCOME TO</div>
+    <div class="land-title">강의 숏폼 스튜디오</div>
+    <div class="land-sub">마스코트를 클릭해 입장하세요</div>
+    <div class="mascot-wrap" id="enter">
+      <div class="mascot-glow"></div>
+      <img id="mascot" src="/static/mascot.png" alt="mascot"
+           onerror="this.style.display='none';document.getElementById('mascotFallback').style.display='flex';">
+      <div class="mascot-fallback" id="mascotFallback" style="display:none;">🐢</div>
+      <div class="enter-hint">CLICK TO ENTER</div>
+    </div>
+    <div class="land-badge">N</div>
+  </div>
+
+  <div class="app">
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="side-head">스타일 및 옵션 설정</div>
+
+      <div class="side-label">배경 그라데이션 스타일</div>
+      <select class="sel" id="bgStyle"></select>
+      <div class="swatch" id="swatch"></div>
+      <div class="swatch-cap" id="swatchCap"></div>
+
+      <div class="side-label">목소리</div>
+      <select class="sel" id="voice"></select>
+
+      <div class="tip"><b>팁</b> · 스크립트는 또박또박 읽는 구어체로, 문장 끝에 마침표(.)를
+        명확히 찍어 주세요. 문장 단위로 장면·자막이 나뉘어 타이밍이 깔끔해집니다.</div>
+    </aside>
+
+    <!-- 메인 -->
+    <main class="main">
+      <div class="main-head">
+        <h1><span class="hero-ico"></span>강의 숏폼 스튜디오</h1>
+        <p id="mainSub">제목과 스크립트를 입력하면 AI 목소리·세련된 자막·프로그레스 바가 들어간 숏폼(9:16) 영상을 만들어 드립니다.</p>
+      </div>
+
+      <div class="card" id="genCard">
+        <div class="field">
+          <label>숏폼 제목</label>
+          <input class="inp" id="title" placeholder="예: 파이썬 변수 3분 정리" value="">
+        </div>
+        <div class="field">
+          <label>내레이션 스크립트</label>
+          <textarea class="ta" id="script" placeholder="동영상 자막과 목소리가 될 대본을 작성해 주세요. 문장 구분(.)을 잘 지켜주세요."></textarea>
+        </div>
+        <button class="btn" id="genBtn">숏폼 생성하기</button>
+        <div class="err hidden" id="genErr"></div>
+      </div>
+
+      <div class="card progress" id="progress">
+        <div class="steps" id="steps"></div>
+        <div class="ind"><i></i></div>
+        <div class="ptxt" id="ptxt">준비 중…</div>
+      </div>
+
+      <div class="card hidden" id="genResult">
+        <div class="result-video">
+          <video id="resultVid" controls playsinline></video>
+          <div class="result-info">
+            <h3 id="riTitle"></h3>
+            <div class="row">길이 <b id="riDur"></b></div>
+            <div class="row">장면 <b id="riScene"></b></div>
+            <div class="row">목소리 <b id="riVoice"></b></div>
+            <div class="row">배경 <b id="riBg"></b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-head">
+        <h2>학습 코스</h2>
+        <span class="meta" id="courseMeta">폴더를 열어 순서대로 학습하세요</span>
+      </div>
+
+      <!-- 폴더 보기 -->
+      <div id="folders" class="folder-grid"></div>
+
+      <!-- 코스 열었을 때 -->
+      <div id="courseView" style="display:none;">
+        <button class="back-folders" id="backFolders">← 코스 목록</button>
+        <div class="course-name-head"><span class="folder-mark"></span><span id="courseName"></span></div>
+        <div class="course-progress" id="courseProgress">
+          <span class="cp-ring" id="cpRing">0 / 0 완료</span>
+          <div class="cp-bar"><i id="cpBar"></i></div>
+          <button class="cp-reset" id="cpReset">기록 초기화</button>
+        </div>
+        <div id="course"></div>
+      </div>
+
+      <!-- 보조 도구: 강의 PDF에서 내용 추출 -->
+      <details class="pdf-tool">
+        <summary>강의 PDF에서 내용 추출 <span style="color:var(--m-mute);font-weight:400;">(대본 작성 참고용)</span></summary>
+        <div class="pdf-body">
+          <label class="drop" id="drop">
+            <div class="ic">📄</div>
+            <div class="big">PDF를 끌어다 놓거나 클릭해서 선택</div>
+            <div class="small">슬라이드별 텍스트를 주제별로 정리해 드립니다</div>
+            <input type="file" id="file" accept="application/pdf">
+          </label>
+          <div class="err hidden" id="err"></div>
+          <div id="result" class="hidden">
+            <div class="kpis" id="kpis"></div>
+            <div id="groups"></div>
+            <div class="mini-actions">
+              <button class="mini" id="copyAll">전체 텍스트 복사</button>
+              <button class="mini" id="dlJson">JSON 내려받기</button>
+            </div>
+          </div>
+        </div>
+      </details>
+    </main>
+  </div>
+
+  <!-- 코스 플레이어 -->
+  <div class="player-overlay" id="player">
+    <div class="player-box">
+      <button class="player-close" id="pClose">✕</button>
+      <div class="player-top">
+        <span class="ptag" id="pTag"></span>
+        <span class="ptitle" id="pTitle"></span>
+      </div>
+      <div class="player-stage">
+        <button class="nav-btn" id="pPrev" title="이전">‹</button>
+        <video class="player-video" id="pVideo" controls autoplay playsinline></video>
+        <button class="nav-btn" id="pNext" title="다음 영상">›</button>
+      </div>
+      <div class="player-bottom">
+        <span id="pCount"></span>
+        <span class="watched" id="pWatched"></span>
+        <span class="next-hint" id="pHint"></span>
+      </div>
+    </div>
+  </div>
+
+<script>
+const $ = s => document.querySelector(s);
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+// ── 랜딩 진입 ──
+$('#enter').addEventListener('click', ()=>{ $('#landing').classList.add('gone'); });
+
+// ── 배경 스타일 미리보기(백엔드 색과 동일) ──
+const BG_GRAD = {
+  "Deep Navy":  "radial-gradient(circle at 50% 40%, rgb(42,63,122), rgb(7,12,28))",
+  "Midnight":   "radial-gradient(circle at 50% 40%, rgb(30,49,96), rgb(5,8,20))",
+  "Ocean Navy": "radial-gradient(circle at 50% 40%, rgb(20,64,110), rgb(4,10,26))",
+  "Royal":      "radial-gradient(circle at 50% 40%, rgb(48,58,140), rgb(9,11,34))",
+  "Plum":       "radial-gradient(circle at 50% 40%, rgb(92,50,130), rgb(24,10,36))",
+  "Forest":     "radial-gradient(circle at 50% 40%, rgb(24,92,78), rgb(6,24,20))",
+  "Sunset":     "radial-gradient(circle at 50% 40%, rgb(132,60,54), rgb(36,12,20))",
+  "Charcoal":   "radial-gradient(circle at 50% 40%, rgb(70,78,92), rgb(14,16,22))",
+};
+function updateSwatch(){
+  const v = $('#bgStyle').value;
+  $('#swatch').style.background = BG_GRAD[v] || BG_GRAD["Deep Navy"];
+  $('#swatchCap').textContent = v;
+}
+$('#bgStyle').addEventListener('change', updateSwatch);
+
+// ── 옵션 로드 ──
+async function loadOptions(){
+  try{
+    const o = await (await fetch('/api/options')).json();
+    if(o.viewer_only){
+      document.body.classList.add('viewer');
+      $('#mainSub').textContent = '강의를 짧은 숏폼으로. 폴더를 열어 순서대로 학습하세요.';
+    }
+    $('#bgStyle').innerHTML = o.bg_styles.map(b=>`<option>${b}</option>`).join('');
+    $('#voice').innerHTML = o.voices.map(v=>`<option value="${v.id}">${esc(v.label)}</option>`).join('');
+    updateSwatch();
+  }catch(e){ /* 무시 */ }
+}
+
+// ── 생성 ──
+const STEPS = ["음성 생성","자막 추출","영상 렌더","완료"];
+function renderSteps(active){
+  $('#steps').innerHTML = STEPS.map(s=>{
+    const ai = STEPS.indexOf(active);
+    const si = STEPS.indexOf(s);
+    let cls = ''; if(si<ai) cls='done'; else if(si===ai) cls='active';
+    return `<div class="step ${cls}"><span class="dot"></span>${s}</div>`;
+  }).join('');
+}
+let t0=0;
+$('#genBtn').addEventListener('click', async ()=>{
+  const script = $('#script').value.trim();
+  $('#genErr').classList.add('hidden');
+  if(!script){ $('#genErr').textContent='스크립트를 입력하세요.'; $('#genErr').classList.remove('hidden'); return; }
+
+  $('#genBtn').disabled = true; $('#genBtn').textContent='생성 중…';
+  $('#genResult').classList.add('hidden');
+  $('#progress').classList.add('on');
+  renderSteps("음성 생성"); $('#ptxt').textContent='작업을 시작합니다…';
+  t0 = Date.now();
+
+  let job;
+  try{
+    const res = await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({title:$('#title').value||'제목 없음', script,
+        voice:$('#voice').value, bg_style:$('#bgStyle').value})});
+    if(!res.ok){ throw new Error((await res.json()).detail||'생성 실패'); }
+    job = (await res.json()).job_id;
+  }catch(e){ failGen(e.message); return; }
+
+  poll(job);
+});
+
+function failGen(msg){
+  $('#progress').classList.remove('on');
+  $('#genErr').textContent='오류: '+msg; $('#genErr').classList.remove('hidden');
+  $('#genBtn').disabled=false; $('#genBtn').textContent='숏폼 생성하기';
+}
+
+async function poll(job){
+  try{
+    const s = await (await fetch('/api/job/'+job)).json();
+    const el = ((Date.now()-t0)/1000).toFixed(0);
+    if(s.status==='error'){ failGen(s.error||'생성 실패'); return; }
+    renderSteps(s.stage);
+    $('#ptxt').textContent = `${s.stage}${s.message?' · '+s.message:''}  ·  경과 ${el}s`;
+    if(s.status==='done'){ doneGen(s.result); return; }
+    setTimeout(()=>poll(job), 1500);
+  }catch(e){ setTimeout(()=>poll(job), 2000); }
+}
+
+function doneGen(r){
+  renderSteps("완료");
+  $('#ptxt').textContent = `완료! (총 ${((Date.now()-t0)/1000).toFixed(0)}s 소요)`;
+  $('#resultVid').src = '/media/'+r.video+'?t='+Date.now();
+  $('#riTitle').textContent = r.title;
+  $('#riDur').textContent = (r.duration||0).toFixed(1)+'s';
+  $('#riScene').textContent = r.scene_count;
+  $('#riVoice').textContent = r.voice;
+  $('#riBg').textContent = r.bg_style||'';
+  $('#genResult').classList.remove('hidden');
+  $('#genBtn').disabled=false; $('#genBtn').textContent='숏폼 생성하기';
+  setTimeout(()=>$('#progress').classList.remove('on'), 1200);
+  loadCourse();
+}
+
+// ── 코스 폴더 + 커리큘럼 + 플레이어 ──
+let COURSES = [];   // 폴더 목록
+let COURSE = [];    // 현재 연 코스의 항목
+const WATCHED_KEY = 'shortform_watched';
+function getWatched(){ try{ return new Set(JSON.parse(localStorage.getItem(WATCHED_KEY)||'[]')); }catch(e){ return new Set(); } }
+function setWatched(set){ localStorage.setItem(WATCHED_KEY, JSON.stringify([...set])); }
+function fmtDur(s){ s=Math.round(s||0); return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`; }
+
+// 폴더 그리기
+async function loadCourse(){
+  try{
+    COURSES = (await (await fetch('/api/courses')).json()).courses || [];
+  }catch(e){ COURSES=[]; }
+  renderFolders();
+}
+function renderFolders(){
+  const watched = getWatched();
+  const box = $('#folders');
+  if(!COURSES.length){ box.innerHTML = `<div class="shorts-empty">아직 코스가 없습니다.</div>`; return; }
+  box.innerHTML = COURSES.map((c,idx)=>{
+    if(!c.ready){
+      return `<div class="folder-card locked">
+        <div class="folder-ico"><div class="tab"></div><div class="body"></div><div class="lip"></div></div>
+        <div class="folder-name">${esc(c.name)}</div>
+        <div class="folder-badge">준비 중</div></div>`;
+    }
+    const done = c.items.filter(it=>watched.has(it.id)).length;
+    const pct = c.count ? Math.round(done/c.count*100) : 0;
+    return `<div class="folder-card" data-idx="${idx}">
+      <div class="folder-ico"><div class="tab"></div><div class="body"></div><div class="lip"></div></div>
+      <div class="folder-name">${esc(c.name)}</div>
+      <div class="folder-sub">${c.count}개 영상 · ${done} 완료</div>
+      <div class="folder-mini"><i style="width:${pct}%"></i></div>
+    </div>`;
+  }).join('');
+  box.querySelectorAll('.folder-card[data-idx]').forEach(el=>
+    el.addEventListener('click',()=>openCourse(+el.dataset.idx)));
+  $('#folders').style.display='grid';
+  $('#courseView').style.display='none';
+  $('#courseMeta').textContent = '폴더를 열어 순서대로 학습하세요';
+}
+
+// 코스 열기 → 순서 목록
+function openCourse(idx){
+  const c = COURSES[idx];
+  if(!c || !c.ready) return;
+  COURSE = c.items;
+  $('#courseName').textContent = c.name;
+  $('#folders').style.display='none';
+  $('#courseView').style.display='block';
+  $('#courseMeta').textContent = c.name;
+  renderLessons();
+}
+function renderLessons(){
+  const watched = getWatched();
+  let html='', curTopic=null;
+  COURSE.forEach((it,idx)=>{
+    if(it.topic!==curTopic){
+      if(curTopic!==null) html+='</div>';
+      html+=`<div class="topic-group"><div class="topic-head"><span class="dot"></span><h3>${esc(it.topic)}</h3></div>`;
+      curTopic=it.topic;
+    }
+    const done = watched.has(it.id);
+    html+=`<div class="lesson ${done?'done':''}" data-idx="${idx}">
+      <span class="num">${String(idx+1).padStart(2,'0')}</span>
+      <span class="lt">${esc(it.title)}</span>
+      <span class="ld">${fmtDur(it.duration)}</span>
+      <span class="chk">✓</span>
+      <span class="play">▶</span>
+    </div>`;
+  });
+  html+='</div>';
+  const box=$('#course'); box.innerHTML=html;
+  box.querySelectorAll('.lesson').forEach(el=>
+    el.addEventListener('click',()=>openPlayer(+el.dataset.idx)));
+  updateProgress();
+}
+$('#backFolders').addEventListener('click',()=>{ renderFolders(); });
+
+function updateProgress(){
+  const watched = getWatched();
+  const done = COURSE.filter(it=>watched.has(it.id)).length;
+  $('#cpRing').textContent = `${done} / ${COURSE.length} 완료`;
+  $('#cpBar').style.width = COURSE.length ? (done/COURSE.length*100)+'%' : '0';
+}
+
+// 플레이어
+let curIdx = 0;
+function openPlayer(idx){
+  curIdx = idx;
+  const it = COURSE[idx];
+  if(!it) return;
+  $('#pTag').textContent = it.topic;
+  $('#pTitle').textContent = it.title;
+  $('#pVideo').src = '/media/'+it.video+'?t='+Date.now();
+  $('#pCount').textContent = `${idx+1} / ${COURSE.length}`;
+  $('#pPrev').disabled = idx===0;
+  $('#pNext').disabled = idx===COURSE.length-1;
+  $('#pHint').textContent = idx<COURSE.length-1 ? `다음 ▸ ${COURSE[idx+1].title}` : '마지막 강의예요';
+  $('#pWatched').textContent = getWatched().has(it.id) ? '✓ 시청 완료' : '';
+  $('#player').classList.add('on');
+}
+function closePlayer(){ $('#player').classList.remove('on'); $('#pVideo').pause(); $('#pVideo').src=''; }
+function markWatched(id){
+  const w=getWatched(); if(!w.has(id)){ w.add(id); setWatched(w);
+    renderLessons(); $('#pWatched').textContent='✓ 시청 완료'; }
+}
+$('#pPrev').addEventListener('click',()=>openPlayer(Math.max(0,curIdx-1)));
+$('#pNext').addEventListener('click',()=>openPlayer(Math.min(COURSE.length-1,curIdx+1)));
+$('#pClose').addEventListener('click',closePlayer);
+$('#player').addEventListener('click',e=>{ if(e.target===$('#player')) closePlayer(); });
+$('#pVideo').addEventListener('ended',()=>{ markWatched(COURSE[curIdx].id); });
+document.addEventListener('keydown',e=>{
+  if(!$('#player').classList.contains('on')) return;
+  if(e.key==='ArrowRight'&&curIdx<COURSE.length-1) openPlayer(curIdx+1);
+  if(e.key==='ArrowLeft'&&curIdx>0) openPlayer(curIdx-1);
+  if(e.key==='Escape') closePlayer();
+});
+$('#cpReset').addEventListener('click',()=>{ if(confirm('시청 기록을 초기화할까요?')){ localStorage.removeItem(WATCHED_KEY); renderLessons(); } });
+
+// ── PDF 추출(보조) ──
+const drop=$('#drop'), fileInput=$('#file'); let payload=null;
+['dragenter','dragover'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.add('over');}));
+['dragleave','drop'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove('over');}));
+drop.addEventListener('drop',ev=>{const f=ev.dataTransfer.files[0];if(f&&f.type==='application/pdf')uploadPdf(f);});
+fileInput.addEventListener('change',ev=>{if(ev.target.files[0])uploadPdf(ev.target.files[0]);});
+async function uploadPdf(file){
+  $('#err').classList.add('hidden'); $('#result').classList.add('hidden');
+  const fd=new FormData(); fd.append('file',file);
+  try{
+    const res=await fetch('/api/extract',{method:'POST',body:fd});
+    if(!res.ok) throw new Error((await res.json()).detail||'처리 실패');
+    payload=await res.json(); renderPdf();
+  }catch(e){ $('#err').textContent='오류: '+e.message; $('#err').classList.remove('hidden'); }
+}
+function renderPdf(){
+  $('#kpis').innerHTML = `${kpi('슬라이드',payload.total_slides,'장')}${kpi('내용 있음',payload.filled_slides,'장')}${kpi('글자 수',payload.total_chars.toLocaleString(),'자')}${kpi('주제',payload.groups.length,'개')}`;
+  const box=$('#groups'); box.innerHTML='';
+  payload.groups.forEach(g=>{
+    const d=document.createElement('details'); d.className='group';
+    d.innerHTML=`<summary><span class="gnum">${String(g.index).padStart(2,'0')}</span>
+      <span class="gtitle">${esc(g.title)}</span>
+      <span class="gcount">p.${g.from_page}–${g.to_page} · ${g.slides.length}장</span></summary>
+      <div class="gbody">${g.slides.map(s=>`<div class="slide">
+        <span class="spage">SLIDE ${s.page}</span><span class="stitle">${esc(s.title)}</span>
+        ${s.text?`<div class="stext">${esc(s.text)}</div>`:''}</div>`).join('')}</div>`;
+    box.appendChild(d);
+  });
+  $('#result').classList.remove('hidden');
+}
+function kpi(l,v,u){return `<div class="kpi"><div class="label">${l}</div><div class="value">${v}<span class="unit">${u}</span></div></div>`;}
+$('#copyAll').addEventListener('click',()=>{
+  const txt=payload.slides.map(s=>`=== 슬라이드 ${s.page} ===\n${s.text||'(빈 슬라이드)'}`).join('\n\n');
+  navigator.clipboard.writeText(txt); $('#copyAll').textContent='복사됨 ✓';
+  setTimeout(()=>$('#copyAll').textContent='전체 텍스트 복사',1500);
+});
+$('#dlJson').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='lecture-content.json'; a.click();
+});
+
+// 초기 로드
+loadOptions(); loadCourse();
+</script>
+</body>
+</html>

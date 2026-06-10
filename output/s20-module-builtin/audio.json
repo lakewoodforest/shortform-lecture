@@ -1,0 +1,36 @@
+{
+  "short_id": "s20-module-builtin",
+  "title": "내장 함수와 표준 라이브러리",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 41,
+      "narration": "파이썬은 자주 쓰는 기능을 미리 만들어 두었는데, 이걸 내장 함수라고 해요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.144
+    },
+    {
+      "index": 2,
+      "slide_page": 41,
+      "narration": "print, input, len, sum, min, max 처럼 70가지가 넘는 함수를 바로 쓸 수 있죠.",
+      "audio": "scene-02.mp3",
+      "duration": 8.304
+    },
+    {
+      "index": 3,
+      "slide_page": 41,
+      "narration": "여기에 더해, 표준 라이브러리라는 더 큰 기능 모음도 제공해요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.352
+    },
+    {
+      "index": 4,
+      "slide_page": 41,
+      "narration": "그림 그리기, 무작위 수 만들기, 복잡한 수학 계산 같은 걸 손쉽게 가져다 쓸 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.344
+    }
+  ],
+  "total_duration": 27.144
+}

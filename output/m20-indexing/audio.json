@@ -1,0 +1,36 @@
+{
+  "short_id": "m20-indexing",
+  "title": "인덱싱 (순서로 꺼내기)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 56,
+      "narration": "리스트에 담긴 값을 꺼내려면 인덱스, 즉 순서 번호를 써요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.832
+    },
+    {
+      "index": 2,
+      "slide_page": 56,
+      "narration": "파이썬은 0부터 세기 때문에 첫 번째 값은 인덱스 0이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.088
+    },
+    {
+      "index": 3,
+      "slide_page": 56,
+      "narration": "재미있는 건 음수도 쓸 수 있다는 거예요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.528
+    },
+    {
+      "index": 4,
+      "slide_page": 56,
+      "narration": "인덱스 마이너스 1은 맨 마지막 값을 가리켜요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.368
+    }
+  ],
+  "total_duration": 18.816
+}

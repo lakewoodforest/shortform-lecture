@@ -1,0 +1,81 @@
+{
+  "short_id": "s14-operator-arithmetic",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 5.184,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.14,
+          "text": "산술 연산자는 우리가 아는 사칙연산을"
+        },
+        {
+          "start": 2.14,
+          "end": 3.78,
+          "text": "컴퓨터로 하는 거예요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 4.56,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.08,
+          "text": "더하기는 플러스, 빼기는 마이너스"
+        },
+        {
+          "start": 2.08,
+          "end": 3.6,
+          "text": "기호를 써요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 6.096,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.36,
+          "text": "곱하기는 곱셈 기호 대신 별표를 쓰고,"
+        },
+        {
+          "start": 2.36,
+          "end": 4.78,
+          "text": "나누기는 슬래시 기호를 써요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 6.12,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.4,
+          "text": "학교에서 배운 곱하기, 나누기 기호와"
+        },
+        {
+          "start": 2.48,
+          "end": 4.1,
+          "text": "모양이 조금 다르니 익숙해지면"
+        },
+        {
+          "start": 4.1,
+          "end": 5.04,
+          "text": "돼요."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "short_id": "s11-datatype-why",
+  "title": "자료형이 왜 중요할까?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 24,
+      "narration": "자료형을 신경 써야 하는 이유는, 자료형에 따라 같은 연산도 의미가 달라지기 때문이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.768
+    },
+    {
+      "index": 2,
+      "slide_page": 24,
+      "narration": "예를 들어 숫자 10과 10을 플러스 하면 20이 나와요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.512
+    },
+    {
+      "index": 3,
+      "slide_page": 24,
+      "narration": "하지만 글자 good과 morning을 플러스 하면, 더해지는 게 아니라 goodmorning 처럼 이어 붙어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.696
+    },
+    {
+      "index": 4,
+      "slide_page": 24,
+      "narration": "그래서 따옴표가 있으면 문자열, 따옴표가 없으면 숫자라는 걸 꼭 기억해 두세요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.552
+    }
+  ],
+  "total_duration": 24.528
+}

@@ -1,0 +1,43 @@
+{
+  "short_id": "s15-operator-division",
+  "title": "나눗셈의 함정 (몫과 나머지)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 31,
+      "narration": "나눗셈은 조금 주의가 필요해요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.216
+    },
+    {
+      "index": 2,
+      "slide_page": 31,
+      "narration": "파이썬에서 슬래시 한 개로 나누면 결과가 항상 소수로 나와요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.136
+    },
+    {
+      "index": 3,
+      "slide_page": 31,
+      "narration": "만약 몫만 정수로 깔끔하게 얻고 싶다면 슬래시를 두 개 붙여서 쓰면 돼요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.832
+    },
+    {
+      "index": 4,
+      "slide_page": 31,
+      "narration": "그러면 소수점 아래는 버리고 정수 부분만 남아요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.296
+    },
+    {
+      "index": 5,
+      "slide_page": 31,
+      "narration": "그리고 나눈 뒤 남는 나머지가 궁금하면 퍼센트 기호를 쓰면 나머지를 알려줘요.",
+      "audio": "scene-05.mp3",
+      "duration": 6.264
+    }
+  ],
+  "total_duration": 24.744
+}

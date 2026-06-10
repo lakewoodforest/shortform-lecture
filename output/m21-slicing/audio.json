@@ -1,0 +1,29 @@
+{
+  "short_id": "m21-slicing",
+  "title": "슬라이싱 (잘라내기)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 59,
+      "narration": "리스트에서 여러 값을 한 번에 잘라 새 리스트를 만들고 싶다면 슬라이싱을 써요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.168
+    },
+    {
+      "index": 2,
+      "slide_page": 59,
+      "narration": "대괄호 안에 시작과 끝을 콜론으로 구분해 적으면 그 범위가 잘려 나와요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.712
+    },
+    {
+      "index": 3,
+      "slide_page": 59,
+      "narration": "원래 리스트는 그대로 남고 새 리스트가 만들어진다는 점이 포인트예요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.568
+    }
+  ],
+  "total_duration": 17.448
+}

@@ -1,0 +1,113 @@
+{
+  "short_id": "s16-operator-power",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 5.064,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.62,
+          "text": "같은 수를 여러 번 곱하는 거듭제곱은"
+        },
+        {
+          "start": 1.62,
+          "end": 3.46,
+          "text": "별표 두 개로 계산해요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 4.92,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.0,
+          "text": "예를 들어 2의 7제곱은 2 별표"
+        },
+        {
+          "start": 2.0,
+          "end": 3.66,
+          "text": "별표 7 이라고 쓰면 돼요"
+        },
+        {
+          "start": 3.66,
+          "end": 3.86,
+          "text": "."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 4.632,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.02,
+          "text": "이때 아래 숫자 2를 밑, 위 숫자"
+        },
+        {
+          "start": 2.02,
+          "end": 3.64,
+          "text": "7을 지수라고 불러요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 7.464,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.3,
+          "text": "거듭제곱을 응용하면 제곱근도 구할"
+        },
+        {
+          "start": 2.3,
+          "end": 4.38,
+          "text": "수 있어서, 피타고라스 정리"
+        },
+        {
+          "start": 4.38,
+          "end": 6.06,
+          "text": "같은 계산에도 쓸 수 있어요"
+        },
+        {
+          "start": 6.06,
+          "end": 6.44,
+          "text": "."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slide_page": 0,
+      "duration": 6.336,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.58,
+          "text": "참고로 거듭제곱은 다른 연산보다 먼저"
+        },
+        {
+          "start": 2.58,
+          "end": 4.9,
+          "text": "계산되는 높은 우선순위를 가져요"
+        },
+        {
+          "start": 4.9,
+          "end": 5.36,
+          "text": "."
+        }
+      ]
+    }
+  ]
+}

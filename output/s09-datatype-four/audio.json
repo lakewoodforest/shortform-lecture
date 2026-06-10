@@ -1,0 +1,36 @@
+{
+  "short_id": "s09-datatype-four",
+  "title": "기본 자료형 네 가지",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 21,
+      "narration": "프로그램이 다루는 데이터의 종류를 자료형이라고 해요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.2
+    },
+    {
+      "index": 2,
+      "slide_page": 21,
+      "narration": "파이썬에서 가장 기본이 되는 네 가지를 알아볼게요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.176
+    },
+    {
+      "index": 3,
+      "slide_page": 21,
+      "narration": "1이나 2 같은 정수, 3.14 같은 소수를 뜻하는 실수, 글자 묶음인 문자열, 그리고 참과 거짓을 나타내는 부울형이에요.",
+      "audio": "scene-03.mp3",
+      "duration": 10.104
+    },
+    {
+      "index": 4,
+      "slide_page": 21,
+      "narration": "이 네 가지만 알아도 데이터를 구분하는 눈이 생겨요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.44
+    }
+  ],
+  "total_duration": 22.92
+}

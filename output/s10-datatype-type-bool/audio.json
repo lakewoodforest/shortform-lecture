@@ -1,0 +1,43 @@
+{
+  "short_id": "s10-datatype-type-bool",
+  "title": "자료형 확인하기와 참·거짓",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 22,
+      "narration": "어떤 변수가 무슨 자료형인지 궁금하면 type 함수를 써보면 돼요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.4
+    },
+    {
+      "index": 2,
+      "slide_page": 22,
+      "narration": "변수 이름을 type 괄호 안에 넣으면 자료형을 알려주죠.",
+      "audio": "scene-02.mp3",
+      "duration": 4.584
+    },
+    {
+      "index": 3,
+      "slide_page": 22,
+      "narration": "참고로 실수는 영어로 플로트라고 표시돼요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.984
+    },
+    {
+      "index": 4,
+      "slide_page": 22,
+      "narration": "부울형은 참 또는 거짓, 둘 중 하나만 가지는 자료형인데요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.304
+    },
+    {
+      "index": 5,
+      "slide_page": 22,
+      "narration": "나중에 조건문이나 반복문에서 어떤 조건이 맞는지 검사할 때 아주 유용하게 쓰여요.",
+      "audio": "scene-05.mp3",
+      "duration": 6.528
+    }
+  ],
+  "total_duration": 25.8
+}

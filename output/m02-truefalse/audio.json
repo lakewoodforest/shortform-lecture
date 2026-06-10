@@ -1,0 +1,36 @@
+{
+  "short_id": "m02-truefalse",
+  "title": "참과 거짓, 비교의 결과",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 5,
+      "narration": "파이썬에서 참은 True, 거짓은 False로 표현해요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.392
+    },
+    {
+      "index": 2,
+      "slide_page": 5,
+      "narration": "두 값을 비교하면 이 결과가 만들어지죠.",
+      "audio": "scene-02.mp3",
+      "duration": 3.864
+    },
+    {
+      "index": 3,
+      "slide_page": 5,
+      "narration": "예를 들어 100이 1보다 크냐고 물으면 결과는 True예요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.368
+    },
+    {
+      "index": 4,
+      "slide_page": 5,
+      "narration": "조건문은 바로 이 True와 False를 보고 어디로 갈지 결정해요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.616
+    }
+  ],
+  "total_duration": 18.24
+}

@@ -1,0 +1,91 @@
+{
+  "short_id": "s08-variable-string",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 5.544,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.16,
+          "text": "변수에는 숫자뿐 아니라 글자, 즉"
+        },
+        {
+          "start": 2.5,
+          "end": 4.08,
+          "text": "문자열도 저장할 수 있어"
+        },
+        {
+          "start": 4.08,
+          "end": 4.42,
+          "text": "요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 4.68,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.54,
+          "text": "문자열은 큰따옴표나 작은따옴표로 감싸서"
+        },
+        {
+          "start": 2.54,
+          "end": 3.66,
+          "text": "만들어요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 5.376,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.18,
+          "text": "글자가 몇 개인지 세고 싶을 땐 len"
+        },
+        {
+          "start": 2.18,
+          "end": 3.78,
+          "text": "함수를 쓰면 길이를 알려"
+        },
+        {
+          "start": 3.78,
+          "end": 4.4,
+          "text": "줘요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 6.888,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.0,
+          "text": "또 두 문자열을 플러스 기호로 이으면"
+        },
+        {
+          "start": 2.0,
+          "end": 3.66,
+          "text": "하나로 합쳐지는데, 이걸 문자열"
+        },
+        {
+          "start": 4.08,
+          "end": 5.82,
+          "text": "연결이라고 해요."
+        }
+      ]
+    }
+  ]
+}

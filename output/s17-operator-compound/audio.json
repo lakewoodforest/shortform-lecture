@@ -1,0 +1,36 @@
+{
+  "short_id": "s17-operator-compound",
+  "title": "복합 할당 연산자",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 36,
+      "narration": "복합 할당 연산자는 산술 연산과 저장을 한 번에 하는 편리한 방법이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.072
+    },
+    {
+      "index": 2,
+      "slide_page": 36,
+      "narration": "예를 들어 변수에 10을 더한 뒤 다시 저장하고 싶을 때, 플러스 등호를 쓰면 짧게 표현할 수 있어요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.8
+    },
+    {
+      "index": 3,
+      "slide_page": 36,
+      "narration": "더하기뿐 아니라 빼기, 곱하기, 나누기에도 똑같이 쓸 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.048
+    },
+    {
+      "index": 4,
+      "slide_page": 36,
+      "narration": "코드가 짧아지고 읽기도 편해지는 작은 꿀팁이에요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.464
+    }
+  ],
+  "total_duration": 24.384
+}

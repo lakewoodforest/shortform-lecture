@@ -1,0 +1,36 @@
+{
+  "short_id": "s13-operator-expression",
+  "title": "수식 — 연산자와 피연산자",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 29,
+      "narration": "수식은 피연산자와 연산자가 조합된 거예요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.08
+    },
+    {
+      "index": 2,
+      "slide_page": 29,
+      "narration": "연산자는 어떤 계산을 나타내는 기호이고, 피연산자는 계산의 대상이 되는 숫자나 변수예요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.416
+    },
+    {
+      "index": 3,
+      "slide_page": 29,
+      "narration": "예를 들어 7 더하기 4 라는 수식에서, 7과 4는 피연산자이고 더하기 기호는 연산자죠.",
+      "audio": "scene-03.mp3",
+      "duration": 7.416
+    },
+    {
+      "index": 4,
+      "slide_page": 29,
+      "narration": "참고로 코드를 쓸 때 연산자 양옆에 한 칸씩 띄어 쓰는 게 보기 좋은 습관이에요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.336
+    }
+  ],
+  "total_duration": 25.248
+}

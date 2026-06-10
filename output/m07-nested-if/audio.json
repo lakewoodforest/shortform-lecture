@@ -1,0 +1,36 @@
+{
+  "short_id": "m07-nested-if",
+  "title": "중첩 if 블록",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 16,
+      "narration": "if 문 안에 또 if 문을 넣을 수도 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.008
+    },
+    {
+      "index": 2,
+      "slide_page": 16,
+      "narration": "이걸 중첩 if, 또는 내부 if 블록이라고 해요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.776
+    },
+    {
+      "index": 3,
+      "slide_page": 16,
+      "narration": "예를 들어 먼저 0 이상인지 확인하고, 그 안에서 다시 0인지 양수인지를 또 나눠 검사하는 식이죠.",
+      "audio": "scene-03.mp3",
+      "duration": 7.704
+    },
+    {
+      "index": 4,
+      "slide_page": 16,
+      "narration": "조건을 단계적으로 좁혀갈 때 유용해요.",
+      "audio": "scene-04.mp3",
+      "duration": 3.648
+    }
+  ],
+  "total_duration": 20.136
+}

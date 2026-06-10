@@ -1,0 +1,91 @@
+{
+  "short_id": "s17-operator-compound",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 6.072,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.72,
+          "text": "복합 할당 연산자는 산술 연산과"
+        },
+        {
+          "start": 2.72,
+          "end": 4.46,
+          "text": "저장을 한 번에 하는 편리한"
+        },
+        {
+          "start": 4.46,
+          "end": 4.98,
+          "text": "방법이에요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 7.8,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.86,
+          "text": "예를 들어 변수에 10을 더한 뒤"
+        },
+        {
+          "start": 1.86,
+          "end": 3.68,
+          "text": "다시 저장하고 싶을 때, 플러스"
+        },
+        {
+          "start": 3.68,
+          "end": 5.72,
+          "text": "등호를 쓰면 짧게 표현할 수"
+        },
+        {
+          "start": 5.72,
+          "end": 6.72,
+          "text": "있어요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 6.048,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.52,
+          "text": "더하기뿐 아니라 빼기, 곱하기, 나누기에도"
+        },
+        {
+          "start": 3.04,
+          "end": 4.66,
+          "text": "똑같이 쓸 수 있어요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 4.464,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.36,
+          "text": "코드가 짧아지고 읽기도 편해지는 작은"
+        },
+        {
+          "start": 2.36,
+          "end": 3.4,
+          "text": "꿀팁이에요."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "short_id": "m06-elif",
+  "title": "elif로 여러 조건 나누기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 14,
+      "narration": "갈래가 셋 이상이면 elif를 써요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.384
+    },
+    {
+      "index": 2,
+      "slide_page": 14,
+      "narration": "elif는 else와 if를 합친 말로, 앞 조건이 거짓일 때 또 다른 조건을 검사해요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.744
+    },
+    {
+      "index": 3,
+      "slide_page": 14,
+      "narration": "if로 시작해 elif를 여러 번 쓰고 마지막에 else로 나머지를 처리하면 여러 단계의 판단을 만들 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 8.016
+    }
+  ],
+  "total_duration": 18.144
+}

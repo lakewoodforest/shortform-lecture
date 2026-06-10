@@ -1,0 +1,29 @@
+{
+  "short_id": "m11-for-in",
+  "title": "for-in과 변수 활용",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 29,
+      "narration": "for 문은 반복하면서 꺼낸 값을 변수에 담아 줘요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.392
+    },
+    {
+      "index": 2,
+      "slide_page": 29,
+      "narration": "그래서 그 변수를 print로 출력하면 값이 하나씩 찍히죠.",
+      "audio": "scene-02.mp3",
+      "duration": 4.968
+    },
+    {
+      "index": 3,
+      "slide_page": 29,
+      "narration": "리스트뿐 아니라 문자열에도 쓸 수 있어서, 글자를 하나씩 꺼내 반복할 수도 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.84
+    }
+  ],
+  "total_duration": 16.2
+}

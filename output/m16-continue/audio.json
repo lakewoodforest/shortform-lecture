@@ -1,0 +1,36 @@
+{
+  "short_id": "m16-continue",
+  "title": "continue와 break",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 43,
+      "narration": "반복을 제어하는 두 명령이 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.312
+    },
+    {
+      "index": 2,
+      "slide_page": 43,
+      "narration": "break는 반복문 자체를 즉시 끝내고 나가요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.08
+    },
+    {
+      "index": 3,
+      "slide_page": 43,
+      "narration": "반면 continue는 그 회차만 건너뛰고 다음 반복으로 바로 넘어가죠.",
+      "audio": "scene-03.mp3",
+      "duration": 5.856
+    },
+    {
+      "index": 4,
+      "slide_page": 43,
+      "narration": "둘을 잘 쓰면 원하는 경우만 골라 처리하거나 멈출 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.16
+    }
+  ],
+  "total_duration": 18.408
+}

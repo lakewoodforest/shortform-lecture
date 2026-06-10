@@ -1,0 +1,115 @@
+{
+  "short_id": "s07-variable-naming",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 4.896,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.9,
+          "text": "변수 이름은 사람 이름처럼"
+        },
+        {
+          "start": 1.9,
+          "end": 3.88,
+          "text": "서로를 구별해주는 식별자예요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 7.416,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.7,
+          "text": "이름은 자유롭게 지을 수 있지만,"
+        },
+        {
+          "start": 1.7,
+          "end": 3.58,
+          "text": "파이썬이 이미 쓰고 있는 예약어는"
+        },
+        {
+          "start": 3.58,
+          "end": 5.54,
+          "text": "변수 이름으로 쓸 수 없어요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 3.216,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.1,
+          "text": "예약어를 쓰면 오류가 나거든요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 2.736,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 1.78,
+          "text": "그리고 가장 중요한 팁!"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slide_page": 0,
+      "duration": 3.96,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.02,
+          "text": "이름만 봐도 역할을 알 수 있게 짓는"
+        },
+        {
+          "start": 2.02,
+          "end": 2.78,
+          "text": "게 좋아요."
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "slide_page": 0,
+      "duration": 7.104,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.58,
+          "text": "체중과 키를 x1, x2 라고 하기보다"
+        },
+        {
+          "start": 2.58,
+          "end": 3.38,
+          "text": "weight, height"
+        },
+        {
+          "start": 3.82,
+          "end": 5.02,
+          "text": "라고 하면 훨씬 이해하기 쉽"
+        },
+        {
+          "start": 5.02,
+          "end": 6.14,
+          "text": "죠."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "short_id": "web-01-short",
+  "title": "인삿말",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "narration": "안녕하세요,파이썬 수업을 맡게된 땡땡땡 입니다.",
+      "audio": "scene-01.mp3",
+      "duration": 4.728
+    }
+  ],
+  "total_duration": 4.728
+}

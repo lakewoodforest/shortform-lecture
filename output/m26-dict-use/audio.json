@@ -1,0 +1,29 @@
+{
+  "short_id": "m26-dict-use",
+  "title": "딕셔너리 다루기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 75,
+      "narration": "딕셔너리에서 가장 중요한 건 키로 값을 찾는 거예요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.656
+    },
+    {
+      "index": 2,
+      "slide_page": 75,
+      "narration": "모든 키만 보려면 keys, 모든 값만 보려면 values, 키와 값을 함께 보려면 items를 써요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.656
+    },
+    {
+      "index": 3,
+      "slide_page": 75,
+      "narration": "for 문과 함께 쓰면 저장된 내용을 하나씩 살펴볼 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.064
+    }
+  ],
+  "total_duration": 17.376
+}

@@ -1,0 +1,22 @@
+{
+  "short_id": "web-02-short",
+  "title": "인삿말",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "narration": "안녕하세요,파이썬 수업을 맡게된 부기부기 입니다.",
+      "audio": "scene-01.mp3",
+      "duration": 4.704
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "narration": "각 섹터별로 나누어 30초~1분 가량 으로 설명될 예정입니다.",
+      "audio": "scene-02.mp3",
+      "duration": 5.28
+    }
+  ],
+  "total_duration": 9.984
+}

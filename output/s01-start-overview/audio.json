@@ -1,0 +1,36 @@
+{
+  "short_id": "s01-start-overview",
+  "title": "파이썬, 어떻게 시작하죠?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 7,
+      "narration": "파이썬을 시작하는 방법은 크게 두 가지예요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.888
+    },
+    {
+      "index": 2,
+      "slide_page": 7,
+      "narration": "하나는 명령어를 한 줄씩 바로 입력해보는 대화식 모드, 다른 하나는 코드를 파일로 저장해서 한꺼번에 실행하는 스크립트 모드죠.",
+      "audio": "scene-02.mp3",
+      "duration": 9.456
+    },
+    {
+      "index": 3,
+      "slide_page": 7,
+      "narration": "처음엔 대화식으로 가볍게 연습하고, 익숙해지면 스크립트로 넘어가면 돼요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.024
+    },
+    {
+      "index": 4,
+      "slide_page": 7,
+      "narration": "오늘은 이 두 가지를 차근차근 알아볼게요.",
+      "audio": "scene-04.mp3",
+      "duration": 3.864
+    }
+  ],
+  "total_duration": 23.232
+}

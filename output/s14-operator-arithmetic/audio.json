@@ -1,0 +1,36 @@
+{
+  "short_id": "s14-operator-arithmetic",
+  "title": "산술 연산자 (사칙연산)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 30,
+      "narration": "산술 연산자는 우리가 아는 사칙연산을 컴퓨터로 하는 거예요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.184
+    },
+    {
+      "index": 2,
+      "slide_page": 30,
+      "narration": "더하기는 플러스, 빼기는 마이너스 기호를 써요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.56
+    },
+    {
+      "index": 3,
+      "slide_page": 30,
+      "narration": "곱하기는 곱셈 기호 대신 별표를 쓰고, 나누기는 슬래시 기호를 써요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.096
+    },
+    {
+      "index": 4,
+      "slide_page": 30,
+      "narration": "학교에서 배운 곱하기, 나누기 기호와 모양이 조금 다르니 익숙해지면 돼요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.12
+    }
+  ],
+  "total_duration": 21.96
+}

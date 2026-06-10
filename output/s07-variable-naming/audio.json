@@ -1,0 +1,50 @@
+{
+  "short_id": "s07-variable-naming",
+  "title": "변수 이름 짓는 규칙",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 15,
+      "narration": "변수 이름은 사람 이름처럼 서로를 구별해주는 식별자예요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.896
+    },
+    {
+      "index": 2,
+      "slide_page": 15,
+      "narration": "이름은 자유롭게 지을 수 있지만, 파이썬이 이미 쓰고 있는 예약어는 변수 이름으로 쓸 수 없어요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.416
+    },
+    {
+      "index": 3,
+      "slide_page": 15,
+      "narration": "예약어를 쓰면 오류가 나거든요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.216
+    },
+    {
+      "index": 4,
+      "slide_page": 15,
+      "narration": "그리고 가장 중요한 팁!",
+      "audio": "scene-04.mp3",
+      "duration": 2.736
+    },
+    {
+      "index": 5,
+      "slide_page": 15,
+      "narration": "이름만 봐도 역할을 알 수 있게 짓는 게 좋아요.",
+      "audio": "scene-05.mp3",
+      "duration": 3.96
+    },
+    {
+      "index": 6,
+      "slide_page": 15,
+      "narration": "체중과 키를 x1, x2 라고 하기보다 weight, height 라고 하면 훨씬 이해하기 쉽죠.",
+      "audio": "scene-06.mp3",
+      "duration": 7.296
+    }
+  ],
+  "total_duration": 29.52
+}

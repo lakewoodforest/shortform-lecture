@@ -1,0 +1,50 @@
+{
+  "short_id": "s05-variable-assign",
+  "title": "변수에 값 저장하기 (= 의 진짜 의미)",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 10,
+      "narration": "변수에 값을 저장할 땐 등호 기호를 써요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.008
+    },
+    {
+      "index": 2,
+      "slide_page": 10,
+      "narration": "예를 들어 weight 등호 78.2 라고 쓰면, weight라는 상자에 78.2가 들어가요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.104
+    },
+    {
+      "index": 3,
+      "slide_page": 10,
+      "narration": "그런데 여기서 등호는 수학의 같다는 뜻이 아니에요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.128
+    },
+    {
+      "index": 4,
+      "slide_page": 10,
+      "narration": "오른쪽 값을 왼쪽 변수에 저장하라는 명령이죠.",
+      "audio": "scene-04.mp3",
+      "duration": 4.392
+    },
+    {
+      "index": 5,
+      "slide_page": 10,
+      "narration": "그래서 이 기호를 할당 연산자, 또는 대입 연산자라고 불러요.",
+      "audio": "scene-05.mp3",
+      "duration": 5.376
+    },
+    {
+      "index": 6,
+      "slide_page": 10,
+      "narration": "저장한 값을 화면에 보고 싶으면 print 괄호 안에 변수 이름을 넣으면 돼요.",
+      "audio": "scene-06.mp3",
+      "duration": 5.616
+    }
+  ],
+  "total_duration": 30.624
+}

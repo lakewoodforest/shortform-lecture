@@ -1,0 +1,29 @@
+{
+  "short_id": "m22-list-edit",
+  "title": "리스트 수정과 메소드",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 62,
+      "narration": "리스트는 값을 자유롭게 바꿀 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.936
+    },
+    {
+      "index": 2,
+      "slide_page": 62,
+      "narration": "인덱스로 위치를 지정한 뒤 새 값을 할당하면 그 자리가 바뀌죠.",
+      "audio": "scene-02.mp3",
+      "duration": 5.424
+    },
+    {
+      "index": 3,
+      "slide_page": 62,
+      "narration": "또 끝에 추가하는 append, 특정 위치를 빼는 pop처럼 리스트를 다루는 여러 메소드가 준비돼 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 7.656
+    }
+  ],
+  "total_duration": 17.016
+}

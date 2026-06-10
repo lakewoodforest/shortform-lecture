@@ -1,0 +1,108 @@
+{
+  "short_id": "s18-operator-compare-logic",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 6.192,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.26,
+          "text": "비교 연산자는 두 값을 크다,"
+        },
+        {
+          "start": 2.56,
+          "end": 4.38,
+          "text": "작다, 같다처럼 비교하는"
+        },
+        {
+          "start": 4.38,
+          "end": 5.16,
+          "text": "연산자예요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 3.816,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.38,
+          "text": "비교한 결과는 참 또는 거짓으로"
+        },
+        {
+          "start": 2.38,
+          "end": 2.82,
+          "text": "나와요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 4.608,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.58,
+          "text": "논리 연산자는 이런 참과 거짓을 조합할"
+        },
+        {
+          "start": 2.58,
+          "end": 3.64,
+          "text": "때 써요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 6.024,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.24,
+          "text": "그리고를 뜻하는 and, 또는를 뜻하는"
+        },
+        {
+          "start": 2.24,
+          "end": 4.24,
+          "text": "or, 부정을 뜻하는 not 이"
+        },
+        {
+          "start": 4.24,
+          "end": 4.92,
+          "text": "있어요."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slide_page": 0,
+      "duration": 6.168,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.24,
+          "text": "이 연산자들은 나중에 조건을 판단할"
+        },
+        {
+          "start": 2.24,
+          "end": 4.1,
+          "text": "때 핵심적으로 쓰이니 익혀두면"
+        },
+        {
+          "start": 4.1,
+          "end": 4.98,
+          "text": "좋아요."
+        }
+      ]
+    }
+  ]
+}

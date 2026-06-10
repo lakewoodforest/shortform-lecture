@@ -1,0 +1,43 @@
+{
+  "short_id": "s02-interactive-mode",
+  "title": "대화식 모드로 첫 코드 써보기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 5,
+      "narration": "대화식 모드는 파이썬을 실행하면 나오는 화살표 세 개 프롬프트에 명령을 바로 입력하는 방식이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 7.704
+    },
+    {
+      "index": 2,
+      "slide_page": 5,
+      "narration": "예를 들어 print 괄호 안에 Hello Python을 적고 엔터를 치면, 바로 아래에 그 글자가 그대로 출력돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.752
+    },
+    {
+      "index": 3,
+      "slide_page": 5,
+      "narration": "여기서 print는 괄호 안의 값을 화면에 보여주는 파이썬의 기본 기능이에요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.904
+    },
+    {
+      "index": 4,
+      "slide_page": 5,
+      "narration": "숫자 계산도 가능해서, 5 더하기 6을 입력하면 11이 바로 나오죠.",
+      "audio": "scene-04.mp3",
+      "duration": 5.976
+    },
+    {
+      "index": 5,
+      "slide_page": 5,
+      "narration": "이렇게 한 줄 쓰고 결과를 바로 확인할 수 있는 게 대화식 모드의 장점이에요.",
+      "audio": "scene-05.mp3",
+      "duration": 6.072
+    }
+  ],
+  "total_duration": 33.408
+}

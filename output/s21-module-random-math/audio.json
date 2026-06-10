@@ -1,0 +1,43 @@
+{
+  "short_id": "s21-module-random-math",
+  "title": "random 모듈과 math 모듈",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 43,
+      "narration": "표준 라이브러리 중에서 자주 쓰는 두 가지를 소개할게요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.536
+    },
+    {
+      "index": 2,
+      "slide_page": 43,
+      "narration": "먼저 random 모듈은 무작위 수를 만들거나, 여러 값 중 하나를 임의로 뽑거나 섞을 때 써요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.08
+    },
+    {
+      "index": 3,
+      "slide_page": 43,
+      "narration": "게임이나 추첨 같은 데 유용하죠.",
+      "audio": "scene-03.mp3",
+      "duration": 3.192
+    },
+    {
+      "index": 4,
+      "slide_page": 43,
+      "narration": "다음으로 math 모듈은 원주율 파이나 자연상수 같은 값, 그리고 절댓값, 올림, 내림, 로그, 삼각함수 같은 다양한 수학 기능을 담고 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 11.784
+    },
+    {
+      "index": 5,
+      "slide_page": 43,
+      "narration": "필요할 때 불러와서 쓰면 됩니다.",
+      "audio": "scene-05.mp3",
+      "duration": 3.24
+    }
+  ],
+  "total_duration": 29.832
+}

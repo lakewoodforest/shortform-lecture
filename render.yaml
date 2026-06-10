@@ -1,0 +1,11 @@
+# Render 블루프린트 — 한 번에 배포 (Docker, 무료 플랜)
+# Render 대시보드에서 New > Blueprint 로 이 저장소를 연결하면 자동 적용됨.
+services:
+  - type: web
+    name: shortform-lecture
+    runtime: docker
+    plan: free
+    envVars:
+      - key: VIEWER_ONLY
+        value: "1"
+    healthCheckPath: /

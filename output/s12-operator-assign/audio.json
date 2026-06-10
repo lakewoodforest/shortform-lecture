@@ -1,0 +1,43 @@
+{
+  "short_id": "s12-operator-assign",
+  "title": "할당 연산자 = 다시 보기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 27,
+      "narration": "앞에서 봤던 등호 기호, 할당 연산자를 다시 정리해볼게요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.376
+    },
+    {
+      "index": 2,
+      "slide_page": 27,
+      "narration": "이 기호는 같다는 뜻이 아니라, 오른쪽 값을 왼쪽 변수에 저장하는 연산이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.312
+    },
+    {
+      "index": 3,
+      "slide_page": 27,
+      "narration": "그래서 등호의 왼쪽에는 반드시 값을 담을 수 있는 변수가 와야 해요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.616
+    },
+    {
+      "index": 4,
+      "slide_page": 27,
+      "narration": "오른쪽에는 숫자나 변수, 또는 계산식이 올 수 있죠.",
+      "audio": "scene-04.mp3",
+      "duration": 4.968
+    },
+    {
+      "index": 5,
+      "slide_page": 27,
+      "narration": "만약 왼쪽이 변수가 아니면 오류가 나니 주의하세요.",
+      "audio": "scene-05.mp3",
+      "duration": 4.56
+    }
+  ],
+  "total_duration": 26.832
+}

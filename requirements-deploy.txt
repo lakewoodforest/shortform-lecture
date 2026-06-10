@@ -1,0 +1,6 @@
+# 뷰어 전용 배포(Render)용 최소 의존성.
+# 영상 생성(edge-tts/moviepy/faster-whisper)은 배포본에서 비활성(VIEWER_ONLY=1)이라 제외.
+fastapi
+uvicorn[standard]
+python-multipart
+pymupdf

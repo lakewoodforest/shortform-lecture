@@ -1,0 +1,29 @@
+{
+  "short_id": "m04-ifelse",
+  "title": "if-else 문",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 8,
+      "narration": "참일 때와 거짓일 때 각각 다른 일을 시키고 싶다면 if-else를 써요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.048
+    },
+    {
+      "index": 2,
+      "slide_page": 8,
+      "narration": "조건이 참이면 if 쪽 코드를, 거짓이면 else 쪽 코드를 실행하죠.",
+      "audio": "scene-02.mp3",
+      "duration": 5.832
+    },
+    {
+      "index": 3,
+      "slide_page": 8,
+      "narration": "참고로 조건 뒤에 붙는 콜론은 아래에 딸린 코드가 있다는 신호예요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.52
+    }
+  ],
+  "total_duration": 17.4
+}

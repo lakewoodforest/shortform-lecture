@@ -1,0 +1,128 @@
+{
+  "short_id": "s02-interactive-mode",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 7.704,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.16,
+          "text": "대화식 모드는 파이썬을 실행하면 나오는"
+        },
+        {
+          "start": 2.16,
+          "end": 4.46,
+          "text": "화살표 세 개 프롬프트에 명령을"
+        },
+        {
+          "start": 4.46,
+          "end": 6.02,
+          "text": "바로 입력하는 방식이에"
+        },
+        {
+          "start": 6.02,
+          "end": 6.62,
+          "text": "요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 7.728,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.08,
+          "text": "예를 들어 print 괄호 안에 Hello"
+        },
+        {
+          "start": 2.08,
+          "end": 3.9,
+          "text": "Python을 적고 엔터를 치면,"
+        },
+        {
+          "start": 4.3,
+          "end": 6.0,
+          "text": "바로 아래에 그 글자가 그대로 출력돼"
+        },
+        {
+          "start": 6.0,
+          "end": 6.78,
+          "text": "요."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 5.904,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.16,
+          "text": "여기서 print는 괄호 안의 값을"
+        },
+        {
+          "start": 2.16,
+          "end": 4.26,
+          "text": "화면에 보여주는 파이썬의 기본 기"
+        },
+        {
+          "start": 4.26,
+          "end": 4.82,
+          "text": "능이에요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 5.976,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.64,
+          "text": "숫자 계산도 가능해서, 5 더하기"
+        },
+        {
+          "start": 2.64,
+          "end": 4.5,
+          "text": "6을 입력하면 11이 바로 나"
+        },
+        {
+          "start": 4.5,
+          "end": 5.02,
+          "text": "오죠."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slide_page": 0,
+      "duration": 6.072,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.02,
+          "text": "이렇게 한 줄 쓰고 결과를 바로 확인할"
+        },
+        {
+          "start": 2.02,
+          "end": 3.9,
+          "text": "수 있는 게 대화식 모드의"
+        },
+        {
+          "start": 3.9,
+          "end": 4.98,
+          "text": "장점이에요."
+        }
+      ]
+    }
+  ]
+}

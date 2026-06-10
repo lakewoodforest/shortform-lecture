@@ -1,0 +1,36 @@
+{
+  "short_id": "s06-variable-change-multi",
+  "title": "값은 바뀌고, 변수는 여러 개",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 12,
+      "narration": "변수의 값은 언제든 새로 바꿀 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.008
+    },
+    {
+      "index": 2,
+      "slide_page": 12,
+      "narration": "예를 들어 몸무게가 78.2였다가 다이어트로 76.9가 됐다면, 변수에 76.9를 다시 저장하면 끝이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 9.408
+    },
+    {
+      "index": 3,
+      "slide_page": 12,
+      "narration": "변수는 필요한 만큼 얼마든지 만들 수도 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.272
+    },
+    {
+      "index": 4,
+      "slide_page": 12,
+      "narration": "또 x 콤마 y 등호 100 콤마 200 처럼 쓰면, 한 줄에서 두 변수에 값을 동시에 넣을 수 있는데, 이걸 동시 할당이라고 해요.",
+      "audio": "scene-04.mp3",
+      "duration": 9.576
+    }
+  ],
+  "total_duration": 27.264
+}

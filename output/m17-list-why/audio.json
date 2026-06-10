@@ -1,0 +1,36 @@
+{
+  "short_id": "m17-list-why",
+  "title": "리스트가 필요한 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 49,
+      "narration": "학생 100명의 점수를 변수 100개로 만들면 끔찍하겠죠.",
+      "audio": "scene-01.mp3",
+      "duration": 4.776
+    },
+    {
+      "index": 2,
+      "slide_page": 49,
+      "narration": "이럴 때 여러 데이터를 하나로 묶는 리스트를 써요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.176
+    },
+    {
+      "index": 3,
+      "slide_page": 49,
+      "narration": "파이썬에서 리스트는 대괄호 안에 값들을 쉼표로 나열해서 만들어요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.496
+    },
+    {
+      "index": 4,
+      "slide_page": 49,
+      "narration": "데이터 한 묶음을 변수 하나로 다룰 수 있게 되죠.",
+      "audio": "scene-04.mp3",
+      "duration": 4.176
+    }
+  ],
+  "total_duration": 18.624
+}

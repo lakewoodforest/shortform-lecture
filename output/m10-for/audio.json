@@ -1,0 +1,29 @@
+{
+  "short_id": "m10-for",
+  "title": "for 루프 기본",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 27,
+      "narration": "for 루프는 정해진 횟수만큼 같은 동작을 반복해요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.44
+    },
+    {
+      "index": 2,
+      "slide_page": 27,
+      "narration": "대괄호 안에 값들을 적은 리스트를 만들고, for 변수 in 리스트 형태로 쓰면 값을 하나씩 꺼내며 반복하죠.",
+      "audio": "scene-02.mp3",
+      "duration": 8.256
+    },
+    {
+      "index": 3,
+      "slide_page": 27,
+      "narration": "반복할 코드는 반드시 들여쓰기로 묶어 줘야 해요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.416
+    }
+  ],
+  "total_duration": 17.112
+}

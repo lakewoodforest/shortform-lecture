@@ -1,0 +1,36 @@
+{
+  "short_id": "m13-range-args",
+  "title": "range의 시작·끝·간격",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 34,
+      "narration": "range는 숫자를 세 개까지 받을 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.84
+    },
+    {
+      "index": 2,
+      "slide_page": 34,
+      "narration": "순서대로 시작값, 끝값, 그리고 간격이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.464
+    },
+    {
+      "index": 3,
+      "slide_page": 34,
+      "narration": "예를 들어 range 괄호 0, 5, 1은 0부터 4까지를 만들어요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.664
+    },
+    {
+      "index": 4,
+      "slide_page": 34,
+      "narration": "끝값은 포함되지 않는다는 점만 기억하면 돼요.",
+      "audio": "scene-04.mp3",
+      "duration": 3.96
+    }
+  ],
+  "total_duration": 17.928
+}

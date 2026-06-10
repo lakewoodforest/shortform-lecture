@@ -1,0 +1,43 @@
+{
+  "short_id": "s18-operator-compare-logic",
+  "title": "비교 연산자와 논리 연산자",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 37,
+      "narration": "비교 연산자는 두 값을 크다, 작다, 같다처럼 비교하는 연산자예요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.192
+    },
+    {
+      "index": 2,
+      "slide_page": 37,
+      "narration": "비교한 결과는 참 또는 거짓으로 나와요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.816
+    },
+    {
+      "index": 3,
+      "slide_page": 37,
+      "narration": "논리 연산자는 이런 참과 거짓을 조합할 때 써요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.608
+    },
+    {
+      "index": 4,
+      "slide_page": 37,
+      "narration": "그리고를 뜻하는 and, 또는를 뜻하는 or, 부정을 뜻하는 not 이 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.024
+    },
+    {
+      "index": 5,
+      "slide_page": 37,
+      "narration": "이 연산자들은 나중에 조건을 판단할 때 핵심적으로 쓰이니 익혀두면 좋아요.",
+      "audio": "scene-05.mp3",
+      "duration": 6.168
+    }
+  ],
+  "total_duration": 26.808
+}

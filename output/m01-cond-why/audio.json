@@ -1,0 +1,29 @@
+{
+  "short_id": "m01-cond-why",
+  "title": "조건문은 왜 필요할까?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 4,
+      "narration": "프로그램은 상황에 따라 다른 일을 해야 할 때가 많아요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.344
+    },
+    {
+      "index": 2,
+      "slide_page": 4,
+      "narration": "예를 들어 시험 점수가 60점 이상이면 합격, 아니면 불합격을 출력해야 하죠.",
+      "audio": "scene-02.mp3",
+      "duration": 6.552
+    },
+    {
+      "index": 3,
+      "slide_page": 4,
+      "narration": "이렇게 어떤 조건이 참인지 거짓인지 따져서 흐름을 바꾸는 게 바로 조건문이에요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.336
+    }
+  ],
+  "total_duration": 17.232
+}

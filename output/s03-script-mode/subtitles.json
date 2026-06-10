@@ -1,0 +1,123 @@
+{
+  "short_id": "s03-script-mode",
+  "model": "small",
+  "language": "ko",
+  "text_source": "script",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "duration": 7.248,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.3,
+          "text": "대화식 모드는 편하지만, 잘못"
+        },
+        {
+          "start": 2.3,
+          "end": 4.36,
+          "text": "입력하면 고치기 힘들고 같은 일을"
+        },
+        {
+          "start": 4.36,
+          "end": 5.56,
+          "text": "다시 시키기도 번거로"
+        },
+        {
+          "start": 5.56,
+          "end": 6.26,
+          "text": "워요."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "duration": 5.328,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.02,
+          "text": "그래서 명령어들을 모아 하나의 파일로"
+        },
+        {
+          "start": 2.02,
+          "end": 3.8,
+          "text": "저장하는 게 스크립트 모드예요"
+        },
+        {
+          "start": 3.8,
+          "end": 4.26,
+          "text": "."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slide_page": 0,
+      "duration": 4.8,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.24,
+          "text": "이렇게 저장한 코드 파일은 이름 뒤에"
+        },
+        {
+          "start": 2.24,
+          "end": 3.78,
+          "text": "점 파이가 붙어요."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slide_page": 0,
+      "duration": 8.52,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.44,
+          "text": "파이썬을 설치하면 함께 제공되는 IDLE이라는"
+        },
+        {
+          "start": 2.44,
+          "end": 4.5,
+          "text": "도구에서 코드를 작성하고, Run"
+        },
+        {
+          "start": 4.5,
+          "end": 6.42,
+          "text": "메뉴를 눌러 실행할 수 있어"
+        },
+        {
+          "start": 6.42,
+          "end": 7.46,
+          "text": "요."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slide_page": 0,
+      "duration": 6.96,
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.44,
+          "text": "간단한 연습은 대화식, 제대로 된"
+        },
+        {
+          "start": 2.44,
+          "end": 4.2,
+          "text": "프로그램은 스크립트, 이렇게"
+        },
+        {
+          "start": 4.6,
+          "end": 5.76,
+          "text": "나눠 쓰면 됩니다."
+        }
+      ]
+    }
+  ]
+}
