@@ -1,0 +1,43 @@
+{
+  "short_id": "a2-13-normal",
+  "title": "정규분포로 키 1만 명 만들기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 52,
+      "narration": "사람 키 같은 데이터는 평균 근처가 가장 많고 멀어질수록 드물어요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.712
+    },
+    {
+      "index": 2,
+      "slide_page": 52,
+      "narration": "이런 분포가 정규분포예요.",
+      "audio": "scene-02.mp3",
+      "duration": 2.856
+    },
+    {
+      "index": 3,
+      "slide_page": 52,
+      "narration": "노멀 함수에 평균 175, 표준편차 10, 개수 1만을 넘기면 실제 같은 키 데이터가 만들어져요.",
+      "audio": "scene-03.mp3",
+      "duration": 8.472
+    },
+    {
+      "index": 4,
+      "slide_page": 52,
+      "narration": "표준편차가 클수록 데이터가 넓게 흩어지고요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.248
+    },
+    {
+      "index": 5,
+      "slide_page": 52,
+      "narration": "만든 데이터로 평균과 중앙값도 바로 계산해 볼 수 있습니다.",
+      "audio": "scene-05.mp3",
+      "duration": 5.328
+    }
+  ],
+  "total_duration": 26.616
+}

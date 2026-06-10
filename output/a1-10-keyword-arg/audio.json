@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-10-keyword-arg",
+  "title": "키워드 인자로 헷갈림 끝",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 27,
+      "narration": "파워 함수에 2와 10을 넘길 때, 순서가 바뀌면 결과가 완전히 달라져요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.336
+    },
+    {
+      "index": 2,
+      "slide_page": 27,
+      "narration": "이럴 때는 키워드 인자를 쓰세요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.24
+    },
+    {
+      "index": 3,
+      "slide_page": 27,
+      "narration": "base는 2, exponent는 10처럼 이름을 명시하면 순서가 헷갈릴 일이 없어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.336
+    },
+    {
+      "index": 4,
+      "slide_page": 27,
+      "narration": "한 가지 규칙만 기억하세요.",
+      "audio": "scene-04.mp3",
+      "duration": 2.856
+    },
+    {
+      "index": 5,
+      "slide_page": 27,
+      "narration": "위치 인자가 항상 먼저, 키워드 인자는 그 뒤에 와야 합니다.",
+      "audio": "scene-05.mp3",
+      "duration": 5.328
+    }
+  ],
+  "total_duration": 24.096
+}

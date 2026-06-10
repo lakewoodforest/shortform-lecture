@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-09-default-arg",
+  "title": "디폴트 인자, 기본값의 힘",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 25,
+      "narration": "햄버거를 주문할 때 보통은 기본 구성 그대로 시키죠.",
+      "audio": "scene-01.mp3",
+      "duration": 4.848
+    },
+    {
+      "index": 2,
+      "slide_page": 25,
+      "narration": "함수도 마찬가지예요.",
+      "audio": "scene-02.mp3",
+      "duration": 2.496
+    },
+    {
+      "index": 3,
+      "slide_page": 25,
+      "narration": "매개변수에 기본값을 정해 두면, 인자를 생략해도 그 값이 자동으로 들어가요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.336
+    },
+    {
+      "index": 4,
+      "slide_page": 25,
+      "narration": "이게 디폴트 인자예요.",
+      "audio": "scene-04.mp3",
+      "duration": 2.616
+    },
+    {
+      "index": 5,
+      "slide_page": 25,
+      "narration": "피클과 양파에 트루라는 기본값을 줘 두면, 특별한 요청이 없을 때 알아서 채워지는 거죠.",
+      "audio": "scene-05.mp3",
+      "duration": 7.128
+    }
+  ],
+  "total_duration": 23.424
+}

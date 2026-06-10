@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-07-scope",
+  "title": "지역 변수와 전역 변수",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 20,
+      "narration": "변수에도 사는 동네가 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.12
+    },
+    {
+      "index": 2,
+      "slide_page": 20,
+      "narration": "함수 밖에서 만든 변수는 전역 변수, 함수 안에서 만든 변수는 지역 변수예요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.72
+    },
+    {
+      "index": 3,
+      "slide_page": 20,
+      "narration": "함수 안에서 전역 변수를 읽는 건 가능해요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.936
+    },
+    {
+      "index": 4,
+      "slide_page": 20,
+      "narration": "그런데 함수 안에서 같은 이름에 값을 할당하면 새로운 지역 변수가 만들어져요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.288
+    },
+    {
+      "index": 5,
+      "slide_page": 20,
+      "narration": "밖의 변수는 그대로라는 게 함정 포인트입니다.",
+      "audio": "scene-05.mp3",
+      "duration": 4.2
+    }
+  ],
+  "total_duration": 24.264
+}

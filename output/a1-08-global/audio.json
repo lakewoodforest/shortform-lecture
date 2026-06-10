@@ -1,0 +1,36 @@
+{
+  "short_id": "a1-08-global",
+  "title": "global 키워드",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 22,
+      "narration": "함수 안에서 전역 변수의 값을 진짜로 바꾸고 싶다면 글로벌 키워드를 쓰세요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.552
+    },
+    {
+      "index": 2,
+      "slide_page": 22,
+      "narration": "global counter라고 선언하면 그때부터는 지역 변수가 아니라 전역 변수를 사용하게 돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.888
+    },
+    {
+      "index": 3,
+      "slide_page": 22,
+      "narration": "함수 안에서 바꾼 값이 밖에서도 유지되죠.",
+      "audio": "scene-03.mp3",
+      "duration": 3.912
+    },
+    {
+      "index": 4,
+      "slide_page": 22,
+      "narration": "다만 전역 변수를 남발하면 코드가 길어질 때 에러의 원인이 되니, 꼭 필요할 때만 쓰는 게 좋아요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.656
+    }
+  ],
+  "total_duration": 25.008
+}

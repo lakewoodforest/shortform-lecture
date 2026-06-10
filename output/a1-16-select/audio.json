@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-16-select",
+  "title": "원하는 열과 행만 골라 보기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 55,
+      "narration": "데이터프레임에서 특정 열만 보고 싶다면 대괄호 안에 열 이름을 넣으면 돼요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.928
+    },
+    {
+      "index": 2,
+      "slide_page": 55,
+      "narration": "두 개 이상의 열은 이름들을 리스트로 묶어서 전달하고요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.512
+    },
+    {
+      "index": 3,
+      "slide_page": 55,
+      "narration": "행은 어떨까요.",
+      "audio": "scene-03.mp3",
+      "duration": 2.112
+    },
+    {
+      "index": 4,
+      "slide_page": 55,
+      "narration": "처음 다섯 행은 헤드, 마지막 다섯 행은 테일 함수로 볼 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.424
+    },
+    {
+      "index": 5,
+      "slide_page": 55,
+      "narration": "특정 레이블의 행 하나만 콕 집고 싶다면 loc 속성을 쓰면 됩니다.",
+      "audio": "scene-05.mp3",
+      "duration": 5.736
+    }
+  ],
+  "total_duration": 23.712
+}

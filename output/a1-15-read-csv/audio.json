@@ -1,0 +1,36 @@
+{
+  "short_id": "a1-15-read-csv",
+  "title": "read_csv 한 줄이면 끝",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 50,
+      "narration": "판다스로 CSV 파일을 읽는 건 정말 간단해요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.416
+    },
+    {
+      "index": 2,
+      "slide_page": 50,
+      "narration": "read_csv 함수에 파일 이름만 넘기면 데이터프레임이 만들어져요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.52
+    },
+    {
+      "index": 3,
+      "slide_page": 50,
+      "narration": "첫 행은 자동으로 열 이름, 컬럼스가 되고, 행마다 인덱스 번호도 알아서 붙어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.768
+    },
+    {
+      "index": 4,
+      "slide_page": 50,
+      "narration": "엑셀에서 파일 열듯이, 파이썬에서는 read_csv 한 줄이면 됩니다.",
+      "audio": "scene-04.mp3",
+      "duration": 5.736
+    }
+  ],
+  "total_duration": 22.44
+}

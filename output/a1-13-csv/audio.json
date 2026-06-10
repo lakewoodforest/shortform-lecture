@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-13-csv",
+  "title": "CSV 파일이 뭐길래",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 40,
+      "narration": "CSV는 쉼표로 구분한 변수라는 뜻이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.368
+    },
+    {
+      "index": 2,
+      "slide_page": 40,
+      "narration": "표 형식 데이터를 저장하고 옮기는 데 쓰는 텍스트 파일이죠.",
+      "audio": "scene-02.mp3",
+      "duration": 4.92
+    },
+    {
+      "index": 3,
+      "slide_page": 40,
+      "narration": "열은 필드, 행은 레코드를 나타내요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.888
+    },
+    {
+      "index": 4,
+      "slide_page": 40,
+      "narration": "만약 데이터 안에 쉼표가 들어가야 한다면 따옴표로 묶어 주면 돼요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.184
+    },
+    {
+      "index": 5,
+      "slide_page": 40,
+      "narration": "기상청 데이터 같은 공공 데이터도 대부분 CSV로 제공됩니다.",
+      "audio": "scene-05.mp3",
+      "duration": 5.544
+    }
+  ],
+  "total_duration": 23.904
+}

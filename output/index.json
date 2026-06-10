@@ -1,8 +1,348 @@
 {
   "lecture_id": "lecture",
   "lecture_title": "파이썬 기초",
-  "short_count": 54,
+  "short_count": 88,
   "shorts": [
+    {
+      "id": "a2-12-random",
+      "title": "난수로 데이터 만들기",
+      "duration": 25.848,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 48,
+      "video": "a2-12-random/video.mp4"
+    },
+    {
+      "id": "a2-11-reshape",
+      "title": "reshape와 flatten",
+      "duration": 25.752,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 44,
+      "video": "a2-11-reshape/video.mp4"
+    },
+    {
+      "id": "a2-14-corrcoef",
+      "title": "상관관계, corrcoef로 확인",
+      "duration": 24.84,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 55,
+      "video": "a2-14-corrcoef/video.mp4"
+    },
+    {
+      "id": "a2-13-normal",
+      "title": "정규분포로 키 1만 명 만들기",
+      "duration": 26.616,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 52,
+      "video": "a2-13-normal/video.mp4"
+    },
+    {
+      "id": "a2-10-arange",
+      "title": "arange와 linspace",
+      "duration": 28.2,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 40,
+      "video": "a2-10-arange/video.mp4"
+    },
+    {
+      "id": "a2-09-2d-logical",
+      "title": "2차원 배열에서 조건 걸기",
+      "duration": 24.312,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 35,
+      "video": "a2-09-2d-logical/video.mp4"
+    },
+    {
+      "id": "a2-08-2d-idx",
+      "title": "2차원 배열, 인덱스는 두 개",
+      "duration": 24.864,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 28,
+      "video": "a2-08-2d-idx/video.mp4"
+    },
+    {
+      "id": "a2-07-logical-idx",
+      "title": "조건으로 골라내는 논리 인덱싱",
+      "duration": 25.056,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 24,
+      "video": "a2-07-logical-idx/video.mp4"
+    },
+    {
+      "id": "a2-06-indexing",
+      "title": "배열 인덱싱과 슬라이싱",
+      "duration": 24.336,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 22,
+      "video": "a2-06-indexing/video.mp4"
+    },
+    {
+      "id": "a2-05-vectorize",
+      "title": "벡터화 연산이 빠른 이유",
+      "duration": 27.144,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 19,
+      "video": "a2-05-vectorize/video.mp4"
+    },
+    {
+      "id": "a2-04-array-op",
+      "title": "전 직원 월급 인상, 한 줄로",
+      "duration": 25.32,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 15,
+      "video": "a2-04-array-op/video.mp4"
+    },
+    {
+      "id": "a2-03-import-np",
+      "title": "import numpy as np",
+      "duration": 24.432,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 10,
+      "video": "a2-03-import-np/video.mp4"
+    },
+    {
+      "id": "a2-02-list-vs-np",
+      "title": "리스트 더하기의 배신",
+      "duration": 25.992,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 8,
+      "video": "a2-02-list-vs-np/video.mp4"
+    },
+    {
+      "id": "a2-01-numpy-why",
+      "title": "넘파이, 왜 쓰는 걸까?",
+      "duration": 22.488,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 4,
+      "video": "a2-01-numpy-why/video.mp4"
+    },
+    {
+      "id": "a1-19-sort-concat",
+      "title": "정렬과 concat",
+      "duration": 22.824,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 76,
+      "video": "a1-19-sort-concat/video.mp4"
+    },
+    {
+      "id": "a1-18-filter-na",
+      "title": "결손값 찾고 채우기",
+      "duration": 24.912,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 70,
+      "video": "a1-18-filter-na/video.mp4"
+    },
+    {
+      "id": "a1-17-describe",
+      "title": "describe로 한눈에 분석",
+      "duration": 24.888,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 62,
+      "video": "a1-17-describe/video.mp4"
+    },
+    {
+      "id": "a1-16-select",
+      "title": "원하는 열과 행만 골라 보기",
+      "duration": 23.712,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 55,
+      "video": "a1-16-select/video.mp4"
+    },
+    {
+      "id": "a1-15-read-csv",
+      "title": "read_csv 한 줄이면 끝",
+      "duration": 22.44,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 50,
+      "video": "a1-15-read-csv/video.mp4"
+    },
+    {
+      "id": "a1-14-series-df",
+      "title": "시리즈와 데이터프레임",
+      "duration": 23.928,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 47,
+      "video": "a1-14-series-df/video.mp4"
+    },
+    {
+      "id": "a1-13-csv",
+      "title": "CSV 파일이 뭐길래",
+      "duration": 23.904,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 40,
+      "video": "a1-13-csv/video.mp4"
+    },
+    {
+      "id": "a1-12-pandas-why",
+      "title": "판다스, 엑셀보다 빠르게",
+      "duration": 27.576,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 36,
+      "video": "a1-12-pandas-why/video.mp4"
+    },
+    {
+      "id": "a1-11-recursion",
+      "title": "재귀함수, 자신을 부르는 함수",
+      "duration": 24.888,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 30,
+      "video": "a1-11-recursion/video.mp4"
+    },
+    {
+      "id": "a1-10-keyword-arg",
+      "title": "키워드 인자로 헷갈림 끝",
+      "duration": 24.096,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 27,
+      "video": "a1-10-keyword-arg/video.mp4"
+    },
+    {
+      "id": "a1-09-default-arg",
+      "title": "디폴트 인자, 기본값의 힘",
+      "duration": 23.424,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 25,
+      "video": "a1-09-default-arg/video.mp4"
+    },
+    {
+      "id": "a1-08-global",
+      "title": "global 키워드",
+      "duration": 25.008,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 22,
+      "video": "a1-08-global/video.mp4"
+    },
+    {
+      "id": "a1-07-scope",
+      "title": "지역 변수와 전역 변수",
+      "duration": 24.264,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 20,
+      "video": "a1-07-scope/video.mp4"
+    },
+    {
+      "id": "a1-06-multi-return",
+      "title": "여러 값을 한 번에 반환하기",
+      "duration": 21.576,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 17,
+      "video": "a1-06-multi-return/video.mp4"
+    },
+    {
+      "id": "a1-05-return",
+      "title": "return, 함수가 돌려주는 값",
+      "duration": 22.824,
+      "scene_count": 4,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 14,
+      "video": "a1-05-return/video.mp4"
+    },
+    {
+      "id": "a1-04-arg-param",
+      "title": "인자와 매개변수, 뭐가 다르지?",
+      "duration": 23.016,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 12,
+      "video": "a1-04-arg-param/video.mp4"
+    },
+    {
+      "id": "a1-03-func-call",
+      "title": "함수 호출, 이름만 부르면 끝",
+      "duration": 21.408,
+      "scene_count": 6,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 9,
+      "video": "a1-03-func-call/video.mp4"
+    },
+    {
+      "id": "a1-02-func-def",
+      "title": "def로 함수 만들기",
+      "duration": 23.04,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 6,
+      "video": "a1-02-func-def/video.mp4"
+    },
+    {
+      "id": "a1-01-func-why",
+      "title": "함수, 왜 쓰는 걸까?",
+      "duration": 24.576,
+      "scene_count": 5,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": 4,
+      "video": "a1-01-func-why/video.mp4"
+    },
+    {
+      "id": "web-05-short",
+      "title": "테스트 숏폼",
+      "duration": 6.144,
+      "scene_count": 2,
+      "voice": "ko-KR-SunHiNeural",
+      "bg_style": "Deep Navy",
+      "slide_page": null,
+      "video": "web-05-short/video.mp4"
+    },
     {
       "id": "web-04-short",
       "title": "안녕인사.",

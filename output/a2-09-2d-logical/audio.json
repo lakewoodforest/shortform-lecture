@@ -1,0 +1,43 @@
+{
+  "short_id": "a2-09-2d-logical",
+  "title": "2차원 배열에서 조건 걸기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 35,
+      "narration": "논리 인덱싱은 2차원 배열에서도 통해요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.768
+    },
+    {
+      "index": 2,
+      "slide_page": 35,
+      "narration": "배열이 5보다 큰지 비교하면 같은 모양의 트루 폴스 배열이 나오고, 그걸로 원하는 값만 추릴 수 있어요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.896
+    },
+    {
+      "index": 3,
+      "slide_page": 35,
+      "narration": "퍼센트 2가 0이라는 조건을 주면 짝수만 골라낼 수도 있죠.",
+      "audio": "scene-03.mp3",
+      "duration": 5.088
+    },
+    {
+      "index": 4,
+      "slide_page": 35,
+      "narration": "행렬에서 특정 열만 슬라이싱한 다음 조건을 거는 것도 가능해요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.112
+    },
+    {
+      "index": 5,
+      "slide_page": 35,
+      "narration": "조합은 자유입니다.",
+      "audio": "scene-05.mp3",
+      "duration": 2.448
+    }
+  ],
+  "total_duration": 24.312
+}

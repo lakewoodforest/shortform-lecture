@@ -1,0 +1,50 @@
+{
+  "short_id": "a2-05-vectorize",
+  "title": "벡터화 연산이 빠른 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 19,
+      "narration": "넘파이는 왜 빠를까요.",
+      "audio": "scene-01.mp3",
+      "duration": 2.736
+    },
+    {
+      "index": 2,
+      "slide_page": 19,
+      "narration": "비밀은 자료형에 있어요.",
+      "audio": "scene-02.mp3",
+      "duration": 2.664
+    },
+    {
+      "index": 3,
+      "slide_page": 19,
+      "narration": "넘파이 배열은 모든 항목이 같은 자료형이라 저장 공간이 일정해요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.4
+    },
+    {
+      "index": 4,
+      "slide_page": 19,
+      "narration": "그래서 몇 번째 항목이든 위치만 알면 바로 접근할 수 있죠.",
+      "audio": "scene-04.mp3",
+      "duration": 5.208
+    },
+    {
+      "index": 5,
+      "slide_page": 19,
+      "narration": "실제로 합 연산을 비교하면 반복문은 0.023초, 넘파이의 np.sum은 0.00065초.",
+      "audio": "scene-05.mp3",
+      "duration": 8.496
+    },
+    {
+      "index": 6,
+      "slide_page": 19,
+      "narration": "수십 배 차이가 납니다.",
+      "audio": "scene-06.mp3",
+      "duration": 2.64
+    }
+  ],
+  "total_duration": 27.144
+}

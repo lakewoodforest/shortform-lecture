@@ -1,0 +1,36 @@
+{
+  "short_id": "a1-06-multi-return",
+  "title": "여러 값을 한 번에 반환하기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 17,
+      "narration": "파이썬 함수의 큰 특징 하나, 값을 여러 개 반환할 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.328
+    },
+    {
+      "index": 2,
+      "slide_page": 17,
+      "narration": "리턴 뒤에 쉼표로 값을 나란히 적으면 돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.888
+    },
+    {
+      "index": 3,
+      "slide_page": 17,
+      "narration": "두 수를 받아서 사칙연산 결과 네 개를 한 번에 돌려주는 함수도 만들 수 있죠.",
+      "audio": "scene-03.mp3",
+      "duration": 6.144
+    },
+    {
+      "index": 4,
+      "slide_page": 17,
+      "narration": "단, 매개변수 개수와 인자 개수는 정확히 맞춰야 한다는 점은 잊지 마세요.",
+      "audio": "scene-04.mp3",
+      "duration": 6.216
+    }
+  ],
+  "total_duration": 21.576
+}

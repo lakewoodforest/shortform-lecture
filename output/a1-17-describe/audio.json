@@ -1,0 +1,36 @@
+{
+  "short_id": "a1-17-describe",
+  "title": "describe로 한눈에 분석",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 62,
+      "narration": "데이터를 받으면 일단 전체 특징부터 파악해야겠죠.",
+      "audio": "scene-01.mp3",
+      "duration": 4.872
+    },
+    {
+      "index": 2,
+      "slide_page": 62,
+      "narration": "디스크라이브 함수 하나면 평균, 표준편차, 최솟값, 최댓값을 한 번에 요약해 줘요.",
+      "audio": "scene-02.mp3",
+      "duration": 7.44
+    },
+    {
+      "index": 3,
+      "slide_page": 62,
+      "narration": "특정 열만 골라서 민, 맥스, 민, 섬 같은 함수를 따로 적용할 수도 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 7.08
+    },
+    {
+      "index": 4,
+      "slide_page": 62,
+      "narration": "본격적인 분석 전에 디스크라이브부터, 습관으로 만들어 두세요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.496
+    }
+  ],
+  "total_duration": 24.888
+}

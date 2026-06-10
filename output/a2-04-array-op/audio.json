@@ -1,0 +1,50 @@
+{
+  "short_id": "a2-04-array-op",
+  "title": "전 직원 월급 인상, 한 줄로",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 15,
+      "narration": "회사가 전 직원 월급을 백만 원씩 올려 주기로 했어요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.536
+    },
+    {
+      "index": 2,
+      "slide_page": 15,
+      "narration": "직원이 천 명이라면 어떻게 할까요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.336
+    },
+    {
+      "index": 3,
+      "slide_page": 15,
+      "narration": "넘파이라면 배열에 100을 더하는 한 줄이면 돼요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.128
+    },
+    {
+      "index": 4,
+      "slide_page": 15,
+      "narration": "모든 요소에 100이 한 번에 더해지거든요.",
+      "audio": "scene-04.mp3",
+      "duration": 3.576
+    },
+    {
+      "index": 5,
+      "slide_page": 15,
+      "narration": "2배로 올리고 싶다면 2를 곱하면 되고요.",
+      "audio": "scene-05.mp3",
+      "duration": 3.792
+    },
+    {
+      "index": 6,
+      "slide_page": 15,
+      "narration": "반복문 없이 배열 전체에 연산이 적용되는 것, 이게 넘파이의 힘이에요.",
+      "audio": "scene-06.mp3",
+      "duration": 5.952
+    }
+  ],
+  "total_duration": 25.32
+}

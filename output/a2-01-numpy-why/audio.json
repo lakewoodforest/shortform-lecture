@@ -1,0 +1,36 @@
+{
+  "short_id": "a2-01-numpy-why",
+  "title": "넘파이, 왜 쓰는 걸까?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 4,
+      "narration": "데이터 분석이나 기계학습을 하려면 넘파이를 피해 갈 수 없어요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.04
+    },
+    {
+      "index": 2,
+      "slide_page": 4,
+      "narration": "넘파이는 대용량 배열과 행렬 연산을 아주 빠르게 처리하는 라이브러리예요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.688
+    },
+    {
+      "index": 3,
+      "slide_page": 4,
+      "narration": "판다스도, 사이킷런도, 텐서플로도 모두 넘파이 위에 만들어졌거든요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.24
+    },
+    {
+      "index": 4,
+      "slide_page": 4,
+      "narration": "기초 체력 같은 존재라, 확실히 이해해 두면 두고두고 든든합니다.",
+      "audio": "scene-04.mp3",
+      "duration": 5.52
+    }
+  ],
+  "total_duration": 22.488
+}

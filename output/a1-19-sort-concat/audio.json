@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-19-sort-concat",
+  "title": "정렬과 concat",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 76,
+      "narration": "데이터 분석에서 정렬은 필수죠.",
+      "audio": "scene-01.mp3",
+      "duration": 3.288
+    },
+    {
+      "index": 2,
+      "slide_page": 76,
+      "narration": "판다스에서는 sort_values 함수에 열 이름만 넘기면 끝이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.16
+    },
+    {
+      "index": 3,
+      "slide_page": 76,
+      "narration": "그리고 데이터가 여러 테이블로 나뉘어 있을 때는 콘캣 함수로 데이터프레임을 합칠 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.72
+    },
+    {
+      "index": 4,
+      "slide_page": 76,
+      "narration": "정렬하고, 합치고.",
+      "audio": "scene-04.mp3",
+      "duration": 2.856
+    },
+    {
+      "index": 5,
+      "slide_page": 76,
+      "narration": "이 두 가지만 익혀도 데이터 정리가 한결 수월해집니다.",
+      "audio": "scene-05.mp3",
+      "duration": 4.8
+    }
+  ],
+  "total_duration": 22.824
+}

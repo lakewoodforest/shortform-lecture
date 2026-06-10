@@ -1,0 +1,50 @@
+{
+  "short_id": "a1-12-pandas-why",
+  "title": "판다스, 엑셀보다 빠르게",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 36,
+      "narration": "표 데이터 하면 엑셀이 떠오르죠.",
+      "audio": "scene-01.mp3",
+      "duration": 3.192
+    },
+    {
+      "index": 2,
+      "slide_page": 36,
+      "narration": "파이썬에는 판다스가 있어요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.0
+    },
+    {
+      "index": 3,
+      "slide_page": 36,
+      "narration": "판다스는 데이터 분석 라이브러리로, 리스트나 딕셔너리, 넘파이 배열을 데이터프레임으로 바꿀 수 있어요.",
+      "audio": "scene-03.mp3",
+      "duration": 8.064
+    },
+    {
+      "index": 4,
+      "slide_page": 36,
+      "narration": "CSV나 엑셀 파일도 바로 열 수 있고요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.272
+    },
+    {
+      "index": 5,
+      "slide_page": 36,
+      "narration": "평균은 mean, 상관관계는 corr, 개수는 count.",
+      "audio": "scene-05.mp3",
+      "duration": 5.424
+    },
+    {
+      "index": 6,
+      "slide_page": 36,
+      "narration": "데이터 분석의 기본기가 다 들어 있습니다.",
+      "audio": "scene-06.mp3",
+      "duration": 3.624
+    }
+  ],
+  "total_duration": 27.576
+}

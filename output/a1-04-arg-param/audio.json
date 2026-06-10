@@ -1,0 +1,50 @@
+{
+  "short_id": "a1-04-arg-param",
+  "title": "인자와 매개변수, 뭐가 다르지?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 12,
+      "narration": "함수 밖에서 안으로 값을 전달할 수 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.864
+    },
+    {
+      "index": 2,
+      "slide_page": 12,
+      "narration": "이때 함수에 넘겨주는 값을 인자라고 해요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.816
+    },
+    {
+      "index": 3,
+      "slide_page": 12,
+      "narration": "그리고 함수 안에서 그 값을 받는 변수가 매개변수예요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.656
+    },
+    {
+      "index": 4,
+      "slide_page": 12,
+      "narration": "헷갈리면 이렇게 기억하세요.",
+      "audio": "scene-04.mp3",
+      "duration": 2.976
+    },
+    {
+      "index": 5,
+      "slide_page": 12,
+      "narration": "넘기는 값은 인자, 받는 변수는 매개변수.",
+      "audio": "scene-05.mp3",
+      "duration": 4.488
+    },
+    {
+      "index": 6,
+      "slide_page": 12,
+      "narration": "시험에도 잘 나오는 구분이에요.",
+      "audio": "scene-06.mp3",
+      "duration": 3.216
+    }
+  ],
+  "total_duration": 23.016
+}

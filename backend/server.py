@@ -25,8 +25,9 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .extractor import build_payload
+from .quiz import COURSES, DIFFICULTIES, HF_MODEL_ID, generate_quiz
 
-app = FastAPI(title="강의 숏폼 스튜디오")
+app = FastAPI(title="한입 파이썬")
 
 ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "frontend"
@@ -54,6 +55,25 @@ def index():
     return HTMLResponse(html)
 
 
+def _group_table_for(filename: str):
+    """data/group-tables.json에 등록된 파일이면 그 표를 쓴다(하드코딩 우선).
+
+    등록 안 된 파일은 None을 돌려주고, 구분 표지 자동 감지로 처리된다.
+    고급 자료를 받으면 group-tables.json에 항목만 추가하면 된다.
+    """
+    path = ROOT / "data" / "group-tables.json"
+    if not path.exists():
+        return None
+    try:
+        tables = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    table = tables.get(filename)
+    if isinstance(table, str):          # 별칭(다른 파일명 가리킴) 지원
+        table = tables.get(table)
+    return table if isinstance(table, list) and table else None
+
+
 @app.post("/api/extract")
 async def extract(file: UploadFile = File(...)):
     if not file.filename.lower().endswith(".pdf"):
@@ -65,7 +85,8 @@ async def extract(file: UploadFile = File(...)):
         tmp_path = tmp.name
 
     try:
-        payload = build_payload(tmp_path)
+        table = _group_table_for(file.filename)
+        payload = build_payload(tmp_path, groups=table, auto=True)
         payload["filename"] = file.filename
         return JSONResponse(payload)
     finally:
@@ -87,8 +108,8 @@ def options():
     return {"voices": VOICES, "bg_styles": BG_STYLE_LIST, "viewer_only": VIEWER_ONLY}
 
 
-# 나중에 채워질 코스(폴더) — 로드맵 표시용
-UPCOMING_COURSES = ["파이썬 중급", "파이썬 심화", "머신러닝"]
+# 나중에 채워질 코스(폴더) — 로드맵 표시용 (영상이 생성되면 자동으로 실제 폴더가 됨)
+UPCOMING_COURSES = ["파이썬 고급 v1", "파이썬 고급 v2"]
 
 
 def _short_item(sh: dict) -> dict | None:
@@ -134,6 +155,30 @@ def courses():
         if c not in bucket:
             result.append({"name": c, "items": [], "count": 0, "ready": False})
     return {"courses": result}
+
+
+# ── 파이썬 문제 풀이 ──
+@app.get("/api/quiz/options")
+def quiz_options():
+    """문제 풀이 선택지(코스·주제) + 현재 문제 소스(내장 은행 / HF 모델)."""
+    return {"courses": COURSES, "difficulties": DIFFICULTIES,
+            "source": "model" if HF_MODEL_ID else "bank",
+            "model": HF_MODEL_ID}
+
+
+class QuizReq(BaseModel):
+    course: str = "파이썬 입문"
+    topic: str = "전체"
+    difficulty: str = "전체"
+    count: int = 5
+
+
+@app.post("/api/quiz/generate")
+def quiz_generate(req: QuizReq):
+    result = generate_quiz(req.course, req.topic, req.difficulty, req.count)
+    if not result["questions"]:
+        raise HTTPException(400, "해당 조건의 문제가 없습니다.")
+    return result
 
 
 class GenerateReq(BaseModel):

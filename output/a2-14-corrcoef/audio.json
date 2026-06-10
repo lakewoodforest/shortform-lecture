@@ -1,0 +1,43 @@
+{
+  "short_id": "a2-14-corrcoef",
+  "title": "상관관계, corrcoef로 확인",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 55,
+      "narration": "키가 큰 사람은 대체로 몸무게도 많이 나가죠.",
+      "audio": "scene-01.mp3",
+      "duration": 4.128
+    },
+    {
+      "index": 2,
+      "slide_page": 55,
+      "narration": "이런 관계를 숫자로 확인하는 게 상관관계예요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.2
+    },
+    {
+      "index": 3,
+      "slide_page": 55,
+      "narration": "넘파이의 코어코프 함수에 두 데이터를 넘기면 상관계수를 계산해 줘요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.856
+    },
+    {
+      "index": 4,
+      "slide_page": 55,
+      "narration": "한 값이 늘 때 다른 값도 늘면 상관관계가 높은 거예요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.776
+    },
+    {
+      "index": 5,
+      "slide_page": 55,
+      "narration": "변수가 세 개 이상이라면 리스트로 묶어서 한 번에 행렬로 볼 수도 있습니다.",
+      "audio": "scene-05.mp3",
+      "duration": 5.88
+    }
+  ],
+  "total_duration": 24.84
+}

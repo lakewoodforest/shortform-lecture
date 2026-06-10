@@ -52,10 +52,41 @@ python backend/extractor.py input/lecture.pdf > data/out.json
 이후 음성(edge-tts) → 자막(faster-whisper) → 9:16 영상(moviepy) 순으로
 `pipeline.py` 의 빈 단계를 채워 나가면 된다.
 
+## 고급 v1·v2 영상 생성하기
+
+고급 코스의 대본 33편(v1 19편 · v2 14편)이 `data/shorts-plan.json`에 준비돼 있다.
+영상을 만들려면 프로젝트 루트에서 한 줄만 실행하면 된다:
+
+```bash
+python scripts/generate_all.py
+```
+
+이미 만들어진 영상(입문·중급)은 자동으로 건너뛰고 새 대본만 생성한다.
+완료되면 "준비 중" 폴더가 실제 코스 폴더로 바뀐다.
+
+## 파이썬 문제 풀이 (대시보드 우측)
+
+`backend/quiz.py` 의 내장 문제 은행(주제 8개 × 난이도 3단계)에서 문제를 뽑아 준다.
+허깅페이스 모델로 바꾸려면:
+
+1. 환경변수 `QUIZ_HF_MODEL` 에 모델 ID 지정 (예: `Qwen/Qwen2.5-1.5B-Instruct`)
+2. `backend/quiz.py` 의 `_generate_with_model()` 안 TODO 채우기
+   (반환 형식만 문제 은행과 맞추면 프론트는 수정 불필요)
+
+연동 전에는 자동으로 문제 은행으로 폴백한다.
+
 ## 주제 덩어리 바꾸기
 
-다른 강의자료를 쓰거나 묶음을 바꾸려면 `backend/extractor.py` 의
-`DEFAULT_GROUPS` 표만 수정하면 된다 (페이지 범위 지정).
+PDF 추출 시 주제 분할 규칙:
+
+1. 업로드한 파일명이 `data/group-tables.json` 에 등록돼 있으면 그 표를 그대로 쓴다
+   (lecture.pdf, intermediate.pdf 등록됨 — 고급 자료를 받으면 항목만 추가).
+2. 등록 안 된 파일은 "제목만 있는 구분 표지 슬라이드"를 자동 감지해 나눈다
+   (같은 형식의 강의자료라면 잘 동작. 중급 PDF로 검증됨).
+3. 감지가 안 되면 전체를 한 덩어리로 묶는다.
+
+영상 파이프라인(pipeline.py)은 기존처럼 `backend/extractor.py` 의
+`DEFAULT_GROUPS` 를 사용하므로 영향 없음.
 
 ## Render 배포 (뷰어 전용)
 

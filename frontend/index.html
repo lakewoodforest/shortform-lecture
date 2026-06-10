@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>강의 숏폼 스튜디오</title>
+<title>한입 파이썬 — 숏폼으로 배우고 퀴즈로 다지기</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
   :root{
-    --navy:#16244a;
-    --navy-2:#1f3160;
-    --bg:#0a1124;          /* 앱 베이스(딥 네이비) */
-    --bg-2:#0e1730;
-    --panel:#13203f;        /* 카드 */
-    --panel-2:#172a52;
-    --line:rgba(255,255,255,.09);
-    --line-2:rgba(255,255,255,.16);
-    --ink:#e8edfb;
-    --mute:#8a99c0;
+    --navy:#22356b;
+    --navy-2:#2c4585;
+    --bg:#16264f;          /* 앱 베이스(밝아진 네이비) */
+    --bg-2:#1c2f60;
+    --panel:#22376b;        /* 카드 */
+    --panel-2:#28408016;
+    --line:rgba(255,255,255,.11);
+    --line-2:rgba(255,255,255,.2);
+    --ink:#ecf1fd;
+    --mute:#9dabd0;
     --accent:#6e96f0;
-    --accent-2:#9db8f7;
-    --shadow:0 18px 44px -18px rgba(0,0,0,.6);
+    --accent-2:#a6bff8;
+    --shadow:0 18px 44px -18px rgba(0,0,0,.5);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
     background:
-      radial-gradient(120% 80% at 50% -10%, #1a2c5a 0%, var(--bg-2) 42%, var(--bg) 100%);
+      radial-gradient(120% 80% at 50% -10%, #31498e 0%, var(--bg-2) 42%, var(--bg) 100%);
     background-attachment:fixed;
     color:var(--ink);
     font-family:'IBM Plex Sans KR',sans-serif;
@@ -35,46 +35,59 @@
   /* ── 랜딩(진입) 화면 ── */
   #landing{
     position:fixed;inset:0;z-index:1000;
-    background:radial-gradient(120% 90% at 50% 42%, #2a3f7a 0%, #16244a 38%, #0c1530 72%, #070c1c 100%);
+    /* 이전(네이비): #3a5496 0%, #243a73 38%, #18274f 72%, #101a38 100% */
+    background:radial-gradient(120% 90% at 50% 42%, #2f9fe9 0%, #1583d6 40%, #0e68b4 74%, #0a5294 100%);
     display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
     text-align:center;color:#fff;overflow:hidden;
     transition:opacity .8s ease, visibility .8s ease;
   }
   #landing.gone{opacity:0;visibility:hidden;pointer-events:none;}
   #landing::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(50% 40% at 50% 48%, rgba(120,150,230,.18), transparent 70%);
+    background:radial-gradient(50% 40% at 50% 48%, rgba(255,255,255,.12), transparent 70%);
     pointer-events:none;}
   .land-head{margin-top:84px;display:flex;align-items:center;gap:18px;justify-content:center;
     opacity:0;animation:fadeDown .9s .1s forwards;}
   .land-pill{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;
-    letter-spacing:3px;color:#cdd9f5;border:1px solid rgba(255,255,255,.22);
+    letter-spacing:3px;color:#f0f8ff;border:1px solid rgba(255,255,255,.4);
     padding:7px 14px;border-radius:9px;}
-  .land-sep{width:46px;height:1px;background:rgba(255,255,255,.25);}
-  .land-head .svc{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:5px;color:#9fb0d8;}
+  .land-sep{width:46px;height:1px;background:rgba(255,255,255,.4);}
+  .land-head .svc{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:5px;color:#d8edfc;}
   .welcome{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
-    letter-spacing:7px;color:#7e8fbb;opacity:0;animation:fadeDown .9s .25s forwards;}
-  .land-title{margin-top:10px;font-size:54px;font-weight:800;letter-spacing:-1px;color:#eaf0ff;
-    text-shadow:0 6px 40px rgba(80,120,220,.45);opacity:0;animation:fadeDown 1s .4s forwards;}
-  .land-sub{margin-top:14px;font-size:15px;color:#aab8de;opacity:0;animation:fadeDown 1s .6s forwards;}
-  .mascot-wrap{position:relative;margin-top:auto;margin-bottom:auto;cursor:pointer;
+    letter-spacing:7px;color:#c2e1f8;opacity:0;animation:fadeDown .9s .25s forwards;}
+  .land-title{margin-top:10px;font-size:54px;font-weight:800;letter-spacing:-1px;color:#ffffff;
+    text-shadow:0 6px 40px rgba(7,60,110,.5);opacity:0;animation:fadeDown 1s .4s forwards;}
+  .land-sub{margin-top:14px;font-size:15px;color:#e2f2fd;opacity:0;animation:fadeDown 1s .6s forwards;}
+  /* 입구 2개: 좌(숏폼 스튜디오) · 우(파이썬 문제 풀이) */
+  .gates{position:relative;margin-top:auto;margin-bottom:auto;display:flex;gap:90px;
+    align-items:flex-end;justify-content:center;flex-wrap:wrap;
     opacity:0;animation:fadeUp 1.1s .7s forwards;}
-  .mascot-glow{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
-    width:360px;height:360px;border-radius:50%;
-    background:radial-gradient(circle, rgba(120,160,255,.35), transparent 65%);
+  .gate{position:relative;cursor:pointer;text-align:center;width:260px;padding:10px 0;}
+  .gate-glow{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
+    width:320px;height:320px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,.3), transparent 65%);
     filter:blur(8px);animation:breathe 4s ease-in-out infinite;}
-  #mascot{position:relative;width:230px;height:auto;display:block;
+  .gate-glow.green{background:radial-gradient(circle, rgba(160,240,200,.35), transparent 65%);}
+  .gate img,.gate svg{position:relative;display:block;margin:0 auto;
     filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));
     transition:transform .35s cubic-bezier(.2,.8,.3,1.2);}
-  .mascot-wrap:hover #mascot{transform:translateY(-10px) scale(1.04);}
-  .mascot-fallback{position:relative;width:200px;height:200px;border-radius:50%;
+  .gate img{width:215px;height:auto;}
+  .gate svg{height:306px;width:auto;}  /* 좌측 마스코트와 높이 맞춤 */
+  .gate:hover img,.gate:hover svg{transform:translateY(-10px) scale(1.04);}
+  .mascot-fallback{position:relative;width:190px;height:190px;border-radius:50%;margin:0 auto;
     background:linear-gradient(160deg,#dfe8ff,#9fb6ee);display:flex;align-items:center;
-    justify-content:center;font-size:90px;box-shadow:0 18px 40px rgba(0,0,0,.45);}
-  .enter-hint{position:relative;margin-top:18px;font-family:'IBM Plex Mono',monospace;
-    font-size:12px;letter-spacing:3px;color:#8a9bc6;opacity:0;animation:fadeUp 1.1s 1s forwards;}
-  .land-badge{position:absolute;left:28px;bottom:28px;width:46px;height:46px;border-radius:50%;
-    border:1px solid rgba(255,255,255,.18);background:rgba(10,18,40,.5);color:#cdd9f5;
+    justify-content:center;font-size:84px;box-shadow:0 18px 40px rgba(0,0,0,.45);}
+  .gate-label{position:relative;margin-top:18px;font-weight:700;font-size:16.5px;color:#eaf0ff;}
+  .gate-cap{position:relative;margin-top:5px;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:3px;color:#cde6f9;}
+  .gate:hover .gate-cap{color:#fff;}
+  .land-badge{position:absolute;left:28px;bottom:28px;width:52px;height:52px;border-radius:14px;
+    border:1px solid rgba(255,255,255,.22);background:#fff;color:#22356b;
     display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;
-    font-size:18px;opacity:0;animation:fadeUp 1s 1.1s forwards;}
+    font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;
+    box-shadow:0 10px 24px -8px rgba(0,0,0,.5);transition:transform .2s;
+    opacity:0;animation:fadeUp 1s 1.1s forwards;}
+  .land-badge:hover{transform:translateY(-3px) scale(1.05);}
+  .land-badge img{width:72%;height:72%;object-fit:contain;image-rendering:-webkit-optimize-contrast;}
   @keyframes fadeDown{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:none;}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
   @keyframes breathe{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}
@@ -83,7 +96,7 @@
   /* ── 앱 2단 레이아웃 ── */
   .app{display:grid;grid-template-columns:300px 1fr;gap:0;min-height:100vh;}
 
-  .sidebar{background:linear-gradient(180deg,rgba(19,32,63,.85),rgba(12,20,42,.85));
+  .sidebar{background:linear-gradient(180deg,rgba(34,55,107,.92),rgba(24,40,82,.92));
     border-right:1px solid var(--line);padding:28px 22px;backdrop-filter:blur(6px);}
   .side-head{font-weight:700;font-size:16px;color:var(--accent-2);margin-bottom:24px;
     display:flex;align-items:center;gap:8px;}
@@ -100,7 +113,13 @@
   .tip{margin-top:26px;background:rgba(110,150,240,.08);border:1px solid rgba(110,150,240,.2);
     border-radius:12px;padding:14px 15px;font-size:12.8px;color:#b9c6ea;line-height:1.6;}
 
-  .main{padding:46px 50px 90px;max-width:1000px;}
+  .main{padding:34px 50px 90px;}
+  .wrap{max-width:1020px;margin:0 auto;}
+  .home-btn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#46537a;
+    background:#fff;border:1px solid #dde4f0;border-radius:9px;padding:9px 14px;
+    cursor:pointer;transition:.15s;margin-bottom:6px;}
+  .home-btn:hover{border-color:var(--accent);color:var(--accent);}
+  body.viewer .home-btn{display:none;}
   .main-head{text-align:center;margin-bottom:34px;}
   .main-head h1{font-size:38px;font-weight:800;letter-spacing:-1px;
     background:linear-gradient(90deg,#fff,#9db8f7);-webkit-background-clip:text;
@@ -119,6 +138,9 @@
     box-shadow:0 0 0 3px rgba(110,150,240,.18);}
   .ta{min-height:180px;resize:vertical;line-height:1.75;}
   .inp::placeholder,.ta::placeholder{color:#5d6a90;}
+  select.inp{appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2369748f' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;}
 
   .btn{width:100%;border:none;border-radius:13px;padding:15px;font-size:15.5px;font-weight:600;
     font-family:'IBM Plex Sans KR';color:#fff;cursor:pointer;transition:.18s;
@@ -126,6 +148,98 @@
     box-shadow:0 10px 26px -8px rgba(110,150,240,.6);}
   .btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
   .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;filter:grayscale(.3);}
+
+  /* ── 기능 카드 헤더 ── */
+  .feat-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .feat-head h2{font-size:18.5px;font-weight:700;letter-spacing:-.3px;color:#1b2a52;}
+  .feat-head p{font-size:12.5px;margin-top:1px;color:#69748f;}
+  .feat-badge{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:1px;padding:4px 9px;border-radius:7px;flex:none;}
+  .feat-badge.bank{color:#2f8f8d;background:#eef8f4;border:1px solid #c4e5da;}
+  .feat-badge.model{color:#3f64c8;background:#eaf0ff;border:1px solid #c9d8f5;}
+  .feat-ico{width:42px;height:42px;border-radius:13px;position:relative;flex:none;
+    box-shadow:0 9px 20px -6px rgba(79,95,214,.5);}
+  .ico-clap{background:linear-gradient(135deg,#6e96f0,#4f5fd6);}
+  .ico-clap::after{content:"";position:absolute;left:16px;top:13px;border-style:solid;
+    border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;}
+  .ico-quiz{background:linear-gradient(135deg,#58b58e,#2f8f8d);
+    box-shadow:0 9px 20px -6px rgba(47,143,141,.5);}
+  .ico-quiz::after{content:"?";position:absolute;inset:0;display:flex;align-items:center;
+    justify-content:center;color:#fff;font-weight:800;font-size:21px;font-family:'IBM Plex Mono',monospace;}
+
+  /* ── 문제 풀이 대시보드(전체 화면) ── */
+  #quizApp{position:fixed;inset:0;z-index:900;display:none;overflow-y:auto;
+    background:
+      radial-gradient(110% 70% at 50% -8%, #d9efe2 0%, #ecf6f0 45%, #e3efe8 100%);}
+  #quizApp.on{display:block;}
+  .quiz-shell{max-width:740px;margin:0 auto;padding:44px 24px 90px;}
+  .quiz-top{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+  .quiz-title{font-size:24px;font-weight:800;letter-spacing:-.5px;color:#17422f;line-height:1.3;}
+  .quiz-title small{display:block;font-size:12.5px;color:#5f7a6c;font-weight:500;margin-top:2px;}
+  .q-back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#41604f;
+    background:#fff;border:1px solid #cfe0d6;border-radius:9px;padding:9px 14px;
+    cursor:pointer;transition:.15s;margin-right:4px;}
+  .q-back:hover{border-color:#2f8f5f;color:#2f8f5f;}
+  #quizApp .card{border-color:#dcebe2;box-shadow:0 16px 38px -20px rgba(23,66,47,.3);}
+  #quizApp .quiz-top .feat-badge{margin-left:auto;}
+
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{padding:8px 15px;border-radius:9px;border:1px solid #dde4f0;background:#f6f8fd;
+    color:#46537a;font-family:'IBM Plex Sans KR';font-size:13px;cursor:pointer;transition:.15s;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.on{background:#eaf0ff;border-color:var(--accent);color:#3f64c8;font-weight:600;}
+  #quizApp .chip:hover{border-color:#2f8f5f;}
+  #quizApp .chip.on{background:#e8f6ee;border-color:#2f8f5f;color:#21724c;}
+  #quizApp .inp:focus{border-color:#2f8f5f;box-shadow:0 0 0 3px rgba(47,143,95,.15);}
+  .btn-quiz{background:linear-gradient(90deg,#46a583,#2f8f8d);
+    box-shadow:0 10px 26px -8px rgba(47,143,141,.55);}
+  .quiz-src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa6c2;
+    text-align:center;margin-top:12px;}
+
+  .q-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .q-count{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3f64c8;font-weight:600;}
+  .q-topic{font-size:11.5px;color:#69748f;background:#f3f6fc;border:1px solid #e4e9f3;
+    padding:3px 10px;border-radius:7px;}
+  .q-diff{font-size:11.5px;color:#946b1f;background:#fdf6e7;border:1px solid #f3e3bb;
+    padding:3px 10px;border-radius:7px;}
+  .q-quit{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#69748f;
+    background:none;border:1px solid #e4e9f3;border-radius:7px;padding:4px 10px;cursor:pointer;}
+  .q-quit:hover{color:#c0392b;border-color:#e6b8b2;}
+  .q-bar{height:6px;background:#e7ecf6;border-radius:99px;overflow:hidden;margin-bottom:18px;}
+  .q-bar i{display:block;height:100%;width:0;border-radius:99px;transition:width .3s;
+    background:linear-gradient(90deg,#46a583,#2f8f8d);}
+  .q-text{font-size:15.5px;font-weight:600;color:#1b2a52;line-height:1.6;margin-bottom:12px;}
+  .q-code{background:#1c2f60;color:#dce6ff;border-radius:11px;padding:14px 16px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.65;
+    white-space:pre-wrap;margin-bottom:14px;overflow-x:auto;}
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;
+    background:#f6f8fd;border:1.5px solid #dde4f0;border-radius:11px;padding:12px 15px;
+    font-family:'IBM Plex Sans KR';font-size:14px;color:#1b2a52;cursor:pointer;transition:.15s;}
+  .opt:hover{border-color:var(--accent);background:#fff;}
+  .opt .key{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#69748f;
+    width:24px;height:24px;border-radius:7px;background:#e7ecf6;flex:none;
+    display:flex;align-items:center;justify-content:center;}
+  .opt.correct{border-color:#2fae6a;background:#effaf3;}
+  .opt.correct .key{background:#2fae6a;color:#fff;}
+  .opt.wrong{border-color:#d96459;background:#fdf1ef;}
+  .opt.wrong .key{background:#d96459;color:#fff;}
+  .opt:disabled{cursor:default;}
+  .opt:disabled:not(.correct):not(.wrong){opacity:.55;}
+  .q-explain{margin-top:14px;background:#f3f6fc;border-left:3px solid #2f8f8d;
+    border-radius:0 11px 11px 0;padding:12px 15px;font-size:13px;color:#46537a;line-height:1.65;}
+  .q-explain b{color:#1b2a52;}
+  .q-next{margin-top:14px;width:100%;border:none;border-radius:11px;padding:12px;
+    font-family:'IBM Plex Sans KR';font-size:14px;font-weight:600;color:#fff;cursor:pointer;
+    background:linear-gradient(90deg,#46a583,#2f8f8d);}
+  .q-next:hover{filter:brightness(1.07);}
+
+  .q-result{text-align:center;padding:10px 0 4px;}
+  .q-score{font-family:'IBM Plex Mono',monospace;font-size:44px;font-weight:600;color:#2f8f8d;}
+  .q-score small{font-size:18px;color:#9aa6c2;}
+  .q-msg{font-size:14.5px;color:#46537a;margin:6px 0 18px;}
+  .q-again{display:flex;gap:10px;}
+  .q-again .mini{flex:1;text-align:center;}
 
   /* 진행 상황 */
   .progress{display:none;}
@@ -304,6 +418,40 @@
   .folder-card.locked .folder-ico .body{background:linear-gradient(165deg,#b7c1d6,#9aa6c2);}
   .folder-card.locked .folder-ico .tab{background:linear-gradient(#c4cde0,#aab4cc);}
 
+  /* ── 난이도별 폴더 색 (입문: 기본 파랑) ── */
+  .folder-card.c-teal .folder-ico .tab{background:linear-gradient(#84e2c0,#49c697);}
+  .folder-card.c-teal .folder-ico .body{background:linear-gradient(165deg,#5cd3a6 0%,#33ab7e 55%,#2a9168 100%);}
+  .folder-card.c-teal .folder-mini i{background:linear-gradient(90deg,#33ab7e,#5ad48a);}
+  .folder-card.c-purple .folder-ico .tab{background:linear-gradient(#cdb6fc,#a685f0);}
+  .folder-card.c-purple .folder-ico .body{background:linear-gradient(165deg,#b193f7 0%,#8a63e0 55%,#7551c9 100%);}
+  .folder-card.c-purple .folder-mini i{background:linear-gradient(90deg,#8a63e0,#b193f7);}
+  .folder-card.c-amber .folder-ico .tab{background:linear-gradient(#ffd89c,#f8b561);}
+  .folder-card.c-amber .folder-ico .body{background:linear-gradient(165deg,#ffc36b 0%,#f29f3d 55%,#e08a28 100%);}
+  .folder-card.c-amber .folder-mini i{background:linear-gradient(90deg,#f29f3d,#ffc36b);}
+  /* 준비 중이어도 난이도 색은 유지(흐리게) */
+  .folder-card.locked.c-teal .folder-ico .body{background:linear-gradient(165deg,#8cc9b1,#6da890);}
+  .folder-card.locked.c-teal .folder-ico .tab{background:linear-gradient(#a8d8c4,#86bba3);}
+  .folder-card.locked.c-purple .folder-ico .body{background:linear-gradient(165deg,#b6a4e0,#9483c4);}
+  .folder-card.locked.c-purple .folder-ico .tab{background:linear-gradient(#cbbdea,#a797d4);}
+  .folder-card.locked.c-amber .folder-ico .body{background:linear-gradient(165deg,#e6c08c,#c9a268);}
+  .folder-card.locked.c-amber .folder-ico .tab{background:linear-gradient(#f0d3a8,#d4b27e);}
+
+  .folder-card.c-rose .folder-ico .tab{background:linear-gradient(#ffb3c4,#f57f9d);}
+  .folder-card.c-rose .folder-ico .body{background:linear-gradient(165deg,#fa92ad 0%,#e8597f 55%,#d4476d 100%);}
+  .folder-card.c-rose .folder-mini i{background:linear-gradient(90deg,#e8597f,#fa92ad);}
+  .folder-card.locked.c-rose .folder-ico .body{background:linear-gradient(165deg,#dba6b4,#bd8896);}
+  .folder-card.locked.c-rose .folder-ico .tab{background:linear-gradient(#e8bdc8,#caa0ac);}
+
+  /* 코스 헤더 미니 폴더 아이콘 색 */
+  .folder-mark.c-teal{background:linear-gradient(165deg,#5cd3a6,#2a9168);box-shadow:0 4px 10px -3px rgba(42,145,104,.5);}
+  .folder-mark.c-teal::before{background:#49c697;}
+  .folder-mark.c-purple{background:linear-gradient(165deg,#b193f7,#7551c9);box-shadow:0 4px 10px -3px rgba(117,81,201,.5);}
+  .folder-mark.c-purple::before{background:#a685f0;}
+  .folder-mark.c-amber{background:linear-gradient(165deg,#ffc36b,#e08a28);box-shadow:0 4px 10px -3px rgba(224,138,40,.5);}
+  .folder-mark.c-amber::before{background:#f8b561;}
+  .folder-mark.c-rose{background:linear-gradient(165deg,#fa92ad,#d4476d);box-shadow:0 4px 10px -3px rgba(212,71,109,.5);}
+  .folder-mark.c-rose::before{background:#f57f9d;}
+
   /* 코스 */
   .back-folders{color:#46537a;border-color:var(--m-line);background:var(--m-surface);}
   .course-name-head{color:var(--m-ink);}
@@ -348,7 +496,7 @@
   body.viewer #progress,
   body.viewer #genResult,
   body.viewer .pdf-tool{display:none!important;}
-  body.viewer .main{max-width:1040px;width:100%;margin:0 auto;}
+  body.viewer .wrap{max-width:1040px;}
 
   /* PDF 추출(보조 도구, 접이식) */
   .pdf-tool{margin-top:34px;background:var(--panel);border:1px solid var(--line);
@@ -361,7 +509,16 @@
   .drop{border:1.5px dashed var(--line-2);border-radius:12px;background:var(--bg-2);
     padding:34px 20px;text-align:center;cursor:pointer;transition:.18s;}
   .drop:hover,.drop.over{border-color:var(--accent);background:rgba(110,150,240,.08);}
-  .drop .ic{font-size:30px;}.drop .big{font-weight:600;font-size:14.5px;margin-top:6px;}
+  .doc-ico{width:34px;height:42px;margin:0 auto;position:relative;border-radius:5px;
+    background:linear-gradient(165deg,#74bcff,#3f86df);
+    box-shadow:0 8px 16px -6px rgba(63,134,223,.5);}
+  .doc-ico::after{content:"";position:absolute;top:0;right:0;
+    border-style:solid;border-width:0 11px 11px 0;
+    border-color:#f3f6fc transparent;}
+  .doc-ico::before{content:"";position:absolute;left:7px;top:15px;width:20px;height:3px;
+    border-radius:2px;background:rgba(255,255,255,.9);
+    box-shadow:0 7px 0 rgba(255,255,255,.7),0 14px 0 rgba(255,255,255,.5);}
+  .drop .big{font-weight:600;font-size:14.5px;margin-top:12px;}
   .drop .small{color:var(--mute);font-size:12.5px;margin-top:4px;}
   input[type=file]{display:none;}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
@@ -399,27 +556,73 @@
 <body>
   <div id="landing">
     <div class="land-head">
-      <span class="land-pill">LECTURE</span>
+      <span class="land-pill">SHORTS</span>
       <span class="land-sep"></span>
-      <span class="svc">SHORTFORM</span>
+      <span class="svc">QUIZ</span>
     </div>
     <div class="welcome">WELCOME TO</div>
-    <div class="land-title">강의 숏폼 스튜디오</div>
-    <div class="land-sub">마스코트를 클릭해 입장하세요</div>
-    <div class="mascot-wrap" id="enter">
-      <div class="mascot-glow"></div>
-      <img id="mascot" src="/static/mascot.png" alt="mascot"
-           onerror="this.style.display='none';document.getElementById('mascotFallback').style.display='flex';">
-      <div class="mascot-fallback" id="mascotFallback" style="display:none;">🐢</div>
-      <div class="enter-hint">CLICK TO ENTER</div>
+    <div class="land-title">한입 파이썬</div>
+    <div class="land-sub">숏폼으로 가볍게 배우고, 퀴즈로 단단하게 다지기</div>
+    <div class="gates">
+      <!-- 좌: 숏폼 스튜디오 -->
+      <div class="gate" id="enterStudio">
+        <div class="gate-glow"></div>
+        <img id="mascot" src="/static/mascot.png" alt="mascot"
+             onerror="this.style.display='none';document.getElementById('mascotFallback').style.display='flex';">
+        <div class="mascot-fallback" id="mascotFallback" style="display:none;">상상부기</div>
+        <div class="gate-label">숏폼 스튜디오</div>
+        <div class="gate-cap">LECTURE SHORTS</div>
+      </div>
+      <!-- 우: 파이썬 문제 풀이 (초록 거북이) -->
+      <div class="gate" id="enterQuiz">
+        <div class="gate-glow green"></div>
+        <svg viewBox="40 12 180 234" xmlns="http://www.w3.org/2000/svg" aria-label="quiz turtle">
+          <!-- 등껍질 -->
+          <ellipse cx="162" cy="158" rx="48" ry="44" fill="#d9f1e3" stroke="#1e5c43" stroke-width="7"/>
+          <g stroke="#1e5c43" stroke-width="4" fill="none" stroke-linecap="round">
+            <polygon points="162,132 184,146 184,170 162,184 140,170 140,146" fill="#aadcc3" stroke-width="4"/>
+            <line x1="162" y1="132" x2="162" y2="116"/>
+            <line x1="184" y1="146" x2="199" y2="138"/>
+            <line x1="184" y1="170" x2="199" y2="178"/>
+            <line x1="140" y1="146" x2="125" y2="138"/>
+            <line x1="140" y1="170" x2="125" y2="178"/>
+          </g>
+          <!-- 발 -->
+          <ellipse cx="86" cy="226" rx="17" ry="11" fill="#fff" stroke="#1e5c43" stroke-width="6"/>
+          <ellipse cx="132" cy="226" rx="17" ry="11" fill="#fff" stroke="#1e5c43" stroke-width="6"/>
+          <!-- 팔 -->
+          <ellipse cx="58" cy="170" rx="13" ry="22" fill="#3da379" stroke="#1e5c43" stroke-width="6"
+                   transform="rotate(18 58 170)"/>
+          <!-- 몸통 -->
+          <path d="M66,140 C74,120 146,120 154,140 C168,174 160,204 144,218 C120,231 98,231 74,218 C58,204 52,174 66,140 Z"
+                fill="#3da379" stroke="#1e5c43" stroke-width="7"/>
+          <!-- 배 + PY -->
+          <ellipse cx="110" cy="186" rx="31" ry="27" fill="#fff"/>
+          <text x="110" y="194" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+                font-weight="700" font-size="21" fill="#1e5c43">PY</text>
+          <!-- 머리 -->
+          <circle cx="110" cy="76" r="54" fill="#fff" stroke="#1e5c43" stroke-width="7"/>
+          <path d="M104,26 q8,-11 17,-4" stroke="#1e5c43" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="91" cy="76" r="5" fill="#1e5c43"/>
+          <circle cx="129" cy="76" r="5" fill="#1e5c43"/>
+          <path d="M100,90 q10,9 20,0" stroke="#1e5c43" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="73" cy="90" rx="9" ry="6" fill="#bfe5d2"/>
+          <ellipse cx="147" cy="90" rx="9" ry="6" fill="#bfe5d2"/>
+        </svg>
+        <div class="gate-label">파이썬 문제 풀이</div>
+        <div class="gate-cap">PYTHON QUIZ</div>
+      </div>
     </div>
-    <div class="land-badge">N</div>
+    <a class="land-badge" href="https://www.hansung.ac.kr" target="_blank" rel="noopener" title="한성대학교">
+      <img src="/static/hsu-logo.png" alt="한성대학교"
+           onerror="this.style.display='none';this.parentElement.textContent='HSU';">
+    </a>
   </div>
 
   <div class="app">
     <!-- 사이드바 -->
     <aside class="sidebar">
-      <div class="side-head">스타일 및 옵션 설정</div>
+      <div class="side-head">영상 스타일</div>
 
       <div class="side-label">배경 그라데이션 스타일</div>
       <select class="sel" id="bgStyle"></select>
@@ -429,18 +632,26 @@
       <div class="side-label">목소리</div>
       <select class="sel" id="voice"></select>
 
-      <div class="tip"><b>팁</b> · 스크립트는 또박또박 읽는 구어체로, 문장 끝에 마침표(.)를
-        명확히 찍어 주세요. 문장 단위로 장면·자막이 나뉘어 타이밍이 깔끔해집니다.</div>
+      <div class="tip"><b>팁</b> · 대본은 구어체로, 문장 끝 마침표(.)는 꼭 찍어 주세요.
+        마침표 기준으로 장면과 자막이 나뉩니다.</div>
     </aside>
 
     <!-- 메인 -->
-    <main class="main">
+    <main class="main"><div class="wrap">
+      <button class="home-btn" id="studioBack">← 처음으로</button>
       <div class="main-head">
-        <h1><span class="hero-ico"></span>강의 숏폼 스튜디오</h1>
-        <p id="mainSub">제목과 스크립트를 입력하면 AI 목소리·세련된 자막·프로그레스 바가 들어간 숏폼(9:16) 영상을 만들어 드립니다.</p>
+        <h1><span class="hero-ico"></span>숏폼 스튜디오</h1>
+        <p id="mainSub">대본 한 편이 곧 9:16 강의 숏폼 한 편. 목소리와 자막은 자동으로 입혀집니다.</p>
       </div>
 
       <div class="card" id="genCard">
+        <div class="feat-head">
+          <span class="feat-ico ico-clap"></span>
+          <div>
+            <h2>숏폼 생성</h2>
+            <p>제목과 대본만 쓰면 나머지는 알아서</p>
+          </div>
+        </div>
         <div class="field">
           <label>숏폼 제목</label>
           <input class="inp" id="title" placeholder="예: 파이썬 변수 3분 정리" value="">
@@ -474,7 +685,7 @@
 
       <div class="sec-head">
         <h2>학습 코스</h2>
-        <span class="meta" id="courseMeta">폴더를 열어 순서대로 학습하세요</span>
+        <span class="meta" id="courseMeta">순서대로 보면 한 코스 완성</span>
       </div>
 
       <!-- 폴더 보기 -->
@@ -494,12 +705,12 @@
 
       <!-- 보조 도구: 강의 PDF에서 내용 추출 -->
       <details class="pdf-tool">
-        <summary>강의 PDF에서 내용 추출 <span style="color:var(--m-mute);font-weight:400;">(대본 작성 참고용)</span></summary>
+        <summary>강의 PDF로 대본 초안 만들기 <span style="color:var(--m-mute);font-weight:400;">(주제별 자동 정리)</span></summary>
         <div class="pdf-body">
           <label class="drop" id="drop">
-            <div class="ic">📄</div>
+            <div class="doc-ico"></div>
             <div class="big">PDF를 끌어다 놓거나 클릭해서 선택</div>
-            <div class="small">슬라이드별 텍스트를 주제별로 정리해 드립니다</div>
+            <div class="small">주제별로 정리한 뒤, 클릭 한 번이면 대본 초안까지 채워집니다</div>
             <input type="file" id="file" accept="application/pdf">
           </label>
           <div class="err hidden" id="err"></div>
@@ -513,7 +724,79 @@
           </div>
         </div>
       </details>
-    </main>
+    </div></main>
+  </div>
+
+  <!-- ── 파이썬 문제 풀이 대시보드 ── -->
+  <div id="quizApp">
+    <div class="quiz-shell">
+      <div class="quiz-top">
+        <button class="q-back" id="quizBack">← 처음으로</button>
+        <span class="feat-ico ico-quiz"></span>
+        <div class="quiz-title">파이썬 문제 풀이
+          <small>영상에서 본 그 내용, 문제로 확인하기</small>
+        </div>
+        <span class="feat-badge bank" id="quizBadge">문제 은행</span>
+      </div>
+
+      <div class="card" id="quizCard">
+        <!-- 설정 -->
+        <div id="quizSetup">
+          <div class="field">
+            <label>코스</label>
+            <div class="chips" id="qCourse"></div>
+          </div>
+          <div class="field">
+            <label>주제</label>
+            <select class="inp" id="qTopic"></select>
+          </div>
+          <div class="field">
+            <label>난이도</label>
+            <div class="chips" id="qDiff"></div>
+          </div>
+          <div class="field">
+            <label>문항 수</label>
+            <div class="chips" id="qCount">
+              <button class="chip on" data-n="5">5문제</button>
+              <button class="chip" data-n="10">10문제</button>
+              <button class="chip" data-n="15">15문제</button>
+              <button class="chip" data-n="20">20문제</button>
+            </div>
+          </div>
+          <button class="btn btn-quiz" id="quizStart">문제 생성하기</button>
+          <div class="err hidden" id="quizErr"></div>
+          <div class="quiz-src" id="quizSrc"></div>
+        </div>
+
+        <!-- 풀이 -->
+        <div id="quizPlay" class="hidden">
+          <div class="q-top">
+            <span class="q-count" id="qNum"></span>
+            <span class="q-topic" id="qTopicTag"></span>
+            <span class="q-diff" id="qDiffTag"></span>
+            <button class="q-quit" id="qQuit">그만하기</button>
+          </div>
+          <div class="q-bar"><i id="qBar"></i></div>
+          <div class="q-text" id="qText"></div>
+          <div class="q-code hidden" id="qCode"></div>
+          <div class="opts" id="qOpts"></div>
+          <div class="q-explain hidden" id="qExplain"></div>
+          <button class="q-next hidden" id="qNext">다음 문제</button>
+        </div>
+
+        <!-- 결과 -->
+        <div id="quizResult" class="hidden">
+          <div class="q-result">
+            <div class="q-score"><span id="qScore">0</span><small> / <span id="qTotal">0</span></small></div>
+            <div class="q-msg" id="qMsg"></div>
+            <div class="q-again">
+              <button class="mini" id="qRetry">같은 조건으로 다시</button>
+              <button class="mini" id="qNew">조건 바꾸기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- 코스 플레이어 -->
@@ -541,8 +824,22 @@
 const $ = s => document.querySelector(s);
 function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 
-// ── 랜딩 진입 ──
-$('#enter').addEventListener('click', ()=>{ $('#landing').classList.add('gone'); });
+// ── 랜딩 진입 (좌: 숏폼 스튜디오 / 우: 문제 풀이) ──
+$('#enterStudio').addEventListener('click', ()=>{
+  $('#quizApp').classList.remove('on');
+  $('#landing').classList.add('gone');
+});
+$('#enterQuiz').addEventListener('click', ()=>{
+  $('#quizApp').classList.add('on');
+  $('#landing').classList.add('gone');
+});
+$('#quizBack').addEventListener('click', ()=>{
+  $('#quizApp').classList.remove('on');
+  $('#landing').classList.remove('gone');
+});
+$('#studioBack').addEventListener('click', ()=>{
+  $('#landing').classList.remove('gone');
+});
 
 // ── 배경 스타일 미리보기(백엔드 색과 동일) ──
 const BG_GRAD = {
@@ -568,7 +865,7 @@ async function loadOptions(){
     const o = await (await fetch('/api/options')).json();
     if(o.viewer_only){
       document.body.classList.add('viewer');
-      $('#mainSub').textContent = '강의를 짧은 숏폼으로. 폴더를 열어 순서대로 학습하세요.';
+      $('#mainSub').textContent = '짧게 보는 파이썬 강의. 폴더를 열어 순서대로 시청하세요.';
     }
     $('#bgStyle').innerHTML = o.bg_styles.map(b=>`<option>${b}</option>`).join('');
     $('#voice').innerHTML = o.voices.map(v=>`<option value="${v.id}">${esc(v.label)}</option>`).join('');
@@ -658,20 +955,29 @@ async function loadCourse(){
   }catch(e){ COURSES=[]; }
   renderFolders();
 }
+// 난이도별 폴더 색 (입문은 기본 파랑)
+const FOLDER_COLORS = {'파이썬 입문':'', '파이썬 중급':'c-teal',
+  '파이썬 고급 v1':'c-purple', '파이썬 고급 v2':'c-amber',
+  '파이썬 심화':'c-purple', '머신러닝':'c-rose'};
+const COLOR_CYCLE = ['', 'c-teal', 'c-purple', 'c-amber'];
+function folderColor(name, idx){
+  return FOLDER_COLORS[name] !== undefined ? FOLDER_COLORS[name] : COLOR_CYCLE[idx % COLOR_CYCLE.length];
+}
 function renderFolders(){
   const watched = getWatched();
   const box = $('#folders');
   if(!COURSES.length){ box.innerHTML = `<div class="shorts-empty">아직 코스가 없습니다.</div>`; return; }
   box.innerHTML = COURSES.map((c,idx)=>{
+    const col = folderColor(c.name, idx);
     if(!c.ready){
-      return `<div class="folder-card locked">
+      return `<div class="folder-card locked ${col}">
         <div class="folder-ico"><div class="tab"></div><div class="body"></div><div class="lip"></div></div>
         <div class="folder-name">${esc(c.name)}</div>
         <div class="folder-badge">준비 중</div></div>`;
     }
     const done = c.items.filter(it=>watched.has(it.id)).length;
     const pct = c.count ? Math.round(done/c.count*100) : 0;
-    return `<div class="folder-card" data-idx="${idx}">
+    return `<div class="folder-card ${col}" data-idx="${idx}">
       <div class="folder-ico"><div class="tab"></div><div class="body"></div><div class="lip"></div></div>
       <div class="folder-name">${esc(c.name)}</div>
       <div class="folder-sub">${c.count}개 영상 · ${done} 완료</div>
@@ -682,7 +988,7 @@ function renderFolders(){
     el.addEventListener('click',()=>openCourse(+el.dataset.idx)));
   $('#folders').style.display='grid';
   $('#courseView').style.display='none';
-  $('#courseMeta').textContent = '폴더를 열어 순서대로 학습하세요';
+  $('#courseMeta').textContent = '순서대로 보면 한 코스 완성';
 }
 
 // 코스 열기 → 순서 목록
@@ -691,6 +997,7 @@ function openCourse(idx){
   if(!c || !c.ready) return;
   COURSE = c.items;
   $('#courseName').textContent = c.name;
+  document.querySelector('.folder-mark').className = 'folder-mark ' + folderColor(c.name, idx);
   $('#folders').style.display='none';
   $('#courseView').style.display='block';
   $('#courseMeta').textContent = c.name;
@@ -781,17 +1088,52 @@ async function uploadPdf(file){
 function renderPdf(){
   $('#kpis').innerHTML = `${kpi('슬라이드',payload.total_slides,'장')}${kpi('내용 있음',payload.filled_slides,'장')}${kpi('글자 수',payload.total_chars.toLocaleString(),'자')}${kpi('주제',payload.groups.length,'개')}`;
   const box=$('#groups'); box.innerHTML='';
-  payload.groups.forEach(g=>{
+  payload.groups.forEach((g,gi)=>{
     const d=document.createElement('details'); d.className='group';
     d.innerHTML=`<summary><span class="gnum">${String(g.index).padStart(2,'0')}</span>
       <span class="gtitle">${esc(g.title)}</span>
       <span class="gcount">p.${g.from_page}–${g.to_page} · ${g.slides.length}장</span></summary>
-      <div class="gbody">${g.slides.map(s=>`<div class="slide">
+      <div class="gbody">
+        <div class="mini-actions" style="margin:10px 0 4px;">
+          <button class="mini draft-btn" data-gi="${gi}">이 주제로 대본 초안 만들기 ↑</button>
+        </div>
+        ${g.slides.map(s=>`<div class="slide">
         <span class="spage">SLIDE ${s.page}</span><span class="stitle">${esc(s.title)}</span>
         ${s.text?`<div class="stext">${esc(s.text)}</div>`:''}</div>`).join('')}</div>`;
     box.appendChild(d);
   });
+  box.querySelectorAll('.draft-btn').forEach(b=>
+    b.addEventListener('click',()=>applyDraft(+b.dataset.gi)));
   $('#result').classList.remove('hidden');
+}
+
+// 주제 슬라이드 내용 → 숏폼 제목·스크립트 초안 채우기 (다듬어서 사용)
+function draftFromGroup(g){
+  const sents=[];
+  g.slides.forEach(s=>{
+    if(!s.text) return;
+    s.text.split('\n').forEach(line=>{
+      let t=line.replace(/^[•·▪◦-]\s*/,'').trim();
+      t=t.replace(/\s*\d+$/,'');            // 끝의 페이지 번호 제거
+      if(t.length<12||/^\d+$/.test(t)) return;
+      sents.push(t);
+    });
+  });
+  let script=`오늘은 ${g.title}에 대해 알아봅니다. `;
+  for(const t of sents){
+    if(script.length>620) break;
+    script+=t+(/[.!?]$/.test(t)?' ':'. ');
+  }
+  script+=`지금까지 ${g.title}의 핵심 내용이었습니다.`;
+  return script;
+}
+function applyDraft(gi){
+  const g=payload.groups[gi];
+  if(!g) return;
+  $('#title').value=`${g.title} 핵심 정리`;
+  $('#script').value=draftFromGroup(g);
+  $('#genCard').scrollIntoView({behavior:'smooth'});
+  $('#script').focus();
 }
 function kpi(l,v,u){return `<div class="kpi"><div class="label">${l}</div><div class="value">${v}<span class="unit">${u}</span></div></div>`;}
 $('#copyAll').addEventListener('click',()=>{
@@ -804,8 +1146,145 @@ $('#dlJson').addEventListener('click',()=>{
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='lecture-content.json'; a.click();
 });
 
+// ── 파이썬 문제 풀이 ──
+let QUIZ=[], qIdx=0, qScore=0;
+const QKEYS=['A','B','C','D','E'];
+
+function bindChips(box){
+  box.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    box.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+    c.classList.add('on');
+  }));
+}
+bindChips($('#qCount'));
+
+let QCOURSES = [];
+function renderTopics(courseName){
+  const c = QCOURSES.find(x=>x.name===courseName) || QCOURSES[0];
+  $('#qTopic').innerHTML = (c?c.topics:['전체']).map(t=>`<option>${esc(t)}</option>`).join('');
+}
+const RESTART_MSG = '서버 재시작이 필요합니다 — 터미널에서 Ctrl+C 후 "uvicorn backend.server:app --reload" 로 다시 실행해 주세요.';
+async function loadQuizOptions(){
+  try{
+    const res = await fetch('/api/quiz/options');
+    if(!res.ok) throw new Error('restart');
+    const o = await res.json();
+    QCOURSES = o.courses || [];
+    $('#qCourse').innerHTML = QCOURSES.map((c,i)=>
+      `<button class="chip ${i===0?'on':''}" data-c="${esc(c.name)}">${esc(c.name)}${c.total?` · ${c.total}문제`:''}</button>`).join('');
+    bindChips($('#qCourse'));
+    $('#qCourse').querySelectorAll('.chip').forEach(el=>
+      el.addEventListener('click',()=>renderTopics(el.dataset.c)));
+    renderTopics(QCOURSES[0] && QCOURSES[0].name);
+    $('#qDiff').innerHTML = o.difficulties.map((d,i)=>
+      `<button class="chip ${i===0?'on':''}" data-d="${esc(d)}">${esc(d)}</button>`).join('');
+    bindChips($('#qDiff'));
+    if(o.source==='model'){
+      $('#quizBadge').textContent='AI 모델';
+      $('#quizBadge').className='feat-badge model';
+      $('#quizSrc').textContent = o.model;
+    }else{
+      const total = QCOURSES.reduce((s,c)=>s+(c.total||0),0);
+      $('#quizSrc').textContent=`강의자료 기반 문제 은행 · 총 ${total}문제 · AI 모델 연동 준비됨`;
+    }
+  }catch(e){
+    $('#quizSrc').textContent = RESTART_MSG;
+    $('#quizSrc').style.color = '#c0392b';
+  }
+}
+
+$('#quizStart').addEventListener('click', startQuiz);
+async function startQuiz(){
+  const body = {
+    course: $('#qCourse .chip.on')?.dataset.c || '파이썬 입문',
+    topic: $('#qTopic').value || '전체',
+    difficulty: $('#qDiff .chip.on')?.dataset.d || '전체',
+    count: +($('#qCount .chip.on')?.dataset.n || 5),
+  };
+  $('#quizErr').classList.add('hidden');
+  $('#quizStart').disabled=true; $('#quizStart').textContent='문제 만드는 중…';
+  try{
+    const res = await fetch('/api/quiz/generate',{method:'POST',
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    if(res.status===404) throw new Error(RESTART_MSG);
+    if(!res.ok) throw new Error((await res.json()).detail||'문제 생성 실패');
+    QUIZ = (await res.json()).questions;
+    qIdx=0; qScore=0;
+    $('#quizSetup').classList.add('hidden');
+    $('#quizResult').classList.add('hidden');
+    $('#quizPlay').classList.remove('hidden');
+    renderQ();
+  }catch(e){
+    $('#quizErr').textContent='오류: '+e.message;
+    $('#quizErr').classList.remove('hidden');
+  }
+  $('#quizStart').disabled=false; $('#quizStart').textContent='문제 생성하기';
+}
+
+function renderQ(){
+  const q = QUIZ[qIdx];
+  $('#qNum').textContent = `Q${qIdx+1} / ${QUIZ.length}`;
+  $('#qTopicTag').textContent = q.topic;
+  $('#qDiffTag').textContent = q.difficulty;
+  $('#qBar').style.width = (qIdx/QUIZ.length*100)+'%';
+  $('#qText').textContent = q.q;
+  if(q.code){ $('#qCode').textContent=q.code; $('#qCode').classList.remove('hidden'); }
+  else $('#qCode').classList.add('hidden');
+  $('#qExplain').classList.add('hidden');
+  $('#qNext').classList.add('hidden');
+  $('#qOpts').innerHTML = q.options.map((o,i)=>
+    `<button class="opt" data-i="${i}"><span class="key">${QKEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
+  $('#qOpts').querySelectorAll('.opt').forEach(el=>
+    el.addEventListener('click',()=>answerQ(+el.dataset.i)));
+}
+
+function answerQ(i){
+  const q = QUIZ[qIdx];
+  const opts = $('#qOpts').querySelectorAll('.opt');
+  opts.forEach(el=>el.disabled=true);
+  opts[q.answer].classList.add('correct');
+  const ok = i===q.answer;
+  if(ok) qScore++; else opts[i].classList.add('wrong');
+  $('#qExplain').innerHTML = `<b>${ok?'정답입니다':'아쉬워요'}</b> · ${esc(q.explain)}`;
+  $('#qExplain').classList.remove('hidden');
+  $('#qNext').textContent = qIdx<QUIZ.length-1 ? '다음 문제' : '결과 보기';
+  $('#qNext').classList.remove('hidden');
+  $('#qBar').style.width = ((qIdx+1)/QUIZ.length*100)+'%';
+}
+
+$('#qNext').addEventListener('click',()=>{
+  if(qIdx<QUIZ.length-1){ qIdx++; renderQ(); }
+  else showQuizResult();
+});
+
+function showQuizResult(){
+  $('#quizPlay').classList.add('hidden');
+  $('#quizResult').classList.remove('hidden');
+  $('#qScore').textContent = qScore;
+  $('#qTotal').textContent = QUIZ.length;
+  const pct = qScore/QUIZ.length;
+  $('#qMsg').textContent =
+    pct===1 ? '완벽해요. 다음 주제로 넘어가도 좋겠어요.' :
+    pct>=0.7 ? '좋아요. 틀린 문제의 해설만 한 번 더 확인해 보세요.' :
+    pct>=0.4 ? '기초가 잡혀가고 있어요. 영상을 복습하고 다시 도전해 보세요.' :
+    '괜찮아요. 학습 코스 영상을 먼저 본 뒤 다시 풀면 훨씬 수월할 거예요.';
+}
+
+$('#qQuit').addEventListener('click',()=>{
+  $('#quizPlay').classList.add('hidden');
+  $('#quizSetup').classList.remove('hidden');
+});
+$('#qRetry').addEventListener('click',()=>{
+  $('#quizResult').classList.add('hidden');
+  startQuiz();
+});
+$('#qNew').addEventListener('click',()=>{
+  $('#quizResult').classList.add('hidden');
+  $('#quizSetup').classList.remove('hidden');
+});
+
 // 초기 로드
-loadOptions(); loadCourse();
+loadOptions(); loadCourse(); loadQuizOptions();
 </script>
 </body>
 </html>

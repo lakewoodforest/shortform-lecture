@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-01-func-why",
+  "title": "함수, 왜 쓰는 걸까?",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 4,
+      "narration": "같은 코드를 세 번, 네 번 복사해 붙이고 있다면 함수를 쓸 때가 된 거예요.",
+      "audio": "scene-01.mp3",
+      "duration": 6.192
+    },
+    {
+      "index": 2,
+      "slide_page": 4,
+      "narration": "함수는 반복해서 쓰는 코드를 하나로 묶은 덩어리예요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.608
+    },
+    {
+      "index": 3,
+      "slide_page": 4,
+      "narration": "입력을 받아서 출력을 내보내는 블랙박스라고 생각하면 쉬워요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.088
+    },
+    {
+      "index": 4,
+      "slide_page": 4,
+      "narration": "오렌지를 넣으면 오렌지주스가 나오는 기계처럼요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.44
+    },
+    {
+      "index": 5,
+      "slide_page": 4,
+      "narration": "한 번만 만들어 두면 언제든 불러서 쓸 수 있죠.",
+      "audio": "scene-05.mp3",
+      "duration": 4.248
+    }
+  ],
+  "total_duration": 24.576
+}

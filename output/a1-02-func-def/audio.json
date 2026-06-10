@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-02-func-def",
+  "title": "def로 함수 만들기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 6,
+      "narration": "함수를 만드는 키워드는 데프, def예요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.008
+    },
+    {
+      "index": 2,
+      "slide_page": 6,
+      "narration": "def 뒤에 함수 이름을 적고 소괄호와 콜론을 붙이면 정의 끝이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 5.568
+    },
+    {
+      "index": 3,
+      "slide_page": 6,
+      "narration": "콜론 아래에는 들여쓰기로 함수가 할 일을 적어요.",
+      "audio": "scene-03.mp3",
+      "duration": 4.176
+    },
+    {
+      "index": 4,
+      "slide_page": 6,
+      "narration": "주의할 점 하나, 정의만 해서는 아무 일도 일어나지 않아요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.016
+    },
+    {
+      "index": 5,
+      "slide_page": 6,
+      "narration": "함수 안의 코드는 호출되어야 비로소 실행됩니다.",
+      "audio": "scene-05.mp3",
+      "duration": 4.272
+    }
+  ],
+  "total_duration": 23.04
+}

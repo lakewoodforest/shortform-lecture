@@ -1,0 +1,50 @@
+{
+  "short_id": "a2-07-logical-idx",
+  "title": "조건으로 골라내는 논리 인덱싱",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 24,
+      "narration": "나이 배열에서 20살 이상인 사람만 뽑고 싶다면요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.464
+    },
+    {
+      "index": 2,
+      "slide_page": 24,
+      "narration": "배열에 조건식을 그대로 적용해 보세요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.528
+    },
+    {
+      "index": 3,
+      "slide_page": 24,
+      "narration": "ages가 20보다 크다고 쓰면 트루와 폴스로 이루어진 부울 배열이 나와요.",
+      "audio": "scene-03.mp3",
+      "duration": 6.0
+    },
+    {
+      "index": 4,
+      "slide_page": 24,
+      "narration": "이걸 다시 대괄호 안에 넣으면 조건에 맞는 값들만 쏙 추려져요.",
+      "audio": "scene-04.mp3",
+      "duration": 5.232
+    },
+    {
+      "index": 5,
+      "slide_page": 24,
+      "narration": "이게 논리 인덱싱이에요.",
+      "audio": "scene-05.mp3",
+      "duration": 2.616
+    },
+    {
+      "index": 6,
+      "slide_page": 24,
+      "narration": "데이터 필터링의 핵심 기술이죠.",
+      "audio": "scene-06.mp3",
+      "duration": 3.216
+    }
+  ],
+  "total_duration": 25.056
+}

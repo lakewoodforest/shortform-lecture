@@ -1,0 +1,50 @@
+{
+  "short_id": "a2-03-import-np",
+  "title": "import numpy as np",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 10,
+      "narration": "넘파이를 쓰려면 먼저 불러와야겠죠.",
+      "audio": "scene-01.mp3",
+      "duration": 3.72
+    },
+    {
+      "index": 2,
+      "slide_page": 10,
+      "narration": "임포트 넘파이 애즈 엔피.",
+      "audio": "scene-02.mp3",
+      "duration": 2.904
+    },
+    {
+      "index": 3,
+      "slide_page": 10,
+      "narration": "여기서 as 뒤의 이름은 별칭이에요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.384
+    },
+    {
+      "index": 4,
+      "slide_page": 10,
+      "narration": "매번 numpy라고 길게 쓰는 대신 np로 줄여 부르는 거죠.",
+      "audio": "scene-04.mp3",
+      "duration": 4.584
+    },
+    {
+      "index": 5,
+      "slide_page": 10,
+      "narration": "전 세계 개발자들이 약속처럼 np를 써요.",
+      "audio": "scene-05.mp3",
+      "duration": 3.912
+    },
+    {
+      "index": 6,
+      "slide_page": 10,
+      "narration": "이제 np.array로 배열을 만들고 더하기 한 번이면 총점 계산 끝입니다.",
+      "audio": "scene-06.mp3",
+      "duration": 5.928
+    }
+  ],
+  "total_duration": 24.432
+}

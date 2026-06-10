@@ -1,0 +1,43 @@
+{
+  "short_id": "a2-06-indexing",
+  "title": "배열 인덱싱과 슬라이싱",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 22,
+      "narration": "넘파이 배열에서 값을 꺼내는 방법은 리스트와 같아요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.536
+    },
+    {
+      "index": 2,
+      "slide_page": 22,
+      "narration": "인덱스는 0부터 시작하고, 슬라이싱도 그대로 돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.704
+    },
+    {
+      "index": 3,
+      "slide_page": 22,
+      "narration": "1 콜론 3이면 인덱스 1부터 2까지, 마지막 숫자 직전까지라는 규칙도 똑같죠.",
+      "audio": "scene-03.mp3",
+      "duration": 6.888
+    },
+    {
+      "index": 4,
+      "slide_page": 22,
+      "narration": "시작이나 끝 인덱스는 생략할 수도 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 3.768
+    },
+    {
+      "index": 5,
+      "slide_page": 22,
+      "narration": "리스트를 다뤄 봤다면 이미 절반은 아는 셈입니다.",
+      "audio": "scene-05.mp3",
+      "duration": 4.44
+    }
+  ],
+  "total_duration": 24.336
+}

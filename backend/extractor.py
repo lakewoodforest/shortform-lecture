@@ -95,6 +95,46 @@ def extract_slides(pdf_path: str) -> List[Slide]:
     return slides
 
 
+def auto_groups(slides: List[Slide]) -> List[Dict] | None:
+    """구분(섹션 표지) 슬라이드를 자동 감지해 주제 덩어리를 만든다.
+
+    이 강의 슬라이드 형식은 새 주제가 시작될 때 제목만 있는 표지 페이지가
+    들어간다(예: '조건문', '반복문'). 글자 수가 매우 적은 한두 줄짜리
+    페이지를 구분 슬라이드로 보고, 그 사이를 한 주제로 묶는다.
+
+    한계: 구분 표지가 없는 강의자료에서는 감지가 안 되므로 None을 반환하고
+    호출 쪽에서 기본 표(DEFAULT_GROUPS)나 단일 그룹으로 처리해야 한다.
+    """
+    dividers: List[tuple[Slide, str]] = []
+    for s in slides:
+        if s.page == 1 or not s.text:
+            continue
+        lines = [l.strip() for l in s.text.split("\n") if l.strip()]
+        if s.char_count > 18 or len(lines) > 2:
+            continue
+        joined = " ".join(lines)
+        tokens = joined.split()
+        # 내용 슬라이드는 보통 끝에 페이지 번호가 붙는다(예: '집합의 연산 89').
+        # 진짜 구분 표지는 제목뿐이므로, 숫자로 끝나면 제외한다.
+        if tokens and tokens[-1].isdigit():
+            continue
+        dividers.append((s, joined))
+    if len(dividers) < 2:
+        return None
+
+    last_page = slides[-1].page
+    groups: List[Dict] = []
+    if dividers[0][0].page > 1:
+        groups.append({"title": "표지 · 학습목표",
+                       "from_page": 1, "to_page": dividers[0][0].page - 1})
+    for i, (d, title) in enumerate(dividers):
+        end = dividers[i + 1][0].page - 1 if i + 1 < len(dividers) else last_page
+        if "감사" in title:
+            title = "마무리"
+        groups.append({"title": title, "from_page": d.page, "to_page": end})
+    return groups
+
+
 def group_slides(slides: List[Slide], groups=None) -> List[Dict]:
     """슬라이드를 주제 덩어리로 묶는다."""
     groups = groups or DEFAULT_GROUPS
@@ -115,9 +155,22 @@ def group_slides(slides: List[Slide], groups=None) -> List[Dict]:
     return out
 
 
-def build_payload(pdf_path: str, groups=None) -> Dict:
-    """프론트엔드/파이프라인이 쓸 최종 JSON 구조."""
+def build_payload(pdf_path: str, groups=None, auto: bool = False) -> Dict:
+    """프론트엔드/파이프라인이 쓸 최종 JSON 구조.
+
+    auto=True 면 구분 슬라이드를 자동 감지해 주제를 나눈다(업로드 추출용).
+    감지가 안 되면 전체를 하나의 그룹으로 묶는다.
+    auto=False(기본)는 기존 동작 그대로 DEFAULT_GROUPS를 쓴다(파이프라인용).
+    """
     slides = extract_slides(pdf_path)
+    grouping = "table"
+    if groups is None and auto:
+        detected = auto_groups(slides)
+        if detected:
+            groups, grouping = detected, "auto"
+        else:
+            groups = [{"title": "전체 내용", "from_page": 1, "to_page": 9999}]
+            grouping = "single"
     grouped = group_slides(slides, groups)
     filled = [s for s in slides if s.text]
     return {
@@ -125,6 +178,7 @@ def build_payload(pdf_path: str, groups=None) -> Dict:
         "total_slides": len(slides),
         "filled_slides": len(filled),
         "total_chars": sum(s.char_count for s in slides),
+        "grouping": grouping,
         "groups": grouped,
         "slides": [asdict(s) for s in slides],
     }

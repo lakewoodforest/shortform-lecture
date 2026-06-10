@@ -1,0 +1,36 @@
+{
+  "short_id": "a1-05-return",
+  "title": "return, 함수가 돌려주는 값",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 14,
+      "narration": "함수가 정말 유용한 건 일을 하고 나서 결과를 돌려줄 수 있다는 점이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 5.664
+    },
+    {
+      "index": 2,
+      "slide_page": 14,
+      "narration": "함수로부터 되돌아오는 값을 반환값이라고 하고, 리턴 키워드로 돌려줘요.",
+      "audio": "scene-02.mp3",
+      "duration": 6.288
+    },
+    {
+      "index": 3,
+      "slide_page": 14,
+      "narration": "반지름을 주면 원의 면적을 계산해서 반환하는 함수를 생각해 보세요.",
+      "audio": "scene-03.mp3",
+      "duration": 5.328
+    },
+    {
+      "index": 4,
+      "slide_page": 14,
+      "narration": "호출 결과를 변수에 담으면 계산된 값이 그대로 저장됩니다.",
+      "audio": "scene-04.mp3",
+      "duration": 5.544
+    }
+  ],
+  "total_duration": 22.824
+}

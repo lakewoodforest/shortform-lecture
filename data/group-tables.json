@@ -1,0 +1,52 @@
+{
+  "_설명": "PDF 추출 시 파일명이 여기에 등록돼 있으면 이 표(페이지 범위)를 그대로 쓴다. 등록 안 된 파일은 구분 표지 자동 감지. 고급 자료를 받으면 advanced.pdf 항목을 추가하면 된다.",
+
+  "lecture.pdf": [
+    {"title": "표지 · 학습목표", "from_page": 1, "to_page": 2},
+    {"title": "파이썬 시작하기", "from_page": 3, "to_page": 7},
+    {"title": "변수", "from_page": 8, "to_page": 20},
+    {"title": "자료형", "from_page": 21, "to_page": 25},
+    {"title": "연산자", "from_page": 26, "to_page": 40},
+    {"title": "모듈 (random · math)", "from_page": 41, "to_page": 43},
+    {"title": "마무리", "from_page": 44, "to_page": 9999}
+  ],
+
+  "intermediate.pdf": [
+    {"title": "표지 · 학습목표", "from_page": 1, "to_page": 2},
+    {"title": "조건문", "from_page": 3, "to_page": 17},
+    {"title": "반복문", "from_page": 18, "to_page": 45},
+    {"title": "리스트와 튜플", "from_page": 46, "to_page": 69},
+    {"title": "딕셔너리와 집합", "from_page": 70, "to_page": 94},
+    {"title": "마무리", "from_page": 95, "to_page": 9999}
+  ],
+
+  "advanced1.pdf": [
+    {"title": "표지 · 학습목표", "from_page": 1, "to_page": 2},
+    {"title": "함수 기초", "from_page": 3, "to_page": 9},
+    {"title": "인자와 반환값", "from_page": 10, "to_page": 18},
+    {"title": "변수의 범위와 global", "from_page": 19, "to_page": 23},
+    {"title": "디폴트 인자와 재귀", "from_page": 24, "to_page": 30},
+    {"title": "모듈", "from_page": 31, "to_page": 33},
+    {"title": "판다스 시작하기", "from_page": 34, "to_page": 38},
+    {"title": "CSV 다루기", "from_page": 39, "to_page": 45},
+    {"title": "시리즈와 데이터프레임", "from_page": 46, "to_page": 53},
+    {"title": "데이터 선택", "from_page": 54, "to_page": 59},
+    {"title": "데이터 분석과 필터링", "from_page": 60, "to_page": 74},
+    {"title": "정렬과 구조 변경", "from_page": 75, "to_page": 80},
+    {"title": "마무리", "from_page": 81, "to_page": 9999}
+  ],
+
+  "advanced2.pdf": [
+    {"title": "표지 · 학습목표", "from_page": 1, "to_page": 3},
+    {"title": "넘파이를 쓰는 이유", "from_page": 4, "to_page": 9},
+    {"title": "배열 만들기와 연산", "from_page": 10, "to_page": 20},
+    {"title": "인덱싱과 슬라이싱", "from_page": 21, "to_page": 25},
+    {"title": "2차원 배열", "from_page": 26, "to_page": 38},
+    {"title": "배열 생성 함수", "from_page": 39, "to_page": 45},
+    {"title": "난수와 통계", "from_page": 46, "to_page": 59},
+    {"title": "마무리", "from_page": 60, "to_page": 9999}
+  ],
+
+  "6주차-함수와 데이터다루기 - 업로드.pdf": "advanced1.pdf",
+  "9주차-넘파이 - 업로드.pdf": "advanced2.pdf"
+}

@@ -1,0 +1,50 @@
+{
+  "short_id": "a1-11-recursion",
+  "title": "재귀함수, 자신을 부르는 함수",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 30,
+      "narration": "함수가 자기 자신을 호출할 수도 있어요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.624
+    },
+    {
+      "index": 2,
+      "slide_page": 30,
+      "narration": "이걸 재귀함수라고 해요.",
+      "audio": "scene-02.mp3",
+      "duration": 2.76
+    },
+    {
+      "index": 3,
+      "slide_page": 30,
+      "narration": "팩토리얼이 대표적인 예죠.",
+      "audio": "scene-03.mp3",
+      "duration": 2.808
+    },
+    {
+      "index": 4,
+      "slide_page": 30,
+      "narration": "n 팩토리얼은 n 곱하기 n 마이너스 1 팩토리얼로 정의되니까, 함수 안에서 자신을 다시 부르면 돼요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.536
+    },
+    {
+      "index": 5,
+      "slide_page": 30,
+      "narration": "중요한 건 종료 조건이에요.",
+      "audio": "scene-05.mp3",
+      "duration": 2.808
+    },
+    {
+      "index": 6,
+      "slide_page": 30,
+      "narration": "1 팩토리얼은 1이라는 조건이 있어야 무한히 반복되지 않습니다.",
+      "audio": "scene-06.mp3",
+      "duration": 5.352
+    }
+  ],
+  "total_duration": 24.888
+}

@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-18-filter-na",
+  "title": "결손값 찾고 채우기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 70,
+      "narration": "실제 데이터는 생각보다 구멍이 많아요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.624
+    },
+    {
+      "index": 2,
+      "slide_page": 70,
+      "narration": "측정 장비 고장 같은 이유로 값이 빠진 결손값이 생기죠.",
+      "audio": "scene-02.mp3",
+      "duration": 5.184
+    },
+    {
+      "index": 3,
+      "slide_page": 70,
+      "narration": "빠진 값이 있는지 확인하는 함수가 isna예요.",
+      "audio": "scene-03.mp3",
+      "duration": 3.888
+    },
+    {
+      "index": 4,
+      "slide_page": 70,
+      "narration": "조건을 대괄호에 넣으면 결손이 있는 행만 추려 볼 수도 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.992
+    },
+    {
+      "index": 5,
+      "slide_page": 70,
+      "narration": "채울 때는 fillna를 쓰는데, inplace에 트루를 줘야 원본에 반영된다는 점, 잊지 마세요.",
+      "audio": "scene-05.mp3",
+      "duration": 7.224
+    }
+  ],
+  "total_duration": 24.912
+}

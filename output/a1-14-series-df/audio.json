@@ -1,0 +1,43 @@
+{
+  "short_id": "a1-14-series-df",
+  "title": "시리즈와 데이터프레임",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 47,
+      "narration": "판다스의 데이터 구조는 딱 두 가지만 기억하면 돼요.",
+      "audio": "scene-01.mp3",
+      "duration": 4.344
+    },
+    {
+      "index": 2,
+      "slide_page": 47,
+      "narration": "한 줄짜리 데이터는 시리즈, 표 전체는 데이터프레임이에요.",
+      "audio": "scene-02.mp3",
+      "duration": 4.944
+    },
+    {
+      "index": 3,
+      "slide_page": 47,
+      "narration": "값이 없는 곳은 np.nan으로 표시하는데, 낫 어 넘버, 즉 값 없음이라는 뜻이에요.",
+      "audio": "scene-03.mp3",
+      "duration": 7.08
+    },
+    {
+      "index": 4,
+      "slide_page": 47,
+      "narration": "딕셔너리로도 데이터프레임을 만들 수 있어요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.008
+    },
+    {
+      "index": 5,
+      "slide_page": 47,
+      "narration": "키가 열 이름이 되고 값이 데이터가 되죠.",
+      "audio": "scene-05.mp3",
+      "duration": 3.552
+    }
+  ],
+  "total_duration": 23.928
+}

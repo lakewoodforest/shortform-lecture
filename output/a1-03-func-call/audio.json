@@ -1,0 +1,50 @@
+{
+  "short_id": "a1-03-func-call",
+  "title": "함수 호출, 이름만 부르면 끝",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 9,
+      "narration": "함수를 실행하는 건 간단해요.",
+      "audio": "scene-01.mp3",
+      "duration": 2.952
+    },
+    {
+      "index": 2,
+      "slide_page": 9,
+      "narration": "함수 이름에 소괄호를 붙여서 불러 주면 돼요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.768
+    },
+    {
+      "index": 3,
+      "slide_page": 9,
+      "narration": "이걸 함수 호출이라고 하죠.",
+      "audio": "scene-03.mp3",
+      "duration": 2.928
+    },
+    {
+      "index": 4,
+      "slide_page": 9,
+      "narration": "주소를 세 번 출력해야 한다면 호출문 세 줄이면 끝이에요.",
+      "audio": "scene-04.mp3",
+      "duration": 4.896
+    },
+    {
+      "index": 5,
+      "slide_page": 9,
+      "narration": "정의는 한 번, 사용은 여러 번.",
+      "audio": "scene-05.mp3",
+      "duration": 3.528
+    },
+    {
+      "index": 6,
+      "slide_page": 9,
+      "narration": "이게 함수의 가장 큰 매력입니다.",
+      "audio": "scene-06.mp3",
+      "duration": 3.336
+    }
+  ],
+  "total_duration": 21.408
+}

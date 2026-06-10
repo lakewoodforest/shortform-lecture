@@ -1,0 +1,50 @@
+{
+  "short_id": "a2-08-2d-idx",
+  "title": "2차원 배열, 인덱스는 두 개",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 28,
+      "narration": "넘파이 2차원 배열은 수학의 행렬이에요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.672
+    },
+    {
+      "index": 2,
+      "slide_page": 28,
+      "narration": "요소를 꺼내려면 인덱스가 두 개 필요해요.",
+      "audio": "scene-02.mp3",
+      "duration": 3.936
+    },
+    {
+      "index": 3,
+      "slide_page": 28,
+      "narration": "첫 번째가 행 번호, 두 번째가 열 번호죠.",
+      "audio": "scene-03.mp3",
+      "duration": 4.128
+    },
+    {
+      "index": 4,
+      "slide_page": 28,
+      "narration": "대괄호를 두 번 쓸 수도 있지만, 넘파이에서는 콤마로 행과 열을 한 번에 적는 표기를 많이 써요.",
+      "audio": "scene-04.mp3",
+      "duration": 7.104
+    },
+    {
+      "index": 5,
+      "slide_page": 28,
+      "narration": "0번 행 2번 열이면 대괄호 안에 0 콤마 2.",
+      "audio": "scene-05.mp3",
+      "duration": 4.2
+    },
+    {
+      "index": 6,
+      "slide_page": 28,
+      "narration": "깔끔하죠.",
+      "audio": "scene-06.mp3",
+      "duration": 1.824
+    }
+  ],
+  "total_duration": 24.864
+}

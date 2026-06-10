@@ -1,0 +1,22 @@
+{
+  "short_id": "web-05-short",
+  "title": "테스트 숏폼",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "index": 1,
+      "slide_page": 0,
+      "narration": "파이썬은 배우기 쉬운 언어예요.",
+      "audio": "scene-01.mp3",
+      "duration": 3.192
+    },
+    {
+      "index": 2,
+      "slide_page": 0,
+      "narration": "오늘은 변수를 알아봅시다.",
+      "audio": "scene-02.mp3",
+      "duration": 2.952
+    }
+  ],
+  "total_duration": 6.144
+}
