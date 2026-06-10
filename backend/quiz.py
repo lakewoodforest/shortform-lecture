@@ -74,6 +74,31 @@ def _from_bank(course: str, topic: str, difficulty: str, count: int) -> List[dic
     return out
 
 
+def answer_question(question: str) -> dict:
+    """튜터 챗봇 응답. HF 모델이 설정돼 있으면 모델, 아니면 안내 메시지."""
+    if HF_MODEL_ID:
+        try:
+            return {"source": "model", "answer": _chat_with_model(question)}
+        except NotImplementedError:
+            pass
+    return {"source": "stub",
+            "answer": "아직 AI 모델이 연결되기 전이에요. 곧 파이썬 질문에 답해 드릴 수 있어요! "
+                      "그동안은 위의 문제 풀이로 복습해 보세요."}
+
+
+def _chat_with_model(question: str) -> str:
+    """허깅페이스 모델 챗봇 연동 지점 (추후 작업).
+
+    TODO(사용자):
+        from huggingface_hub import InferenceClient  (또는 transformers pipeline)
+        간단한 시스템 프롬프트 예:
+            "너는 파이썬 입문 강의의 튜터다. 학생의 질문에 한국어로
+             3~4문장 이내로 쉽고 친절하게 답해라."
+        question을 넘겨 응답 문자열만 반환하면 프론트는 수정 불필요.
+    """
+    raise NotImplementedError("허깅페이스 모델 연동 전입니다.")
+
+
 def _generate_with_model(course: str, topic: str, difficulty: str,
                          count: int) -> List[dict]:
     """허깅페이스 모델 연동 지점 (추후 작업).

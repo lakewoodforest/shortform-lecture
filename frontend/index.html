@@ -234,6 +234,42 @@
     background:linear-gradient(90deg,#46a583,#2f8f8d);}
   .q-next:hover{filter:brightness(1.07);}
 
+  /* ── 튜터 챗봇 (퀴즈 화면 우하단) ── */
+  .chat-fab{position:fixed;right:26px;bottom:26px;z-index:950;width:66px;height:66px;
+    border-radius:50%;border:none;background:#fff;cursor:pointer;padding:6px;
+    box-shadow:0 14px 30px -10px rgba(23,66,47,.45), 0 0 0 1px #dcebe2;
+    transition:transform .25s cubic-bezier(.2,.8,.3,1.3);}
+  .chat-fab:hover{transform:translateY(-4px) scale(1.06);}
+  .chat-fab svg{width:100%;height:100%;display:block;}
+  .chat-fab .ping{position:absolute;top:4px;right:4px;width:13px;height:13px;border-radius:50%;
+    background:#2f8f5f;border:2.5px solid #fff;}
+  .chat-panel{position:fixed;right:26px;bottom:104px;z-index:951;width:330px;max-width:calc(100vw - 52px);
+    background:#fff;border:1px solid #dcebe2;border-radius:18px;overflow:hidden;
+    box-shadow:0 24px 56px -18px rgba(23,66,47,.4);display:none;flex-direction:column;}
+  .chat-panel.on{display:flex;}
+  .chat-head{display:flex;align-items:center;gap:10px;padding:13px 16px;
+    background:linear-gradient(90deg,#46a583,#2f8f8d);color:#fff;}
+  .chat-head .nm{font-weight:700;font-size:14.5px;}
+  .chat-head .st{font-family:'IBM Plex Mono',monospace;font-size:10.5px;opacity:.85;}
+  .chat-close{margin-left:auto;background:none;border:none;color:#fff;font-size:16px;
+    cursor:pointer;opacity:.85;}
+  .chat-close:hover{opacity:1;}
+  .chat-body{height:300px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;
+    gap:9px;background:#f4faf6;}
+  .msg{max-width:82%;padding:9px 13px;border-radius:14px;font-size:13px;line-height:1.6;}
+  .msg.bot{align-self:flex-start;background:#fff;border:1px solid #e2efe7;color:#2a4538;
+    border-bottom-left-radius:4px;}
+  .msg.me{align-self:flex-end;background:#2f8f5f;color:#fff;border-bottom-right-radius:4px;}
+  .msg.wait{align-self:flex-start;color:#8aa697;font-size:12px;background:none;border:none;}
+  .chat-input{display:flex;gap:8px;padding:11px;border-top:1px solid #e2efe7;background:#fff;}
+  .chat-input input{flex:1;border:1px solid #dde9e1;border-radius:10px;padding:10px 12px;
+    font-family:'IBM Plex Sans KR';font-size:13px;color:#1b3527;}
+  .chat-input input:focus{outline:none;border-color:#2f8f5f;}
+  .chat-input button{border:none;border-radius:10px;padding:0 16px;font-family:'IBM Plex Sans KR';
+    font-size:13px;font-weight:600;color:#fff;cursor:pointer;
+    background:linear-gradient(90deg,#46a583,#2f8f8d);}
+  .chat-input button:disabled{opacity:.5;cursor:default;}
+
   .q-result{text-align:center;padding:10px 0 4px;}
   .q-score{font-family:'IBM Plex Mono',monospace;font-size:44px;font-weight:600;color:#2f8f8d;}
   .q-score small{font-size:18px;color:#9aa6c2;}
@@ -490,13 +526,11 @@
   .hint{color:var(--m-mute);}
 
   /* ── 뷰어 전용 모드(배포): 생성 UI 숨기고 감상만 ── */
-  body.viewer .sidebar{display:none;}
-  body.viewer .app{grid-template-columns:1fr;}
-  body.viewer #genCard,
-  body.viewer #progress,
-  body.viewer #genResult,
-  body.viewer .pdf-tool{display:none!important;}
-  body.viewer .wrap{max-width:1040px;}
+  /* 뷰어(데모) 모드: 모든 화면을 그대로 보여주되 영상 생성만 비활성 */
+  body.viewer #genBtn{opacity:.6;cursor:not-allowed;filter:grayscale(.25);}
+  .demo-note{display:none;margin-top:10px;text-align:center;font-size:12.5px;color:#946b1f;
+    background:#fdf6e7;border:1px solid #f3e3bb;border-radius:9px;padding:8px 12px;}
+  body.viewer .demo-note{display:block;}
 
   /* PDF 추출(보조 도구, 접이식) */
   .pdf-tool{margin-top:34px;background:var(--panel);border:1px solid var(--line);
@@ -661,6 +695,7 @@
           <textarea class="ta" id="script" placeholder="동영상 자막과 목소리가 될 대본을 작성해 주세요. 문장 구분(.)을 잘 지켜주세요."></textarea>
         </div>
         <button class="btn" id="genBtn">숏폼 생성하기</button>
+        <div class="demo-note">데모 서버에서는 영상 생성이 꺼져 있어요. 생성은 로컬 실행에서만 동작합니다 (다른 기능은 모두 사용 가능).</div>
         <div class="err hidden" id="genErr"></div>
       </div>
 
@@ -797,6 +832,35 @@
         </div>
       </div>
     </div>
+
+    <!-- 튜터 챗봇 (거북이) -->
+    <button class="chat-fab" id="chatFab" title="PY 튜터에게 질문하기">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="PY tutor">
+        <circle cx="60" cy="62" r="50" fill="#3da379"/>
+        <circle cx="60" cy="64" r="40" fill="#fff"/>
+        <path d="M54,18 q7,-9 15,-3" stroke="#1e5c43" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="44" cy="62" r="4.5" fill="#1e5c43"/>
+        <circle cx="76" cy="62" r="4.5" fill="#1e5c43"/>
+        <path d="M50,75 q10,9 20,0" stroke="#1e5c43" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="32" cy="74" rx="8" ry="5.5" fill="#bfe5d2"/>
+        <ellipse cx="88" cy="74" rx="8" ry="5.5" fill="#bfe5d2"/>
+      </svg>
+      <span class="ping"></span>
+    </button>
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-head">
+        <div>
+          <div class="nm">PY 튜터</div>
+          <div class="st" id="chatStatus">AI 모델 연동 준비 중</div>
+        </div>
+        <button class="chat-close" id="chatClose">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <div class="chat-input">
+        <input id="chatText" placeholder="파이썬이 궁금할 땐 물어보세요" maxlength="300">
+        <button id="chatSend">전송</button>
+      </div>
+    </div>
   </div>
 
   <!-- 코스 플레이어 -->
@@ -865,7 +929,8 @@ async function loadOptions(){
     const o = await (await fetch('/api/options')).json();
     if(o.viewer_only){
       document.body.classList.add('viewer');
-      $('#mainSub').textContent = '짧게 보는 파이썬 강의. 폴더를 열어 순서대로 시청하세요.';
+      $('#genBtn').disabled = true;
+      $('#genBtn').textContent = '숏폼 생성하기 (데모에서는 비활성)';
     }
     $('#bgStyle').innerHTML = o.bg_styles.map(b=>`<option>${b}</option>`).join('');
     $('#voice').innerHTML = o.voices.map(v=>`<option value="${v.id}">${esc(v.label)}</option>`).join('');
@@ -1282,6 +1347,51 @@ $('#qNew').addEventListener('click',()=>{
   $('#quizResult').classList.add('hidden');
   $('#quizSetup').classList.remove('hidden');
 });
+
+// ── PY 튜터 챗봇 ──
+let chatGreeted = false;
+function addMsg(text, who){
+  const el = document.createElement('div');
+  el.className = 'msg ' + who;
+  el.textContent = text;
+  $('#chatBody').appendChild(el);
+  $('#chatBody').scrollTop = $('#chatBody').scrollHeight;
+  return el;
+}
+$('#chatFab').addEventListener('click', ()=>{
+  const on = $('#chatPanel').classList.toggle('on');
+  if(on && !chatGreeted){
+    chatGreeted = true;
+    addMsg('안녕하세요! PY 튜터예요. 파이썬 공부하다 궁금한 게 생기면 물어보세요.', 'bot');
+  }
+  if(on) $('#chatText').focus();
+});
+$('#chatClose').addEventListener('click', ()=>$('#chatPanel').classList.remove('on'));
+
+async function sendChat(){
+  const q = $('#chatText').value.trim();
+  if(!q) return;
+  $('#chatText').value = '';
+  addMsg(q, 'me');
+  $('#chatSend').disabled = true;
+  const wait = addMsg('생각 중…', 'wait');
+  try{
+    const res = await fetch('/api/quiz/ask', {method:'POST',
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify({question:q})});
+    if(!res.ok) throw new Error();
+    const d = await res.json();
+    wait.remove();
+    addMsg(d.answer, 'bot');
+    if(d.source === 'model') $('#chatStatus').textContent = 'AI 모델 연결됨';
+  }catch(e){
+    wait.remove();
+    addMsg('지금은 답을 가져오지 못했어요. 서버가 켜져 있는지 확인해 주세요.', 'bot');
+  }
+  $('#chatSend').disabled = false;
+  $('#chatText').focus();
+}
+$('#chatSend').addEventListener('click', sendChat);
+$('#chatText').addEventListener('keydown', e=>{ if(e.key==='Enter') sendChat(); });
 
 // 초기 로드
 loadOptions(); loadCourse(); loadQuizOptions();

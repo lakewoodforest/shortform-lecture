@@ -25,7 +25,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .extractor import build_payload
-from .quiz import COURSES, DIFFICULTIES, HF_MODEL_ID, generate_quiz
+from .quiz import COURSES, DIFFICULTIES, HF_MODEL_ID, generate_quiz, answer_question
 
 app = FastAPI(title="한입 파이썬")
 
@@ -179,6 +179,19 @@ def quiz_generate(req: QuizReq):
     if not result["questions"]:
         raise HTTPException(400, "해당 조건의 문제가 없습니다.")
     return result
+
+
+class AskReq(BaseModel):
+    question: str
+
+
+@app.post("/api/quiz/ask")
+def quiz_ask(req: AskReq):
+    """튜터 챗봇. HF 모델 연동 전에는 안내 메시지를 돌려준다."""
+    q = req.question.strip()
+    if not q:
+        raise HTTPException(400, "질문을 입력하세요.")
+    return answer_question(q)
 
 
 class GenerateReq(BaseModel):
