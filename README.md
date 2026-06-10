@@ -56,3 +56,26 @@ python backend/extractor.py input/lecture.pdf > data/out.json
 
 다른 강의자료를 쓰거나 묶음을 바꾸려면 `backend/extractor.py` 의
 `DEFAULT_GROUPS` 표만 수정하면 된다 (페이지 범위 지정).
+
+## Render 배포 (뷰어 전용)
+
+미리 만든 강의 코스를 웹에서 감상하도록 배포한다. 영상 생성은 꺼진다(`VIEWER_ONLY=1`).
+
+준비 파일: `Dockerfile`, `render.yaml`, `requirements-deploy.txt` (이미 포함됨).
+
+1) GitHub에 올리기 (이미 git 커밋돼 있음):
+```bash
+# GitHub에서 빈 저장소 생성 후
+git remote add origin https://github.com/<사용자명>/shortform-lecture.git
+git branch -M main
+git push -u origin main
+```
+
+2) Render에서 배포:
+- render.com 로그인 → New > Blueprint → 위 저장소 선택 → render.yaml 자동 인식 → Apply
+- (또는 New > Web Service → 저장소 선택 → Runtime: Docker → 환경변수 `VIEWER_ONLY=1` → Create)
+
+3) 몇 분 후 `https://shortform-lecture.onrender.com` 같은 주소로 접속.
+   무료 플랜은 한동안 접속이 없으면 잠들었다가 다음 접속 때 깨어나는 데 ~30초 걸린다.
+
+로컬에서 생성 기능까지 쓰려면 `VIEWER_ONLY` 없이 `uvicorn backend.server:app` 로 실행.
