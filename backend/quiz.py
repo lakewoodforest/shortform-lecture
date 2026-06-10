@@ -17,6 +17,7 @@ import random
 from typing import List
 
 from .quiz_bank import QUESTION_BANK
+from .code_bank import CODE_BANK
 
 HF_MODEL_ID = os.environ.get("QUIZ_HF_MODEL", "")
 
@@ -25,6 +26,28 @@ DIFFICULTIES = ["전체", "쉬움", "보통", "어려움"]
 COURSES = [{"name": c, "topics": ["전체"] + list(QUESTION_BANK[c].keys()),
             "total": sum(len(v) for v in QUESTION_BANK[c].values())}
            for c in QUESTION_BANK]
+
+CODE_COURSES = [{"name": c, "topics": ["전체"] + list(CODE_BANK[c].keys()),
+                 "total": sum(len(v) for v in CODE_BANK[c].values())}
+                for c in CODE_BANK]
+
+
+def generate_code_set(course: str = "파이썬 입문", topic: str = "전체",
+                      difficulty: str = "전체", count: int = 5) -> dict:
+    """코드 타이핑 연습 문제 세트(빈칸 채우기)."""
+    count = max(1, min(count, 15))
+    bank = CODE_BANK.get(course) or next(iter(CODE_BANK.values()))
+    pool: List[dict] = []
+    topics = bank.keys() if topic == "전체" else [topic]
+    for t in topics:
+        for p in bank.get(t, []):
+            pool.append({**p, "topic": t})
+    if difficulty != "전체":
+        filtered = [p for p in pool if p["difficulty"] == difficulty]
+        if filtered:
+            pool = filtered
+    random.shuffle(pool)
+    return {"problems": pool[:count]}
 
 
 def generate_quiz(course: str = "파이썬 입문", topic: str = "전체",

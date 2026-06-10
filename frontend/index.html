@@ -58,7 +58,7 @@
     text-shadow:0 6px 40px rgba(7,60,110,.5);opacity:0;animation:fadeDown 1s .4s forwards;}
   .land-sub{margin-top:14px;font-size:15px;color:#e2f2fd;opacity:0;animation:fadeDown 1s .6s forwards;}
   /* 입구 2개: 좌(숏폼 스튜디오) · 우(파이썬 문제 풀이) */
-  .gates{position:relative;margin-top:auto;margin-bottom:auto;display:flex;gap:90px;
+  .gates{position:relative;margin-top:auto;margin-bottom:auto;display:flex;gap:56px;
     align-items:flex-end;justify-content:center;flex-wrap:wrap;
     opacity:0;animation:fadeUp 1.1s .7s forwards;}
   .gate{position:relative;cursor:pointer;text-align:center;width:260px;padding:10px 0;}
@@ -67,6 +67,7 @@
     background:radial-gradient(circle, rgba(255,255,255,.3), transparent 65%);
     filter:blur(8px);animation:breathe 4s ease-in-out infinite;}
   .gate-glow.green{background:radial-gradient(circle, rgba(160,240,200,.35), transparent 65%);}
+  .gate-glow.pink{background:radial-gradient(circle, rgba(255,200,215,.35), transparent 65%);}
   .gate img,.gate svg{position:relative;display:block;margin:0 auto;
     filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));
     transition:transform .35s cubic-bezier(.2,.8,.3,1.2);}
@@ -269,6 +270,83 @@
     font-size:13px;font-weight:600;color:#fff;cursor:pointer;white-space:nowrap;
     background:linear-gradient(90deg,#46a583,#2f8f8d);}
   .chat-input button:disabled{opacity:.5;cursor:default;}
+
+  /* ── 코드 연습 대시보드(전체 화면, 로즈 테마) ── */
+  #codeApp{position:fixed;inset:0;z-index:900;display:none;overflow-y:auto;
+    background:radial-gradient(110% 70% at 50% -8%, #fbe3ea 0%, #fdf2f5 45%, #f9e9ee 100%);}
+  #codeApp.on{display:block;}
+  .c-title{font-size:24px;font-weight:800;letter-spacing:-.5px;color:#5e2237;line-height:1.3;}
+  .c-title small{display:block;font-size:12.5px;color:#a06478;font-weight:500;margin-top:2px;}
+  .c-back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#84495d;
+    background:#fff;border:1px solid #efd3dc;border-radius:9px;padding:9px 14px;
+    cursor:pointer;transition:.15s;margin-right:4px;}
+  .c-back:hover{border-color:#d4476d;color:#d4476d;}
+  #codeApp .card{border-color:#f3dde4;box-shadow:0 16px 38px -20px rgba(94,34,55,.28);}
+  #codeApp .chip:hover{border-color:#d4476d;}
+  #codeApp .chip.on{background:#fdecf1;border-color:#d4476d;color:#b53a60;}
+  #codeApp .inp:focus{border-color:#d4476d;box-shadow:0 0 0 3px rgba(212,71,109,.13);}
+  #codeApp .q-bar i{background:linear-gradient(90deg,#e8597f,#d4476d);}
+  #codeApp .q-count{color:#b53a60;}
+  #codeApp .q-quit:hover{color:#b53a60;border-color:#e8b9c8;}
+  #codeApp .q-next{background:linear-gradient(90deg,#e8597f,#d4476d);}
+  #codeApp .q-explain{border-left-color:#d4476d;}
+  #codeApp .q-score{color:#d4476d;}
+  .btn-code{background:linear-gradient(90deg,#e8597f,#d4476d);
+    box-shadow:0 10px 26px -8px rgba(212,71,109,.5);}
+  .ico-code{background:linear-gradient(135deg,#f48ca0,#d4476d);
+    box-shadow:0 9px 20px -6px rgba(212,71,109,.5);}
+  .ico-code::after{content:"</>";position:absolute;inset:0;display:flex;align-items:center;
+    justify-content:center;color:#fff;font-weight:700;font-size:15px;
+    font-family:'IBM Plex Mono',monospace;}
+  .q-code .blank{color:#ffd76b;font-weight:700;border-bottom:2px dashed #ffd76b;}
+  .code-answer{display:flex;gap:9px;margin-top:14px;}
+  .code-answer input{flex:1;min-width:0;background:#f9f4f6;border:1.5px solid #ecd5dd;
+    border-radius:11px;padding:12px 15px;font-family:'IBM Plex Mono',monospace;
+    font-size:14px;color:#3c2230;}
+  .code-answer input:focus{outline:none;border-color:#d4476d;background:#fff;}
+  .code-answer input.ok{border-color:#2fae6a;background:#effaf3;}
+  .code-answer input.no{border-color:#d96459;background:#fdf1ef;}
+  .code-answer button{flex:none;border:none;border-radius:11px;padding:0 20px;
+    font-family:'IBM Plex Sans KR';font-size:14px;font-weight:600;color:#fff;cursor:pointer;
+    background:linear-gradient(90deg,#e8597f,#d4476d);white-space:nowrap;}
+  .code-answer button:disabled{opacity:.5;cursor:default;}
+
+  /* 모드 탭 + 실전 코딩 */
+  .mode-tabs{display:flex;gap:8px;margin-bottom:20px;}
+  .mtab{padding:9px 18px;border-radius:10px;border:1px solid #efd3dc;background:#fff;
+    font-family:'IBM Plex Sans KR';font-size:13.5px;font-weight:600;color:#84495d;
+    cursor:pointer;transition:.15s;}
+  .mtab:hover{border-color:#d4476d;}
+  .mtab.on{background:linear-gradient(90deg,#e8597f,#d4476d);color:#fff;border-color:transparent;}
+  .mtag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;
+    background:rgba(255,255,255,.25);border-radius:5px;padding:2px 5px;margin-left:4px;}
+  .mtab:not(.on) .mtag{background:#fdecf1;color:#d4476d;}
+
+  .live-editor{width:100%;min-height:170px;background:#1c2f60;color:#dce6ff;border:none;
+    border-radius:11px;padding:14px 16px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+    line-height:1.65;resize:vertical;tab-size:4;}
+  .live-editor:focus{outline:2px solid #d4476d;}
+  .live-run{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
+  .run-btn{border:none;border-radius:11px;padding:11px 20px;font-family:'IBM Plex Sans KR';
+    font-size:14px;font-weight:700;color:#fff;cursor:pointer;
+    background:linear-gradient(90deg,#2fae6a,#1f8f55);
+    box-shadow:0 8px 20px -8px rgba(31,143,85,.6);}
+  .run-btn:hover{filter:brightness(1.08);}
+  .run-btn:disabled{opacity:.55;cursor:wait;}
+  .live-status{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#a06478;}
+  .tres-box{margin-top:14px;display:flex;flex-direction:column;gap:7px;}
+  .tres{display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;background:#f9f4f6;border:1px solid #ecd5dd;border-radius:10px;
+    padding:9px 13px;color:#3c2230;flex-wrap:wrap;}
+  .tres.ok{border-color:rgba(47,174,106,.45);background:#effaf3;}
+  .tres.no{border-color:rgba(217,100,89,.45);background:#fdf1ef;}
+  .tres .mark{font-weight:700;flex:none;}
+  .tres.ok .mark{color:#2fae6a;}
+  .tres.no .mark{color:#d96459;}
+  .tres .exp{color:#8a6b78;}
+  .tres-err{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#c0392b;
+    background:#fdf1ef;border:1px solid #f0c4be;border-radius:10px;padding:10px 13px;
+    white-space:pre-wrap;}
 
   .q-result{text-align:center;padding:10px 0 4px;}
   .q-score{font-family:'IBM Plex Mono',monospace;font-size:44px;font-weight:600;color:#2f8f8d;}
@@ -646,6 +724,40 @@
         <div class="gate-label">파이썬 문제 풀이</div>
         <div class="gate-cap">PYTHON QUIZ</div>
       </div>
+      <!-- 코드 연습 (흰 고양이) -->
+      <div class="gate" id="enterCode">
+        <div class="gate-glow pink"></div>
+        <svg viewBox="40 6 200 250" xmlns="http://www.w3.org/2000/svg" aria-label="code cat">
+          <polygon points="58,64 70,14 104,44" fill="#fff" stroke="#4a4350" stroke-width="7" stroke-linejoin="round"/>
+          <polygon points="182,64 170,14 136,44" fill="#fff" stroke="#4a4350" stroke-width="7" stroke-linejoin="round"/>
+          <polygon points="68,52 74,30 90,44" fill="#f7b8c4"/>
+          <polygon points="172,52 166,30 150,44" fill="#f7b8c4"/>
+          <ellipse cx="120" cy="90" rx="64" ry="54" fill="#fff" stroke="#4a4350" stroke-width="7"/>
+          <g stroke="#4a4350" stroke-width="4" fill="none" stroke-linecap="round">
+            <path d="M101,64 q6,-9 13,-7"/>
+            <path d="M116,59 q6,-9 13,-7"/>
+            <path d="M131,62 q6,-9 13,-7"/>
+          </g>
+          <circle cx="106" cy="95" r="3.6" fill="#4a4350"/>
+          <circle cx="134" cy="95" r="3.6" fill="#4a4350"/>
+          <path d="M112,109 q8,-8 16,0" stroke="#4a4350" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <g stroke="#4a4350" stroke-width="4" fill="none" stroke-linecap="round">
+            <path d="M62,90 l20,2"/><path d="M64,100 l18,-2"/>
+            <path d="M178,90 l-20,2"/><path d="M176,100 l-18,-2"/>
+          </g>
+          <path d="M168,202 q24,8 20,-18" stroke="#4a4350" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <ellipse cx="98" cy="230" rx="16" ry="10" fill="#fff" stroke="#4a4350" stroke-width="6"/>
+          <ellipse cx="142" cy="230" rx="16" ry="10" fill="#fff" stroke="#4a4350" stroke-width="6"/>
+          <path d="M80,140 C86,127 154,127 160,140 C171,170 167,202 151,216 C130,228 110,228 89,216 C73,202 69,170 80,140 Z"
+                fill="#fff" stroke="#4a4350" stroke-width="7"/>
+          <rect x="84" y="136" width="14" height="40" rx="7" fill="#f48ca0" stroke="#4a4350" stroke-width="5"/>
+          <rect x="142" y="136" width="14" height="40" rx="7" fill="#f48ca0" stroke="#4a4350" stroke-width="5"/>
+          <text x="120" y="201" text-anchor="middle" font-family="IBM Plex Sans KR, sans-serif"
+                font-weight="800" font-size="24" fill="#ee7b95">HSU</text>
+        </svg>
+        <div class="gate-label">파이썬 코드 연습</div>
+        <div class="gate-cap">CODE PRACTICE</div>
+      </div>
     </div>
     <a class="land-badge" href="https://www.hansung.ac.kr" target="_blank" rel="noopener" title="한성대학교">
       <img src="/static/hsu-logo.png" alt="한성대학교"
@@ -863,6 +975,132 @@
     </div>
   </div>
 
+  <!-- ── 파이썬 코드 연습 대시보드 ── -->
+  <div id="codeApp">
+    <div class="quiz-shell">
+      <div class="quiz-top">
+        <button class="c-back" id="codeBack">← 처음으로</button>
+        <span class="feat-ico ico-code"></span>
+        <div class="c-title">파이썬 코드 연습
+          <small>빈칸에 들어갈 코드를 직접 타이핑해 보세요</small>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="mode-tabs">
+          <button class="mtab on" id="tabFill">빈칸 채우기</button>
+          <button class="mtab" id="tabLive">실전 코딩 <span class="mtag">RUN</span></button>
+        </div>
+
+        <div id="fillMode">
+        <!-- 설정 -->
+        <div id="codeSetup">
+          <div class="field">
+            <label>코스</label>
+            <div class="chips" id="cCourse"></div>
+          </div>
+          <div class="field">
+            <label>주제</label>
+            <select class="inp" id="cTopic"></select>
+          </div>
+          <div class="field">
+            <label>난이도</label>
+            <div class="chips" id="cDiff"></div>
+          </div>
+          <div class="field">
+            <label>문항 수</label>
+            <div class="chips" id="cCount">
+              <button class="chip on" data-n="5">5문제</button>
+              <button class="chip" data-n="8">8문제</button>
+              <button class="chip" data-n="12">12문제</button>
+            </div>
+          </div>
+          <button class="btn btn-code" id="codeStart">코드 연습 시작하기</button>
+          <div class="err hidden" id="codeErr"></div>
+          <div class="quiz-src" id="codeSrc"></div>
+        </div>
+
+        <!-- 풀이 -->
+        <div id="codePlay" class="hidden">
+          <div class="q-top">
+            <span class="q-count" id="cNum"></span>
+            <span class="q-topic" id="cTopicTag"></span>
+            <span class="q-diff" id="cDiffTag"></span>
+            <button class="q-quit" id="cQuit">그만하기</button>
+          </div>
+          <div class="q-bar"><i id="cBar"></i></div>
+          <div class="q-text" id="cPrompt"></div>
+          <div class="q-code" id="cCode"></div>
+          <div class="code-answer">
+            <input id="cInput" placeholder="빈칸에 들어갈 코드 입력" autocomplete="off"
+                   autocapitalize="off" spellcheck="false">
+            <button id="cCheck">확인</button>
+          </div>
+          <div class="q-explain hidden" id="cExplain"></div>
+          <button class="q-next hidden" id="cNext">다음 문제</button>
+        </div>
+
+        <!-- 결과 -->
+        <div id="codeResult" class="hidden">
+          <div class="q-result">
+            <div class="q-score"><span id="cScore">0</span><small> / <span id="cTotal">0</span></small></div>
+            <div class="q-msg" id="cMsg"></div>
+            <div class="q-again">
+              <button class="mini" id="cRetry">같은 조건으로 다시</button>
+              <button class="mini" id="cNew">조건 바꾸기</button>
+            </div>
+          </div>
+        </div>
+        </div><!-- /fillMode -->
+
+        <!-- ── 실전 코딩 (Pyodide 실행 채점) ── -->
+        <div id="liveMode" class="hidden">
+          <div id="liveSetup">
+            <div class="field">
+              <label>코스</label>
+              <div class="chips" id="lCourse"></div>
+            </div>
+            <button class="btn btn-code" id="liveStart">실전 코딩 시작하기</button>
+            <div class="err hidden" id="liveErr"></div>
+            <div class="quiz-src" id="liveSrc">코드를 직접 작성하면 브라우저 안의 파이썬이 실행해 채점합니다</div>
+          </div>
+
+          <div id="livePlay" class="hidden">
+            <div class="q-top">
+              <span class="q-count" id="lNum"></span>
+              <span class="q-topic" id="lTopicTag"></span>
+              <span class="q-diff" id="lDiffTag"></span>
+              <button class="q-quit" id="lQuit">그만하기</button>
+            </div>
+            <div class="q-bar"><i id="lBar"></i></div>
+            <div class="q-text" id="lPrompt"></div>
+            <textarea class="live-editor" id="lEditor" spellcheck="false"
+                      autocapitalize="off" autocomplete="off"></textarea>
+            <div class="live-run">
+              <button class="run-btn" id="lRun">▶ 실행하고 채점</button>
+              <button class="mini" id="lSolution">정답 코드 보기</button>
+              <span class="live-status" id="lStatus"></span>
+            </div>
+            <div class="tres-box hidden" id="lTests"></div>
+            <div class="q-explain hidden" id="lExplain"></div>
+            <button class="q-next hidden" id="lNext">다음 문제</button>
+          </div>
+
+          <div id="liveResult" class="hidden">
+            <div class="q-result">
+              <div class="q-score"><span id="lScore">0</span><small> / <span id="lTotal">0</span></small></div>
+              <div class="q-msg" id="lMsg"></div>
+              <div class="q-again">
+                <button class="mini" id="lRetry">다시 풀기</button>
+                <button class="mini" id="lNew">코스 바꾸기</button>
+              </div>
+            </div>
+          </div>
+        </div><!-- /liveMode -->
+      </div>
+    </div>
+  </div>
+
   <!-- 코스 플레이어 -->
   <div class="player-overlay" id="player">
     <div class="player-box">
@@ -891,10 +1129,12 @@ function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':
 // ── 랜딩 진입 (좌: 숏폼 스튜디오 / 우: 문제 풀이) ──
 $('#enterStudio').addEventListener('click', ()=>{
   $('#quizApp').classList.remove('on');
+  $('#codeApp').classList.remove('on');
   $('#landing').classList.add('gone');
 });
 $('#enterQuiz').addEventListener('click', ()=>{
   $('#quizApp').classList.add('on');
+  $('#codeApp').classList.remove('on');
   $('#landing').classList.add('gone');
 });
 $('#quizBack').addEventListener('click', ()=>{
@@ -1348,6 +1588,353 @@ $('#qNew').addEventListener('click',()=>{
   $('#quizSetup').classList.remove('hidden');
 });
 
+// ── 파이썬 코드 연습 ──
+let CODESET=[], cIdx=0, cScore=0, cAnswered=false, CCOURSES=[];
+bindChips($('#cCount'));
+
+$('#enterCode').addEventListener('click', ()=>{
+  $('#codeApp').classList.add('on');
+  $('#landing').classList.add('gone');
+});
+$('#codeBack').addEventListener('click', ()=>{
+  $('#codeApp').classList.remove('on');
+  $('#landing').classList.remove('gone');
+});
+
+function renderCodeTopics(courseName){
+  const c = CCOURSES.find(x=>x.name===courseName) || CCOURSES[0];
+  $('#cTopic').innerHTML = (c?c.topics:['전체']).map(t=>`<option>${esc(t)}</option>`).join('');
+}
+async function loadCodeOptions(){
+  try{
+    const res = await fetch('/api/code/options');
+    if(!res.ok) throw new Error('restart');
+    const o = await res.json();
+    CCOURSES = o.courses || [];
+    $('#cCourse').innerHTML = CCOURSES.map((c,i)=>
+      `<button class="chip ${i===0?'on':''}" data-c="${esc(c.name)}">${esc(c.name)}${c.total?` · ${c.total}문제`:''}</button>`).join('');
+    bindChips($('#cCourse'));
+    $('#cCourse').querySelectorAll('.chip').forEach(el=>
+      el.addEventListener('click',()=>renderCodeTopics(el.dataset.c)));
+    renderCodeTopics(CCOURSES[0] && CCOURSES[0].name);
+    $('#cDiff').innerHTML = o.difficulties.map((d,i)=>
+      `<button class="chip ${i===0?'on':''}" data-d="${esc(d)}">${esc(d)}</button>`).join('');
+    bindChips($('#cDiff'));
+    const total = CCOURSES.reduce((s,c)=>s+(c.total||0),0);
+    $('#codeSrc').textContent = `강의자료 기반 · 총 ${total}문제 · 빈칸을 직접 타이핑하는 방식`;
+  }catch(e){
+    $('#codeSrc').textContent = RESTART_MSG;
+    $('#codeSrc').style.color = '#c0392b';
+  }
+}
+
+$('#codeStart').addEventListener('click', startCode);
+async function startCode(){
+  const body = {
+    course: $('#cCourse .chip.on')?.dataset.c || '파이썬 입문',
+    topic: $('#cTopic').value || '전체',
+    difficulty: $('#cDiff .chip.on')?.dataset.d || '전체',
+    count: +($('#cCount .chip.on')?.dataset.n || 5),
+  };
+  $('#codeErr').classList.add('hidden');
+  $('#codeStart').disabled=true; $('#codeStart').textContent='문제 가져오는 중…';
+  try{
+    const res = await fetch('/api/code/generate',{method:'POST',
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    if(res.status===404) throw new Error(RESTART_MSG);
+    if(!res.ok) throw new Error((await res.json()).detail||'문제 생성 실패');
+    CODESET = (await res.json()).problems;
+    cIdx=0; cScore=0;
+    $('#codeSetup').classList.add('hidden');
+    $('#codeResult').classList.add('hidden');
+    $('#codePlay').classList.remove('hidden');
+    renderCode();
+  }catch(e){
+    $('#codeErr').textContent='오류: '+e.message;
+    $('#codeErr').classList.remove('hidden');
+  }
+  $('#codeStart').disabled=false; $('#codeStart').textContent='코드 연습 시작하기';
+}
+
+function renderCode(){
+  const p = CODESET[cIdx];
+  cAnswered = false;
+  $('#cNum').textContent = `Q${cIdx+1} / ${CODESET.length}`;
+  $('#cTopicTag').textContent = p.topic;
+  $('#cDiffTag').textContent = p.difficulty;
+  $('#cBar').style.width = (cIdx/CODESET.length*100)+'%';
+  $('#cPrompt').textContent = p.prompt;
+  $('#cCode').innerHTML = esc(p.code).replace(/____/g,'<span class="blank">____</span>');
+  $('#cInput').value=''; $('#cInput').className=''; $('#cInput').disabled=false;
+  $('#cCheck').disabled=false;
+  $('#cExplain').classList.add('hidden');
+  $('#cNext').classList.add('hidden');
+  $('#cInput').focus();
+}
+
+const normCode = s => s.trim().replace(/\s+/g,' ').replace(/"/g,"'");
+function checkCode(){
+  if(cAnswered) return;
+  const p = CODESET[cIdx];
+  const me = normCode($('#cInput').value);
+  if(!me) return;
+  cAnswered = true;
+  const ok = p.answers.some(a=>normCode(a)===me);
+  if(ok) cScore++;
+  $('#cInput').classList.add(ok?'ok':'no');
+  $('#cInput').disabled=true; $('#cCheck').disabled=true;
+  $('#cExplain').innerHTML =
+    `<b>${ok?'정답입니다':'아쉬워요'}</b> · 정답: <b>${esc(p.answers[0])}</b><br>${esc(p.explain)}`;
+  $('#cExplain').classList.remove('hidden');
+  $('#cNext').textContent = cIdx<CODESET.length-1 ? '다음 문제' : '결과 보기';
+  $('#cNext').classList.remove('hidden');
+  $('#cBar').style.width = ((cIdx+1)/CODESET.length*100)+'%';
+  $('#cNext').focus();
+}
+$('#cCheck').addEventListener('click', checkCode);
+$('#cInput').addEventListener('keydown', e=>{ if(e.key==='Enter') checkCode(); });
+
+$('#cNext').addEventListener('click', ()=>{
+  if(cIdx<CODESET.length-1){ cIdx++; renderCode(); }
+  else{
+    $('#codePlay').classList.add('hidden');
+    $('#codeResult').classList.remove('hidden');
+    $('#cScore').textContent = cScore;
+    $('#cTotal').textContent = CODESET.length;
+    const pct = cScore/CODESET.length;
+    $('#cMsg').textContent =
+      pct===1 ? '완벽해요. 손이 코드를 기억하기 시작했어요.' :
+      pct>=0.7 ? '좋아요. 틀린 문법만 한 번 더 적어 보세요.' :
+      pct>=0.4 ? '감이 잡혀가요. 영상으로 복습하고 다시 타이핑해 보세요.' :
+      '괜찮아요. 퀴즈로 개념을 먼저 다지고 오면 훨씬 수월할 거예요.';
+  }
+});
+$('#cQuit').addEventListener('click', ()=>{
+  $('#codePlay').classList.add('hidden');
+  $('#codeSetup').classList.remove('hidden');
+});
+$('#cRetry').addEventListener('click', ()=>{
+  $('#codeResult').classList.add('hidden');
+  startCode();
+});
+$('#cNew').addEventListener('click', ()=>{
+  $('#codeResult').classList.add('hidden');
+  $('#codeSetup').classList.remove('hidden');
+});
+
+// ── 실전 코딩 (Pyodide 실행 채점) ──
+let LIVESET=[], lIdx=0, lScore=0, lDone=false, LCOURSES=[];
+let pyodideReady = null;   // Promise<pyodide>
+
+$('#tabFill').addEventListener('click', ()=>{
+  $('#tabFill').classList.add('on'); $('#tabLive').classList.remove('on');
+  $('#fillMode').classList.remove('hidden'); $('#liveMode').classList.add('hidden');
+});
+$('#tabLive').addEventListener('click', ()=>{
+  $('#tabLive').classList.add('on'); $('#tabFill').classList.remove('on');
+  $('#liveMode').classList.remove('hidden'); $('#fillMode').classList.add('hidden');
+  warmPyodide();   // 미리 엔진 로딩 시작
+});
+
+function warmPyodide(){
+  if(pyodideReady) return pyodideReady;
+  $('#liveSrc').textContent = '파이썬 엔진 준비 중… (최초 1회, 잠시 걸려요)';
+  pyodideReady = new Promise((resolve, reject)=>{
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js';
+    s.onload = async ()=>{
+      try{
+        const py = await loadPyodide();
+        py.runPython(PY_RUNNER);
+        $('#liveSrc').textContent = '파이썬 엔진 준비 완료 · 코드를 작성하면 브라우저에서 바로 실행됩니다';
+        resolve(py);
+      }catch(err){ reject(err); }
+    };
+    s.onerror = ()=>reject(new Error('엔진 로딩 실패 — 인터넷 연결을 확인해 주세요'));
+    document.head.appendChild(s);
+  });
+  pyodideReady.catch(e=>{
+    $('#liveSrc').textContent = '오류: ' + e.message;
+    $('#liveSrc').style.color = '#c0392b';
+    pyodideReady = null;
+  });
+  return pyodideReady;
+}
+
+const PY_RUNNER = `
+import json, math, ast, io, contextlib, traceback
+
+def run_tests(code, tests_json):
+    tests = json.loads(tests_json)
+    env = {}
+    out = io.StringIO()
+    try:
+        with contextlib.redirect_stdout(out):
+            exec(code, env)
+    except Exception:
+        return json.dumps({"error": traceback.format_exc(limit=1), "results": []})
+    results = []
+    for t in tests:
+        try:
+            with contextlib.redirect_stdout(out):
+                val = eval(t["call"], env)
+            if hasattr(val, "tolist"):
+                val = val.tolist()
+            try:
+                exp = ast.literal_eval(t["expected"])
+            except Exception:
+                exp = t["expected"]
+            if isinstance(exp, float) and isinstance(val, (int, float)) and not isinstance(val, bool):
+                ok = math.isclose(val, exp, rel_tol=1e-9)
+            else:
+                ok = (val == exp)
+            results.append({"call": t["call"], "expected": t["expected"],
+                            "got": repr(val), "ok": bool(ok)})
+        except Exception as e:
+            results.append({"call": t["call"], "expected": t["expected"],
+                            "got": "오류: " + str(e), "ok": False})
+    return json.dumps({"error": "", "results": results})
+`;
+
+async function loadLiveOptions(){
+  try{
+    const res = await fetch('/api/live/options');
+    if(!res.ok) throw new Error('restart');
+    LCOURSES = (await res.json()).courses || [];
+    $('#lCourse').innerHTML = LCOURSES.map((c,i)=>
+      `<button class="chip ${i===0?'on':''}" data-c="${esc(c.name)}">${esc(c.name)} · ${c.total}문제</button>`).join('');
+    bindChips($('#lCourse'));
+  }catch(e){ /* 탭 열 때 메시지로 안내됨 */ }
+}
+
+$('#liveStart').addEventListener('click', startLive);
+async function startLive(){
+  const course = $('#lCourse .chip.on')?.dataset.c || '파이썬 입문';
+  $('#liveErr').classList.add('hidden');
+  $('#liveStart').disabled=true; $('#liveStart').textContent='문제 가져오는 중…';
+  try{
+    const res = await fetch('/api/live/generate',{method:'POST',
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify({course})});
+    if(res.status===404) throw new Error(RESTART_MSG);
+    if(!res.ok) throw new Error('문제를 가져오지 못했어요');
+    LIVESET = (await res.json()).problems;
+    lIdx=0; lScore=0;
+    $('#liveSetup').classList.add('hidden');
+    $('#liveResult').classList.add('hidden');
+    $('#livePlay').classList.remove('hidden');
+    renderLive();
+    warmPyodide();
+  }catch(e){
+    $('#liveErr').textContent='오류: '+e.message;
+    $('#liveErr').classList.remove('hidden');
+  }
+  $('#liveStart').disabled=false; $('#liveStart').textContent='실전 코딩 시작하기';
+}
+
+function renderLive(){
+  const p = LIVESET[lIdx];
+  lDone = false;
+  $('#lNum').textContent = `Q${lIdx+1} / ${LIVESET.length}`;
+  $('#lTopicTag').textContent = p.topic;
+  $('#lDiffTag').textContent = p.difficulty;
+  $('#lBar').style.width = (lIdx/LIVESET.length*100)+'%';
+  $('#lPrompt').textContent = p.prompt;
+  $('#lEditor').value = p.starter;
+  $('#lTests').classList.add('hidden'); $('#lTests').innerHTML='';
+  $('#lExplain').classList.add('hidden');
+  $('#lNext').classList.add('hidden');
+  $('#lStatus').textContent='';
+}
+
+// Tab 키로 4칸 들여쓰기
+$('#lEditor').addEventListener('keydown', e=>{
+  if(e.key==='Tab'){
+    e.preventDefault();
+    const t=e.target, s=t.selectionStart;
+    t.value = t.value.slice(0,s) + '    ' + t.value.slice(t.selectionEnd);
+    t.selectionStart = t.selectionEnd = s+4;
+  }
+});
+
+$('#lRun').addEventListener('click', runLive);
+async function runLive(){
+  const p = LIVESET[lIdx];
+  $('#lRun').disabled = true;
+  $('#lStatus').textContent = '엔진 준비 중…';
+  try{
+    const py = await warmPyodide();
+    if(p.needs && p.needs.length){
+      $('#lStatus').textContent = `${p.needs.join(', ')} 패키지 로딩 중…`;
+      await py.loadPackage(p.needs);
+    }
+    $('#lStatus').textContent = '실행 중…';
+    const runner = py.globals.get('run_tests');
+    const raw = runner($('#lEditor').value, JSON.stringify(p.tests));
+    const r = JSON.parse(raw);
+    const box = $('#lTests'); box.innerHTML='';
+    if(r.error){
+      box.innerHTML = `<div class="tres-err">${esc(r.error)}</div>`;
+      box.classList.remove('hidden');
+      $('#lStatus').textContent = '코드에 오류가 있어요';
+    }else{
+      const passed = r.results.filter(x=>x.ok).length;
+      box.innerHTML = r.results.map(x=>
+        `<div class="tres ${x.ok?'ok':'no'}"><span class="mark">${x.ok?'✓':'✕'}</span>
+         <span>${esc(x.call)}</span><span class="exp">기대 ${esc(x.expected)}</span>
+         <span>→ ${esc(x.got)}</span></div>`).join('');
+      box.classList.remove('hidden');
+      const allOk = passed === r.results.length;
+      $('#lStatus').textContent = `테스트 ${passed} / ${r.results.length} 통과`;
+      if(allOk && !lDone){
+        lDone = true; lScore++;
+        $('#lExplain').innerHTML = '<b>통과!</b> 모든 테스트를 만족했어요.';
+        $('#lExplain').classList.remove('hidden');
+        $('#lNext').textContent = lIdx<LIVESET.length-1 ? '다음 문제' : '결과 보기';
+        $('#lNext').classList.remove('hidden');
+        $('#lBar').style.width = ((lIdx+1)/LIVESET.length*100)+'%';
+      }else if(!allOk){
+        $('#lNext').textContent = lIdx<LIVESET.length-1 ? '건너뛰고 다음' : '결과 보기';
+        $('#lNext').classList.remove('hidden');
+      }
+    }
+  }catch(e){
+    $('#lStatus').textContent = '오류: ' + (e.message||e);
+  }
+  $('#lRun').disabled = false;
+}
+
+$('#lSolution').addEventListener('click', ()=>{
+  const p = LIVESET[lIdx];
+  $('#lExplain').innerHTML = `<b>참고 정답</b><pre style="margin-top:8px;white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">${esc(p.solution)}</pre>`;
+  $('#lExplain').classList.remove('hidden');
+});
+
+$('#lNext').addEventListener('click', ()=>{
+  if(lIdx<LIVESET.length-1){ lIdx++; renderLive(); }
+  else{
+    $('#livePlay').classList.add('hidden');
+    $('#liveResult').classList.remove('hidden');
+    $('#lScore').textContent = lScore;
+    $('#lTotal').textContent = LIVESET.length;
+    const pct = lScore/LIVESET.length;
+    $('#lMsg').textContent =
+      pct===1 ? '전부 통과! 이제 진짜 코드를 짤 수 있는 사람이에요.' :
+      pct>=0.5 ? '좋아요. 막힌 문제는 정답 코드와 비교해 보세요.' :
+      '괜찮아요. 빈칸 채우기로 문법을 다지고 다시 도전해 보세요.';
+  }
+});
+$('#lQuit').addEventListener('click', ()=>{
+  $('#livePlay').classList.add('hidden');
+  $('#liveSetup').classList.remove('hidden');
+});
+$('#lRetry').addEventListener('click', ()=>{
+  $('#liveResult').classList.add('hidden'); startLive();
+});
+$('#lNew').addEventListener('click', ()=>{
+  $('#liveResult').classList.add('hidden');
+  $('#liveSetup').classList.remove('hidden');
+});
+
 // ── PY 튜터 챗봇 ──
 let chatGreeted = false;
 function addMsg(text, who){
@@ -1394,7 +1981,7 @@ $('#chatSend').addEventListener('click', sendChat);
 $('#chatText').addEventListener('keydown', e=>{ if(e.key==='Enter') sendChat(); });
 
 // 초기 로드
-loadOptions(); loadCourse(); loadQuizOptions();
+loadOptions(); loadCourse(); loadQuizOptions(); loadCodeOptions(); loadLiveOptions();
 </script>
 </body>
 </html>

@@ -25,7 +25,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .extractor import build_payload
-from .quiz import COURSES, DIFFICULTIES, HF_MODEL_ID, generate_quiz, answer_question
+from .quiz import (COURSES, CODE_COURSES, DIFFICULTIES, HF_MODEL_ID,
+                   generate_quiz, generate_code_set, answer_question)
 
 app = FastAPI(title="한입 파이썬")
 
@@ -177,6 +178,46 @@ class QuizReq(BaseModel):
 def quiz_generate(req: QuizReq):
     result = generate_quiz(req.course, req.topic, req.difficulty, req.count)
     if not result["questions"]:
+        raise HTTPException(400, "해당 조건의 문제가 없습니다.")
+    return result
+
+
+# ── 실전 코딩 (브라우저 Pyodide 실행 채점) ──
+from .live_bank import LIVE_BANK
+
+
+@app.get("/api/live/options")
+def live_options():
+    return {"courses": [{"name": c, "total": len(v)} for c, v in LIVE_BANK.items()]}
+
+
+class LiveReq(BaseModel):
+    course: str = "파이썬 입문"
+
+
+@app.post("/api/live/generate")
+def live_generate(req: LiveReq):
+    problems = LIVE_BANK.get(req.course) or next(iter(LIVE_BANK.values()))
+    return {"problems": problems}
+
+
+# ── 코드 타이핑 연습 ──
+@app.get("/api/code/options")
+def code_options():
+    return {"courses": CODE_COURSES, "difficulties": DIFFICULTIES}
+
+
+class CodeReq(BaseModel):
+    course: str = "파이썬 입문"
+    topic: str = "전체"
+    difficulty: str = "전체"
+    count: int = 5
+
+
+@app.post("/api/code/generate")
+def code_generate(req: CodeReq):
+    result = generate_code_set(req.course, req.topic, req.difficulty, req.count)
+    if not result["problems"]:
         raise HTTPException(400, "해당 조건의 문제가 없습니다.")
     return result
 
