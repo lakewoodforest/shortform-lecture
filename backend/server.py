@@ -193,11 +193,16 @@ def live_options():
 
 class LiveReq(BaseModel):
     course: str = "파이썬 입문"
+    count: int = 0          # 0이면 전부
 
 
 @app.post("/api/live/generate")
 def live_generate(req: LiveReq):
-    problems = LIVE_BANK.get(req.course) or next(iter(LIVE_BANK.values()))
+    import random as _r
+    problems = list(LIVE_BANK.get(req.course) or next(iter(LIVE_BANK.values())))
+    _r.shuffle(problems)
+    if req.count > 0:
+        problems = problems[:req.count]
     return {"problems": problems}
 
 

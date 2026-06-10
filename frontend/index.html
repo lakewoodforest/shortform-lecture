@@ -1060,6 +1060,14 @@
               <label>코스</label>
               <div class="chips" id="lCourse"></div>
             </div>
+            <div class="field">
+              <label>문항 수</label>
+              <div class="chips" id="lCount">
+                <button class="chip on" data-n="5">5문제</button>
+                <button class="chip" data-n="10">10문제</button>
+                <button class="chip" data-n="0">전부</button>
+              </div>
+            </div>
             <button class="btn btn-code" id="liveStart">실전 코딩 시작하기</button>
             <div class="err hidden" id="liveErr"></div>
             <div class="quiz-src" id="liveSrc">코드를 직접 작성하면 브라우저 안의 파이썬이 실행해 채점합니다</div>
@@ -1804,17 +1812,19 @@ async function loadLiveOptions(){
     $('#lCourse').innerHTML = LCOURSES.map((c,i)=>
       `<button class="chip ${i===0?'on':''}" data-c="${esc(c.name)}">${esc(c.name)} · ${c.total}문제</button>`).join('');
     bindChips($('#lCourse'));
+    bindChips($('#lCount'));
   }catch(e){ /* 탭 열 때 메시지로 안내됨 */ }
 }
 
 $('#liveStart').addEventListener('click', startLive);
 async function startLive(){
   const course = $('#lCourse .chip.on')?.dataset.c || '파이썬 입문';
+  const count = +($('#lCount .chip.on')?.dataset.n || 5);
   $('#liveErr').classList.add('hidden');
   $('#liveStart').disabled=true; $('#liveStart').textContent='문제 가져오는 중…';
   try{
     const res = await fetch('/api/live/generate',{method:'POST',
-      headers:{'Content-Type':'application/json'}, body:JSON.stringify({course})});
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify({course, count})});
     if(res.status===404) throw new Error(RESTART_MSG);
     if(!res.ok) throw new Error('문제를 가져오지 못했어요');
     LIVESET = (await res.json()).problems;
