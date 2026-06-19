@@ -110,3 +110,4 @@ git push -u origin main
    무료 플랜은 한동안 접속이 없으면 잠들었다가 다음 접속 때 깨어나는 데 ~30초 걸린다.
 
 로컬에서 생성 기능까지 쓰려면 `VIEWER_ONLY` 없이 `uvicorn backend.server:app` 로 실행.
+<!— 팀원: 김지성 — AI 튜터 챗봇 담당 —>
