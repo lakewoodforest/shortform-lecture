@@ -110,6 +110,22 @@ git push -u origin main
    무료 플랜은 한동안 접속이 없으면 잠들었다가 다음 접속 때 깨어나는 데 ~30초 걸린다.
 
 로컬에서 생성 기능까지 쓰려면 `VIEWER_ONLY` 없이 `uvicorn backend.server:app` 로 실행.
-<!— 팀원: 김지성 — AI 튜터 챗봇 담당 & 허깅페이스 무료모델 api —>
-<!— 팀원: 정재원 — 파이썬 문제 풀이 · 코드 연습 담당 —>
-<!— 팀원: 한건희 — 대시보드 구성 및 숏폼 생성 기능 구현 —>
+
+
+## 👥 팀원별 역할 및 기여도
+
+| 팀원 | GitHub | 담당 역할 | 기여도 |
+|------|--------|-----------|:---:|
+| **한건희** | [lakewoodforest](https://github.com/lakewoodforest) | 프로젝트 기획·총괄, 숏폼 스튜디오(PDF→텍스트→음성→자막→영상 파이프라인), 전체 통합·배포(Render), 저장소·브랜치 관리 | 38% |
+| **정재원** | [jjeoon0430](https://github.com/jjeoon0430) | 파이썬 문제 풀이(4지선다 퀴즈) · 코드 연습(빈칸 + 실전 코딩 Pyodide 채점) | 34% |
+| **김지성** | [jiseongg379](https://github.com/jiseongg379) | AI 튜터 챗봇 (외부 AI 모델 API 연동) | 28% |
+
+> 각 팀원은 개인 브랜치(`gunhee` · `jaewon` · `jisung`)에서 작업 후 Pull Request로 `main`에 병합했습니다. 프롬프트 기록은 `PROMPTS.md`에 있습니다.
+
+## 🖥 실행 화면
+
+| 숏폼 스튜디오 | 파이썬 문제 풀이 |
+|:---:|:---:|
+| ![숏폼 스튜디오](docs/s_studio.png) | ![문제 풀이](docs/s_quiz.png) |
+| **코드 연습** | **AI 튜터 챗봇** |
+| ![코드 연습](docs/s_code.png) | ![챗봇](docs/s_chat.png) |
