@@ -255,7 +255,7 @@ def chat(req: ChatReq):
     if not msg:
         raise HTTPException(400, "질문을 입력하세요.")
 
-    hf_token = os.environ.get("HF_TOKEN")
+    hf_token = (os.environ.get("HF_TOKEN") or "").strip()
     if not hf_token:
         raise HTTPException(500, "HF_TOKEN 환경변수가 설정되지 않았습니다.")
 
