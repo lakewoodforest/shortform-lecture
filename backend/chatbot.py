@@ -16,7 +16,4 @@ if __name__ == "__main__":
         user_input = input("질문: ")
         answer = chat(user_input)
         print("답변:", answer)
-import os
-import json
-
 # 김지성 커밋 테스트
