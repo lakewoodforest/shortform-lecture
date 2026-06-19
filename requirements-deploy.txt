@@ -4,3 +4,6 @@ fastapi
 uvicorn[standard]
 python-multipart
 pymupdf
+# 튜터 챗봇(/api/chat) + .env 로드에 필요
+huggingface_hub
+python-dotenv
