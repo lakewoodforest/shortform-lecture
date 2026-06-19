@@ -705,6 +705,21 @@
 
   @media(max-width:880px){.app{grid-template-columns:1fr;}.sidebar{border-right:none;
     border-bottom:1px solid var(--line);}.main{padding:30px 22px 70px;}.kpis{grid-template-columns:repeat(2,1fr);}}
+
+  /* ── 코드 연습 챗봇(고양이) — 로즈 테마. 기능은 퀴즈 챗봇과 동일(같은 백엔드) ── */
+  #codeApp .chat-fab{background:radial-gradient(circle at 50% 36%, #ffe3ec 0%, #ffc2d6 100%);
+    padding:4px;box-shadow:0 14px 30px -10px rgba(94,34,55,.5), 0 0 0 1px #f3dde4;}
+  #codeApp .chat-fab .ping{background:#d4476d;border-color:#fff;}
+  #codeApp .chat-panel{border-color:#f3dde4;box-shadow:0 24px 56px -18px rgba(94,34,55,.4);}
+  #codeApp .chat-head{background:linear-gradient(90deg,#e8597f,#d4476d);}
+  #codeApp .chat-body{background:#fdf3f6;}
+  #codeApp .msg.bot{background:#fff;border-color:#f3dde4;color:#5e2237;}
+  #codeApp .msg.me{background:#d4476d;color:#fff;}
+  #codeApp .msg.wait{color:#bd8a99;}
+  #codeApp .chat-input{border-top-color:#f3dde4;}
+  #codeApp .chat-input input{border-color:#efd3dc;color:#3c2230;}
+  #codeApp .chat-input input:focus{border-color:#d4476d;}
+  #codeApp .chat-input button{background:linear-gradient(90deg,#e8597f,#d4476d);}
 </style>
 </head>
 <body>
@@ -1067,6 +1082,57 @@
 
   <!-- ── 파이썬 코드 연습 대시보드 ── -->
   <div id="codeApp">
+    <!-- 튜터 챗봇 (고양이 · 코드 연습용, 로즈 테마) -->
+    <button class="chat-fab" id="chatFab2" title="PY 튜터에게 질문하기">
+      <svg viewBox="0 0 130 168" xmlns="http://www.w3.org/2000/svg" aria-label="PY tutor cat"
+           fill="none" stroke="#4a4754" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+        <!-- 꼬리 -->
+        <path d="M100,126 q24,2 21,24 q-2,13 -13,10" fill="none"/>
+        <!-- 귀 -->
+        <path d="M40,40 L36,8 L66,32 Z" fill="#fff"/>
+        <path d="M90,40 L94,8 L64,32 Z" fill="#fff"/>
+        <path d="M45,34 L43,18 L58,31 Z" fill="#f7a9c0" stroke="none"/>
+        <path d="M85,34 L87,18 L72,31 Z" fill="#f7a9c0" stroke="none"/>
+        <!-- 몸통 -->
+        <ellipse cx="65" cy="126" rx="37" ry="33" fill="#fff"/>
+        <!-- 분홍 팔 -->
+        <rect x="49" y="104" width="11" height="34" rx="5.5" fill="#f7a9c0" stroke="none"/>
+        <rect x="70" y="104" width="11" height="34" rx="5.5" fill="#f7a9c0" stroke="none"/>
+        <!-- 배의 HSU -->
+        <text x="65" y="140" text-anchor="middle" font-family="'IBM Plex Sans KR',sans-serif"
+              font-size="19" font-weight="700" fill="#f1789a" stroke="none">HSU</text>
+        <!-- 발 -->
+        <ellipse cx="53" cy="156" rx="11" ry="8" fill="#fff"/>
+        <ellipse cx="77" cy="156" rx="11" ry="8" fill="#fff"/>
+        <!-- 머리 -->
+        <ellipse cx="65" cy="62" rx="45" ry="43" fill="#fff"/>
+        <!-- 찌푸린 눈썹 -->
+        <path d="M50,44 q6,-5 12,-1"/>
+        <path d="M80,44 q-6,-5 -12,-1"/>
+        <!-- 눈 -->
+        <circle cx="52" cy="62" r="3.6" fill="#4a4754" stroke="none"/>
+        <circle cx="78" cy="62" r="3.6" fill="#4a4754" stroke="none"/>
+        <!-- 시무룩한 입 -->
+        <path d="M57,77 q8,-6 16,0" stroke-width="5"/>
+        <!-- 수염 -->
+        <path d="M18,58 l22,2 M16,68 l24,-1 M112,58 l-22,2 M114,68 l-24,-1" stroke-width="4"/>
+      </svg>
+      <span class="ping"></span>
+    </button>
+    <div class="chat-panel" id="chatPanel2">
+      <div class="chat-head">
+        <div>
+          <div class="nm">PY 튜터</div>
+          <div class="st" id="chatStatus2">AI 모델 연동 준비 중</div>
+        </div>
+        <button class="chat-close" id="chatClose2">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody2"></div>
+      <div class="chat-input">
+        <input id="chatText2" placeholder="코드가 막힐 땐 물어보세요" maxlength="300">
+        <button id="chatSend2">전송</button>
+      </div>
+    </div>
     <div class="quiz-shell">
       <div class="quiz-top">
         <button class="c-back" id="codeBack">← 처음으로</button>
@@ -2036,49 +2102,59 @@ $('#lNew').addEventListener('click', ()=>{
 });
 
 // ── PY 튜터 챗봇 ──
-let chatGreeted = false;
-function addMsg(text, who){
-  const el = document.createElement('div');
-  el.className = 'msg ' + who;
-  el.textContent = text;
-  $('#chatBody').appendChild(el);
-  $('#chatBody').scrollTop = $('#chatBody').scrollHeight;
-  return el;
-}
-$('#chatFab').addEventListener('click', ()=>{
-  const on = $('#chatPanel').classList.toggle('on');
-  if(on && !chatGreeted){
-    chatGreeted = true;
-    addMsg('안녕하세요! PY 튜터예요. 파이썬 공부하다 궁금한 게 생기면 물어보세요.', 'bot');
+// 디자인만 다른 같은 챗봇. 둘 다 같은 백엔드(/api/quiz/ask)를 쓰므로,
+// 나중에 허깅페이스 모델을 그 엔드포인트(backend/quiz.py)에 한 번만 연결하면
+// 퀴즈·코드 양쪽 챗봇이 동시에 그 모델로 답하게 된다.
+function wireChat(o){
+  let greeted = false;
+  const body = $(o.body);
+  function addMsg(text, who){
+    const el = document.createElement('div');
+    el.className = 'msg ' + who;
+    el.textContent = text;
+    body.appendChild(el);
+    body.scrollTop = body.scrollHeight;
+    return el;
   }
-  if(on) $('#chatText').focus();
-});
-$('#chatClose').addEventListener('click', ()=>$('#chatPanel').classList.remove('on'));
-
-async function sendChat(){
-  const q = $('#chatText').value.trim();
-  if(!q) return;
-  $('#chatText').value = '';
-  addMsg(q, 'me');
-  $('#chatSend').disabled = true;
-  const wait = addMsg('생각 중…', 'wait');
-  try{
-    const res = await fetch('/api/quiz/ask', {method:'POST',
-      headers:{'Content-Type':'application/json'}, body:JSON.stringify({question:q})});
-    if(!res.ok) throw new Error();
-    const d = await res.json();
-    wait.remove();
-    addMsg(d.answer, 'bot');
-    if(d.source === 'model') $('#chatStatus').textContent = 'AI 모델 연결됨';
-  }catch(e){
-    wait.remove();
-    addMsg('지금은 답을 가져오지 못했어요. 서버가 켜져 있는지 확인해 주세요.', 'bot');
+  $(o.fab).addEventListener('click', ()=>{
+    const on = $(o.panel).classList.toggle('on');
+    if(on && !greeted){ greeted = true; addMsg(o.greeting, 'bot'); }
+    if(on) $(o.text).focus();
+  });
+  $(o.close).addEventListener('click', ()=>$(o.panel).classList.remove('on'));
+  async function send(){
+    const q = $(o.text).value.trim();
+    if(!q) return;
+    $(o.text).value = '';
+    addMsg(q, 'me');
+    $(o.send).disabled = true;
+    const wait = addMsg('답변 받는 중...', 'wait');
+    try{
+      const res = await fetch('/api/chat', {method:'POST',
+        headers:{'Content-Type':'application/json'}, body:JSON.stringify({message:q})});
+      if(!res.ok) throw new Error();
+      const d = await res.json();
+      wait.remove();
+      addMsg(d.reply, 'bot');
+      $(o.status).textContent = 'AI 모델 연결됨';
+    }catch(e){
+      wait.remove();
+      addMsg('지금은 답을 가져오지 못했어요. 서버가 켜져 있는지 확인해 주세요.', 'bot');
+    }
+    $(o.send).disabled = false;
+    $(o.text).focus();
   }
-  $('#chatSend').disabled = false;
-  $('#chatText').focus();
+  $(o.send).addEventListener('click', send);
+  $(o.text).addEventListener('keydown', e=>{ if(e.key==='Enter') send(); });
 }
-$('#chatSend').addEventListener('click', sendChat);
-$('#chatText').addEventListener('keydown', e=>{ if(e.key==='Enter') sendChat(); });
+// 퀴즈 화면 챗봇 (거북이 · 그린)
+wireChat({fab:'#chatFab', panel:'#chatPanel', body:'#chatBody', text:'#chatText',
+  send:'#chatSend', close:'#chatClose', status:'#chatStatus',
+  greeting:'안녕하세요! PY 튜터예요. 파이썬 공부하다 궁금한 게 생기면 물어보세요.'});
+// 코드 연습 화면 챗봇 (고양이 · 로즈) — 같은 백엔드 공유
+wireChat({fab:'#chatFab2', panel:'#chatPanel2', body:'#chatBody2', text:'#chatText2',
+  send:'#chatSend2', close:'#chatClose2', status:'#chatStatus2',
+  greeting:'안녕하세요! PY 튜터예요. 코드 문제 풀다 막히면 편하게 물어보세요.'});
 
 // 초기 로드
 loadOptions(); loadCourse(); loadQuizOptions(); loadCodeOptions(); loadLiveOptions();

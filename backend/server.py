@@ -23,6 +23,8 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from dotenv import load_dotenv
+from huggingface_hub import InferenceClient
 
 from .extractor import build_payload
 from .quiz import (COURSES, CODE_COURSES, DIFFICULTIES, HF_MODEL_ID,
@@ -33,6 +35,9 @@ app = FastAPI(title="한입 파이썬")
 ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "frontend"
 OUTPUT = ROOT / "output"
+
+# .env 파일 로드
+load_dotenv(ROOT / ".env")
 
 # 선택지 (사이드바)
 VOICES = [
@@ -238,6 +243,35 @@ def quiz_ask(req: AskReq):
     if not q:
         raise HTTPException(400, "질문을 입력하세요.")
     return answer_question(q)
+
+
+class ChatReq(BaseModel):
+    message: str
+
+
+@app.post("/api/chat")
+def chat(req: ChatReq):
+    msg = req.message.strip()
+    if not msg:
+        raise HTTPException(400, "질문을 입력하세요.")
+
+    hf_token = os.environ.get("HF_TOKEN")
+    if not hf_token:
+        raise HTTPException(500, "HF_TOKEN 환경변수가 설정되지 않았습니다.")
+
+    try:
+        client = InferenceClient(model="Qwen/Qwen2.5-Coder-3B-Instruct", token=hf_token)
+        response = client.chat_completion(
+            messages=[
+                {"role": "system", "content": "너는 파이썬을 가르치는 친절한 튜터야. 학생이 이해하기 쉽게 한국어로 설명하고, 필요하면 짧은 예제 코드를 보여줘. 답변은 너무 길지 않게."},
+                {"role": "user", "content": msg},
+            ],
+            max_tokens=500,
+        )
+        reply = response.choices[0].message.content
+        return {"reply": reply}
+    except Exception as e:
+        raise HTTPException(500, f"AI 챗봇 오류: {str(e)}")
 
 
 class GenerateReq(BaseModel):
